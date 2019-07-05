@@ -35,7 +35,7 @@ Makes an instance of the configuration file for each resolution and each Hurst i
 
     config = read_config(args.config)
 
-    if args.resolutions[-1] > 2**13:
+    if args.resolutions[-1] > 2**11:
         raise Exception("You need to edit the file fbm_base/fbm.xml by hand to allow this")
 
     for n, hurst_index in enumerate(args.hurst_indices):
