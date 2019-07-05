@@ -3,6 +3,8 @@ import xml.dom.minidom
 import shutil
 import os
 
+MAX_RESOLUTION=2048
+
 from xml_tools import set_in_xml, get_xml_node, get_in_xml, read_config
 if __name__ == '__main__':
     import argparse
@@ -35,7 +37,7 @@ Makes an instance of the configuration file for each resolution and each Hurst i
 
     config = read_config(args.config)
 
-    if args.resolutions[-1] > 2**11:
+    if args.resolutions[-1] > MAX_RESOLUTION:
         raise Exception("You need to edit the file fbm_base/fbm.xml by hand to allow this")
 
     for n, hurst_index in enumerate(args.hurst_indices):
@@ -70,16 +72,16 @@ Makes an instance of the configuration file for each resolution and each Hurst i
                     set_in_xml(initial_data_parameter, "value", hurst_index)
 
                 elif name == "X":
-                    # We need a total of nx**3*3 random samples, but we will always generate the maximum number of samples
-                    set_in_xml(initial_data_parameter, "length", 3*(512-1)**3)
+                    # We need a total of (nx-1)**2*2 random samples, but we will always generate the maximum number of samples
+                    set_in_xml(initial_data_parameter, "length", 2*(MAX_RESOLUTION-1)**2)
 
             uq_parameters = get_xml_node(config, "config.uq.parameters")
             for uq_parameter in uq_parameters.getElementsByTagName("parameter"):
                 name = get_in_xml(uq_parameter, "name")
 
                 if name == "X":
-                    # We need a total of (nx-1)**3*3 random samples
-                    set_in_xml(uq_parameter, "length", 3*(512-1)**3)
+                    # We need a total of (nx-1)**2*2 random samples
+                    set_in_xml(uq_parameter, "length", 2*(MAX_RESOLUTION-1)**2)
 
             shutil.copyfile(os.path.join(os.path.dirname(args.config), python_file),
                              os.path.join(resolution_folder, python_file))
