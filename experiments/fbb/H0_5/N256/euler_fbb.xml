@@ -1,0 +1,61 @@
+<?xml version="1.0" ?><config>
+<fvm>
+  <name>
+    euler_fbb
+  </name>
+  <platform>cpu</platform>
+  <grid>
+    <lowerCorner>0 0 0</lowerCorner>
+    <upperCorner>1 1 0</upperCorner>
+    <dimension>256 256 1</dimension>
+  </grid>
+  <boundary>periodic</boundary>
+  <flux>hll3</flux>
+  <endTime>4</endTime>
+  <equation>euler2</equation>
+  <equationParameters>
+    <gamma>1.4</gamma>
+  </equationParameters>
+  <reconstruction>wenof2</reconstruction>
+  <cfl>auto</cfl>
+  <integrator>auto</integrator>
+
+  <initialData>
+    <python>euler_fbb.py</python>
+    <parameters>
+      <parameter>
+	<name>hurst_index</name>
+	<length>1</length>
+	<value>0.5</value>
+      </parameter>
+      <parameter>
+        <name>X</name>
+        <length>400298493</length>
+        <values><value>0</value></values>
+      </parameter>
+    </parameters>
+  </initialData>
+  <diffusion>
+    <name>none</name>
+    <reconstruction>none</reconstruction>
+  </diffusion>
+  <writer>
+    <type>netcdf</type>
+    <basename>euler_fbb</basename>
+    <numberOfSaves>1</numberOfSaves>
+  </writer>
+</fvm>
+<uq>
+  <samples>30720</samples>
+  <generator>auto</generator>
+  <sampleStart>20480</sampleStart>
+  <parameters>
+    <parameter>
+      <name>X</name>
+      <length>400298493</length>
+      <type>uniform</type>
+    </parameter>
+  </parameters>
+<stats/>
+</uq>
+</config>

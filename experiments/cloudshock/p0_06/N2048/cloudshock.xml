@@ -1,0 +1,63 @@
+<?xml version="1.0" ?><config>
+<fvm>
+  <name>
+    cloudshock
+  </name>
+  <platform>cuda</platform>
+  <grid>
+    <lowerCorner>0 0 0</lowerCorner>
+    <upperCorner>1 1 0</upperCorner>
+    <dimension>2048 2048 1</dimension>
+  </grid>
+  <boundary>neumann</boundary>
+  <flux>hll3</flux>
+  <endTime>0.06</endTime>
+  <equation>euler2</equation>
+  <equationParameters>
+    <gamma>1.4</gamma>
+  </equationParameters>
+  <reconstruction>weno2</reconstruction>
+  <cfl>auto</cfl>
+  <integrator>rungekutta3</integrator>
+
+  <initialData>
+    <python>cloudshock.py</python>
+    <parameters>
+      <parameter>
+        <name>a</name>
+        <length>40</length>
+        <values><value>0</value></values>
+      </parameter>
+      <parameter>
+        <name>epsilon</name>
+        <length>1</length>
+        <value>0.06</value>
+      </parameter>
+
+    </parameters>
+  </initialData>
+  <diffusion>
+    <name>none</name>
+    <reconstruction>none</reconstruction>
+  </diffusion>
+  <writer>
+    <type>netcdf</type>
+    <basename>cloudshock</basename>
+    <numberOfSaves>1</numberOfSaves>
+  </writer>
+</fvm>
+<uq>
+  <sampleStart>0</sampleStart>
+  <samples>2048</samples>
+  <generator>auto</generator>
+  <parameters>
+    <parameter>
+      <name>a</name>
+      <length>40</length>
+      <type>uniform</type>
+    </parameter>
+  </parameters>
+  <stats>
+  </stats>
+</uq>
+</config>
