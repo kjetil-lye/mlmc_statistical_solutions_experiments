@@ -91,7 +91,7 @@ Submits the configuration file leonhard. NOTE: Will run in folder of configurati
     if args.move_to is not None:
         destination_base = os.path.relpath(configuration_path, args.base_path)
 
-        destination_folder = os.path.dirnam(os.path.join(args.move_to, destination_base))
+        destination_folder = os.path.dirname(os.path.join(args.move_to, destination_base))
 
         if not os.path.exists(destination_folder):
             os.makedirs(destination_folder, exist_ok=True)
