@@ -1,0 +1,3 @@
+[submodule "alsvinn"]
+	path = alsvinn
+	url = https://github.com/alsvinn/alsvinn.git
