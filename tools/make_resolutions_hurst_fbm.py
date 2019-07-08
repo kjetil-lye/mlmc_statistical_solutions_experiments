@@ -46,10 +46,10 @@ Makes an instance of the configuration file for each resolution and each Hurst i
 
         for m, resolution in enumerate(args.resolutions):
 
-            if resolution >= args.cuda_cutoff:
-                set_in_xml(config, 'config.fvm.platform', 'cuda')
-            else:
-                set_in_xml(config, 'config.fvm.platform', 'cpu')
+            #if resolution >= args.cuda_cutoff:
+            #    set_in_xml(config, 'config.fvm.platform', 'cuda')
+            #else:
+            #    set_in_xml(config, 'config.fvm.platform', 'cpu')
                 
             resolution_folder = f"{perturbation_folder}/N{resolution}"
             os.makedirs(resolution_folder, exist_ok=True)

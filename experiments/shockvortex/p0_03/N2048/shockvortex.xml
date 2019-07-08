@@ -3,7 +3,7 @@
     <name>
       shockvortex
     </name>
-    <platform>cuda</platform>
+    <platform>cpu</platform>
     <grid>
         <lowerCorner>0 0 0</lowerCorner>
         <upperCorner>1 1 0</upperCorner>
@@ -16,7 +16,7 @@
     <equationParameters>
         <gamma>1.66666666666667</gamma>
     </equationParameters>
-    <reconstruction>weno2</reconstruction>
+    <reconstruction>wenof2</reconstruction>
     <cfl>auto</cfl>
     <integrator>auto</integrator>
     <initialData>

@@ -49,10 +49,10 @@ Makes an instance of the configuration file for each resolution and each perturb
             samples = args.samples[m]
             sample_start = args.sample_starts[m]
 
-            if resolution >= args.cuda_cutoff:
-                set_in_xml(config, "config.fvm.platform", "cuda")
-            else:
-                set_in_xml(config, "config.fvm.platform", "cpu")
+            #if resolution >= args.cuda_cutoff:
+            #    set_in_xml(config, "config.fvm.platform", "cuda")
+            #else:
+            #    set_in_xml(config, "config.fvm.platform", "cpu")
             
             set_in_xml(config, "config.uq.samples", samples)
             set_in_xml(config, "config.uq.sampleStart", sample_start)
