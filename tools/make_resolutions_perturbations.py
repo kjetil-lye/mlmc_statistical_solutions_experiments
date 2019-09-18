@@ -13,6 +13,9 @@ Makes an instance of the configuration file for each resolution and each perturb
     pEPSILON/NRESOLUTION/configname.xml
             """)
 
+    parser.add_argument('--cuda_cutoff', type=int, default=1024,
+                        help="The lowest resolution for which to still use cuda")
+
     parser.add_argument('--resolutions', type=int, nargs='+', required=True,
                         help='Resolutions')
 
@@ -21,6 +24,10 @@ Makes an instance of the configuration file for each resolution and each perturb
 
     parser.add_argument('--perturbations', type=str, nargs='+',
                         help="values of epsilon")
+
+    parser.add_argument('--sample_starts', type=int, nargs='+',
+                        help="Values of sample starts for each reoslution")
+
 
     parser.add_argument('--config', type=str, required=True,
                         help="Path to configuration file")
@@ -40,8 +47,15 @@ Makes an instance of the configuration file for each resolution and each perturb
             os.mkdir(resolution_folder)
 
             samples = args.samples[m]
+            sample_start = args.sample_starts[m]
 
+            #if resolution >= args.cuda_cutoff:
+            #    set_in_xml(config, "config.fvm.platform", "cuda")
+            #else:
+            #    set_in_xml(config, "config.fvm.platform", "cpu")
+            
             set_in_xml(config, "config.uq.samples", samples)
+            set_in_xml(config, "config.uq.sampleStart", sample_start)
             set_in_xml(config, "config.fvm.grid.dimension", f"{resolution} {resolution} 1")
 
             python_file = get_in_xml(config, "config.initialData.python")

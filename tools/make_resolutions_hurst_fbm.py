@@ -3,6 +3,8 @@ import xml.dom.minidom
 import shutil
 import os
 
+MAX_RESOLUTION=2048
+
 from xml_tools import set_in_xml, get_xml_node, get_in_xml, read_config
 if __name__ == '__main__':
     import argparse
@@ -12,6 +14,9 @@ Makes an instance of the configuration file for each resolution and each Hurst i
 
     H{HURST INDEX}/NRESOLUTION/configname.xml
             """)
+
+    parser.add_argument('--cuda_cutoff', type=int, default=1024,
+                        help='The lowest resolution for which to still use CUDA')
 
     parser.add_argument('--resolutions', type=int, nargs='+', required=True,
                         help='Resolutions')
@@ -25,11 +30,14 @@ Makes an instance of the configuration file for each resolution and each Hurst i
     parser.add_argument('--config', type=str, required=True,
                         help="Path to configuration file")
 
+    parser.add_argument('--sample_starts', type=int, nargs='+', required=True,
+                        help='Sample starts for each resolutionx')
+
     args = parser.parse_args()
 
     config = read_config(args.config)
 
-    if args.resolutions[-1] > 512:
+    if args.resolutions[-1] > MAX_RESOLUTION:
         raise Exception("You need to edit the file fbm_base/fbm.xml by hand to allow this")
 
     for n, hurst_index in enumerate(args.hurst_indices):
@@ -37,12 +45,20 @@ Makes an instance of the configuration file for each resolution and each Hurst i
         os.makedirs(perturbation_folder, exist_ok=True)
 
         for m, resolution in enumerate(args.resolutions):
+
+            #if resolution >= args.cuda_cutoff:
+            #    set_in_xml(config, 'config.fvm.platform', 'cuda')
+            #else:
+            #    set_in_xml(config, 'config.fvm.platform', 'cpu')
+                
             resolution_folder = f"{perturbation_folder}/N{resolution}"
             os.makedirs(resolution_folder, exist_ok=True)
 
             samples = args.samples[m]
-
+            sample_start = args.sample_starts[m]
             set_in_xml(config, "config.uq.samples", samples)
+            set_in_xml(config, "config.uq.sampleStart", sample_start)
+            
             set_in_xml(config, "config.fvm.grid.dimension", f"{resolution} {resolution} 1")
 
             python_file = get_in_xml(config, "config.fvm.initialData.python")
@@ -56,16 +72,16 @@ Makes an instance of the configuration file for each resolution and each Hurst i
                     set_in_xml(initial_data_parameter, "value", hurst_index)
 
                 elif name == "X":
-                    # We need a total of nx**3*3 random samples, but we will always generate the maximum number of samples
-                    set_in_xml(initial_data_parameter, "length", 3*(512-1)**3)
+                    # We need a total of (nx-1)**2*2 random samples, but we will always generate the maximum number of samples
+                    set_in_xml(initial_data_parameter, "length", 2*(MAX_RESOLUTION-1)**2)
 
             uq_parameters = get_xml_node(config, "config.uq.parameters")
             for uq_parameter in uq_parameters.getElementsByTagName("parameter"):
                 name = get_in_xml(uq_parameter, "name")
 
                 if name == "X":
-                    # We need a total of (nx-1)**3*3 random samples
-                    set_in_xml(uq_parameter, "length", 3*(512-1)**3)
+                    # We need a total of (nx-1)**2*2 random samples
+                    set_in_xml(uq_parameter, "length", 2*(MAX_RESOLUTION-1)**2)
 
             shutil.copyfile(os.path.join(os.path.dirname(args.config), python_file),
                              os.path.join(resolution_folder, python_file))
