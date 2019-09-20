@@ -14,9 +14,13 @@ def load(filename):
         
         sample = 0
         shape = f.variables['sample_0_rho'][:,:,0].shape
+        next_sample_to_print = 1
         while f'sample_{sample}_rho' in f.variables.keys():
-            sys.stdout.write(f"Reading sample: {sample:04d}\r")
-            sys.stdout.flush()
+            if sample % (1024//80) > next_sample_to_print:
+                sys.stdout.write("#")
+                sys.stdout.flush()
+                next_sample_to_print = sample % (1024//80)
+            
             data = np.zeros((*shape, len(variables)))
             for n, variable in enumerate(variables):
                 key = f'sample_{sample}_{variable}'
@@ -34,13 +38,13 @@ def compute_variance_decay_normed(resolutions, basenames, norm_ord):
     for resolution in resolutions:
         print(f"Resolution: {resolution}")
         data = load(basenames.format(resolution=resolution))
-        variance_single_level = np.linalg.norm(np.var(data, axis=0).flatten(), ord=norm_ord)
+        variance_single_level = np.linalg.norm(np.var(data, axis=0).flatten(), ord=norm_ord)/resolution**2
         
         variances.append(variance_single_level)
         if resolution > resolutions[0]:
             detail = data - data_coarse
             
-            variance_detail = np.linalg.norm(np.var(detail, axis=0).flatten(), ord=norm_ord)
+            variance_detail = np.linalg.norm(np.var(detail, axis=0).flatten(), ord=norm_ord)/resolution**2
             
             
             variances_details.append(variance_detail)
