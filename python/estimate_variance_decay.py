@@ -4,9 +4,13 @@ import plot_info
 import matplotlib.pyplot as plt
 import sys
 
-def load(filename):
+def load(filename, variable):
     samples = []
-    variables = ['rho', 'mx', 'my', 'E']
+    
+    if variable == 'all':
+        variables = ['rho', 'mx', 'my', 'E']
+    else:
+        variables = [variable]
     
     with netCDF4.Dataset(filename) as f:
         for attr in f.ncattrs():
@@ -31,13 +35,13 @@ def load(filename):
     print()
     return np.array(samples)
 
-def compute_variance_decay_normed(resolutions, basenames, norm_ord):
+def compute_variance_decay_normed(resolutions, basenames, norm_ord, variable):
     variances = []
     variances_details = []
     
     for resolution in resolutions:
         print(f"Resolution: {resolution}")
-        data = load(basenames.format(resolution=resolution))
+        data = load(basenames.format(resolution=resolution), variable)
         variance_single_level = np.linalg.norm(np.var(data, axis=0).flatten(), ord=norm_ord)/resolution**2
         
         variances.append(variance_single_level)
@@ -53,15 +57,32 @@ def compute_variance_decay_normed(resolutions, basenames, norm_ord):
     return variances, variances_details
 
 
-def plot_variance_decay_normed(title, resolutions, basenames, norm_ord):
-    variances, variances_details = compute_variance_decay_normed(resolutions, basenames, norm_ord)
+def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable):
+    variances, variances_details = compute_variance_decay_normed(resolutions, 
+                                                                 basenames,
+                                                                 norm_ord,
+                                                                 variable)
+    
+    if variable == 'all':
+        variable_latex = 'u'
+    elif variable == 'rho':
+        variable_latex = '\\rho'
+    elif variable == 'mx':
+        variable_latex = 'm_x'
+    elif variable == 'my':
+        variable_latex = 'm_y'
+    else:
+        variable_latex = variable
+    
+    
+        
     
     plt.loglog(resolutions, variances, '-o', 
-               label=f'$||\\mathrm{{Var}}(u^{{N}})||_{{L^{{{norm_ord}}}}}$')
+               label=f'$||\\mathrm{{Var}}({variable_latex}^{{N}})||_{{L^{{{norm_ord}}}}}$')
     
     
     plt.loglog(resolutions[1:], variances_details, '-*', 
-               label=f'$||\\mathrm{{Var}}(u^{{N}}-u^{{N/2}})||_{{L^{{{norm_ord}}}}}$',
+               label=f'$||\\mathrm{{Var}}({variable_latex}^{{N}}-{variable_latex}^{{N/2}})||_{{L^{{{norm_ord}}}}}$',
                basex=2, basey=2)
     
     plt.legend()
@@ -72,15 +93,15 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord):
     
     plt.xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
     
-    plt.title(f'Variance decay\n{title}')
+    plt.title(f'Variance decay\n{title}\nVariable: {variable}')
     
-    plot_info.savePlot(f'variance_decay_{norm_ord}_{title}')
+    plot_info.savePlot(f'variance_decay_{norm_ord}_{title}_{variable}')
     
-    plot_info.saveData(f'variance_details_{norm_ord}_{title}.txt', variances_details)
+    plot_info.saveData(f'variance_details_{norm_ord}_{title}_{variable}.txt', variances_details)
 
-    plot_info.saveData(f'variance_{norm_ord}_{title}.txt', variances)
+    plot_info.saveData(f'variance_{norm_ord}_{title}_{variable}.txt', variances)
     
-    plot_info.saveData(f'variance_decay_resolutions_{norm_ord}_{title}.txt', resolutions)
+    plot_info.saveData(f'variance_decay_resolutions_{norm_ord}_{title}_{variable}.txt', resolutions)
             
     
 if __name__ == '__main__':
@@ -110,6 +131,9 @@ Computes the variance decay
     parser.add_argument('--norm_order', type=int, default=2,
                         help='The norm order')
     
+    parser.add_argument('--variable', type=str, default='all',
+                        help='The variable to use (rho, mx, my, E)')
+    
     args = parser.parse_args()
 
 
@@ -118,4 +142,5 @@ Computes the variance decay
     
     
     plot_variance_decay_normed(args.title, resolutions,
-                               args.input_basename, args.norm_order)
+                               args.input_basename, args.norm_order,
+                               args.variable)
