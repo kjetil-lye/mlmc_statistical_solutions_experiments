@@ -52,15 +52,15 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 668a85e3b0fbc02a9665d86ddbbe7df858d99e1b
+Commit: f90eaaedb3142ed15275e7ef4b7f9352a32a8437
 Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-Hostname: lo-amd-fp-003};
+Hostname: lo-amd-fp-004};
 \node at (axis cs:0.2,0.93)[
   scale=0.5,
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@668a};
+]{@f90e};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -68,9 +68,9 @@ Hostname: lo-amd-fp-003};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 668a85e3b0fbc02a9665d86ddbbe7df858d99e1b
+Commit: f90eaaedb3142ed15275e7ef4b7f9352a32a8437
 Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-Hostname: lo-amd-fp-003};
+Hostname: lo-amd-fp-004};
 \end{axis}
 
 \end{tikzpicture}
@@ -82,14 +82,14 @@ Hostname: lo-amd-fp-003};
 %% script name: python/estimate_variance_decay.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 668a85e3b0fbc02a9665d86ddbbe7df858d99e1b
-%% GIT git_repo_modified : False
+%% GIT git_commit : f90eaaedb3142ed15275e7ef4b7f9352a32a8437
+%% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-%% GIT git_short_commit : 668a
+%% GIT git_short_commit : f90e
 %% working_directory : /cluster/scratch/klye/mlmc_statistical_solutions_experiments
-%% hostname : lo-amd-fp-003
-%% generated_on_date : 2019-09-20 16:02:49.002512
+%% hostname : lo-amd-fp-004
+%% generated_on_date : 2019-09-20 23:16:44.922330
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/bin/python python/estimate_variance_decay.py --input_basename /cluster/work/math/klye/single_sample_structure_functions/experiments_mean_field/fbb/H0_75/N{resolution}/euler_fbb_1.nc --starting_resolution 64 --max_resolution 1024 --title fBb $H=0.75$ --variable mx --norm_order 2
@@ -1120,5 +1120,5 @@ Hostname: lo-amd-fp-003};
 %% stacktrace:
 %%     [function: savePlot, line: 307, file: /cluster/scratch/klye/mlmc_statistical_solutions_experiments/python/plot_info.py]
 %%     [function: savePlot, line: 329, file: /cluster/scratch/klye/mlmc_statistical_solutions_experiments/python/plot_info.py]
-%%     [function: plot_variance_decay_normed, line: 182, file: python/estimate_variance_decay.py]
-%%     [function: <module>, line: 239, file: python/estimate_variance_decay.py]
+%%     [function: plot_variance_decay_normed, line: 330, file: python/estimate_variance_decay.py]
+%%     [function: <module>, line: 399, file: python/estimate_variance_decay.py]

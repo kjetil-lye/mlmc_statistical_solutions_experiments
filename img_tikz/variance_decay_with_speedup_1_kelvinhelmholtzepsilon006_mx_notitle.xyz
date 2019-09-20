@@ -12,9 +12,6 @@ log basis x={2},
 log basis y={2},
 tick align=outside,
 tick pos=left,
-title={Variance decay
-Kelvin-Helmholtz $\epsilon=0.06$
-Variable: mx},
 width=\figurewidth,
 x grid style={white!69.01960784313725!black},
 xlabel={Resolution (\(\displaystyle N\times N\))},
@@ -55,15 +52,15 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 668a85e3b0fbc02a9665d86ddbbe7df858d99e1b
+Commit: f90eaaedb3142ed15275e7ef4b7f9352a32a8437
 Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-Hostname: lo-a2-016};
+Hostname: lo-amd-fp-002};
 \node at (axis cs:0.2,0.93)[
   scale=0.5,
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@668a};
+]{@f90e};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -71,14 +68,16 @@ Hostname: lo-a2-016};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 668a85e3b0fbc02a9665d86ddbbe7df858d99e1b
+Commit: f90eaaedb3142ed15275e7ef4b7f9352a32a8437
 Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-Hostname: lo-a2-016};
+Hostname: lo-amd-fp-002};
 \end{axis}
 
 \begin{axis}[
 axis y line=right,
 height=\figureheight,
+legend cell align={left},
+legend style={draw=white!80.0!black},
 log basis x={2},
 tick align=outside,
 width=\figurewidth,
@@ -103,6 +102,7 @@ table {%
 512 1.40759225571333
 1024 1.37856280317822
 };
+\addlegendentry{MLMC Speedup}
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -110,15 +110,15 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 668a85e3b0fbc02a9665d86ddbbe7df858d99e1b
+Commit: f90eaaedb3142ed15275e7ef4b7f9352a32a8437
 Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-Hostname: lo-a2-016};
+Hostname: lo-amd-fp-002};
 \node at (axis cs:0.2,0.93)[
   scale=0.5,
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@668a};
+]{@f90e};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -126,9 +126,9 @@ Hostname: lo-a2-016};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 668a85e3b0fbc02a9665d86ddbbe7df858d99e1b
+Commit: f90eaaedb3142ed15275e7ef4b7f9352a32a8437
 Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-Hostname: lo-a2-016};
+Hostname: lo-amd-fp-002};
 \end{axis}
 
 \end{tikzpicture}
@@ -140,14 +140,14 @@ Hostname: lo-a2-016};
 %% script name: python/estimate_variance_decay.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 668a85e3b0fbc02a9665d86ddbbe7df858d99e1b
-%% GIT git_repo_modified : False
+%% GIT git_commit : f90eaaedb3142ed15275e7ef4b7f9352a32a8437
+%% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-%% GIT git_short_commit : 668a
+%% GIT git_short_commit : f90e
 %% working_directory : /cluster/scratch/klye/mlmc_statistical_solutions_experiments
-%% hostname : lo-a2-016
-%% generated_on_date : 2019-09-20 15:34:46.290990
+%% hostname : lo-amd-fp-002
+%% generated_on_date : 2019-09-20 23:24:31.869686
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/bin/python python/estimate_variance_decay.py --input_basename /cluster/work/math/klye/single_sample_structure_functions/experiments_mean_field/kh/p0_06/N{resolution}/kh_1.nc --starting_resolution 64 --max_resolution 1024 --title Kelvin-Helmholtz $\epsilon=0.06$ --variable mx --norm_order 1
@@ -1178,5 +1178,5 @@ Hostname: lo-a2-016};
 %% stacktrace:
 %%     [function: savePlot, line: 307, file: /cluster/scratch/klye/mlmc_statistical_solutions_experiments/python/plot_info.py]
 %%     [function: savePlot, line: 329, file: /cluster/scratch/klye/mlmc_statistical_solutions_experiments/python/plot_info.py]
-%%     [function: plot_variance_decay_normed, line: 196, file: python/estimate_variance_decay.py]
-%%     [function: <module>, line: 239, file: python/estimate_variance_decay.py]
+%%     [function: plot_variance_decay_normed, line: 348, file: python/estimate_variance_decay.py]
+%%     [function: <module>, line: 399, file: python/estimate_variance_decay.py]

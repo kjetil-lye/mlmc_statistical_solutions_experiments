@@ -12,9 +12,6 @@ log basis x={2},
 log basis y={2},
 tick align=outside,
 tick pos=left,
-title={Variance decay
-Kelvin-Helmholtz $\epsilon=0.06$
-Variable: E},
 width=\figurewidth,
 x grid style={white!69.01960784313725!black},
 xlabel={Resolution (\(\displaystyle N\times N\))},
@@ -51,7 +48,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 668a85e3b0fbc02a9665d86ddbbe7df858d99e1b
+Commit: f90eaaedb3142ed15275e7ef4b7f9352a32a8437
 Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
 Hostname: lo-amd-fp-003};
 \node at (axis cs:0.2,0.93)[
@@ -59,28 +56,25 @@ Hostname: lo-amd-fp-003};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@668a};
+]{@f90e};
 \end{axis}
 
 \end{tikzpicture}
 
 %% INCLUDE THE COMMENTS AT THE END WHEN COPYING
 %%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
-%% Variance decay
-%% Kelvin-Helmholtz $\epsilon=0.06$
-%% Variable: E
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% script name: python/estimate_variance_decay.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 668a85e3b0fbc02a9665d86ddbbe7df858d99e1b
-%% GIT git_repo_modified : False
+%% GIT git_commit : f90eaaedb3142ed15275e7ef4b7f9352a32a8437
+%% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-%% GIT git_short_commit : 668a
+%% GIT git_short_commit : f90e
 %% working_directory : /cluster/scratch/klye/mlmc_statistical_solutions_experiments
 %% hostname : lo-amd-fp-003
-%% generated_on_date : 2019-09-20 15:42:14.146788
+%% generated_on_date : 2019-09-20 23:29:44.821631
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/bin/python python/estimate_variance_decay.py --input_basename /cluster/work/math/klye/single_sample_structure_functions/experiments_mean_field/kh/p0_06/N{resolution}/kh_1.nc --starting_resolution 64 --max_resolution 1024 --title Kelvin-Helmholtz $\epsilon=0.06$ --variable E --norm_order 1
@@ -1094,5 +1088,5 @@ Hostname: lo-amd-fp-003};
 %%     git.repo.fun: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/repo/fun.py)
 %% stacktrace:
 %%     [function: savePlot, line: 307, file: /cluster/scratch/klye/mlmc_statistical_solutions_experiments/python/plot_info.py]
-%%     [function: plot_variance_decay_normed, line: 182, file: python/estimate_variance_decay.py]
-%%     [function: <module>, line: 239, file: python/estimate_variance_decay.py]
+%%     [function: plot_variance_decay_normed, line: 330, file: python/estimate_variance_decay.py]
+%%     [function: <module>, line: 399, file: python/estimate_variance_decay.py]
