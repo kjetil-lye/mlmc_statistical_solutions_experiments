@@ -185,9 +185,11 @@ def plot_variance_decay_structure(title, resolutions, basenames, norm_ord, varia
     for n in range(1, len(resolutions)):
         local_resolutions = resolutions[:n+1]
         
-        speedup = compute_speedup(local_resolutions, 
+        # Notice the max, Monte Carlo is always a form of MLMC, so we 
+        # have a minimum speedup of one!
+        speedup = max(1, compute_speedup(local_resolutions, 
                                   variances[:n+1],
-                                  variances_details[:n])
+                                  variances_details[:n]))
         
         speedups.append(speedup)
         
