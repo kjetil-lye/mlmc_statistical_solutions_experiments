@@ -52,7 +52,8 @@ def compute_variance_decay_normed(resolutions, basenames, norm_ord, variable):
             
             
             variances_details.append(variance_detail)
-        data_coarse = np.repeat(np.repeat(data,2,1), 2, 2)
+        if resolution < resolutions[-1]:
+            data_coarse = np.repeat(np.repeat(data,2,1), 2, 2)
             
     return variances, variances_details
 
