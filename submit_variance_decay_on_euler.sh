@@ -3,7 +3,7 @@ set -e
 export PYTHONPATH=$(pwd)/python:$PYTHONPATH
 
 function submit() {
-    bsub -N -B -W 120:00 -R 'rusage[mem=16000]' "$@"
+    bsub -N -B -W 120:00 -R 'rusage[mem=64000]' "$@"
 }
 
 submit python python/estimate_variance_decay.py \
