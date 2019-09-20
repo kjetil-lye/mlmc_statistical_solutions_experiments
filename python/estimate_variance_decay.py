@@ -19,32 +19,32 @@ def speedup_mlmc(variances, levels, work):
                          'M': [Mbase],
                          'Speedup' : 1,
                          'variance' : max(variances),
-                        'work' : [work[-1]],
-                        'sigma2':[variances[-1]],
+                         'work' : [work[-1]],
+                         'sigma2':[variances[-1]],
                          'workBase' : workBase,
-                                  'error': errorMCBase}
+                         'error': errorMCBase}
 
     for L in range(1, maxLevel):
-        sigmas2 = zeros(L+1)
+        sigmas2 = np.zeros(L+1)
         sigmas2[0] = variances[-L-1]
         sigmas2[1:] = levels[-L:]
         workLocal = work[-L-1:]
-        sumSigmaWork = sum(sqrt(sigmas2*workLocal))
-        M = zeros(L+1)
-        M = 1.0/errorMCBase * (sqrt(sigmas2/workLocal))*sumSigmaWork
-        M = ceil(M)
-        workConfiguration = sum(M*workLocal) + sum(M[1:]*workLocal[:-1])
+        sumSigmaWork = np.sum(np.sqrt(sigmas2*workLocal))
+        M = np.zeros(L+1)
+        M = 1.0/errorMCBase * (np.sqrt(sigmas2/workLocal))*sumSigmaWork
+        M = np.ceil(M)
+        workConfiguration = np.sum(M*workLocal) + np.sum(M[1:]*workLocal[:-1])
         speedup = workBase/workConfiguration
 
-        errorMLMC = sum(sigmas2/M)
+        errorMLMC = np.sum(sigmas2/M)
 
 
         # We actually get some floating point errors, therefore, we need to adjust our expectations a bit
-        epsilon = 10*max(errorMCBase*(finfo(type(errorMCBase)).eps), errorMLMC*finfo(type(errorMCBase)).eps)
+        epsilon = 10*max(errorMCBase*(np.finfo(type(errorMCBase)).eps), errorMLMC*np.finfo(type(errorMCBase)).eps)
 
         if  errorMLMC > errorMCBase + epsilon:
             raise Exception("MLMC could not match MC error, MLMC_Error=%s, MC_error=%s" %
-                            (float64(errorMLMC), float64(errorMCBase)))
+                            (np.float64(errorMLMC), np.float64(errorMCBase)))
 
 
 
@@ -191,6 +191,7 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable
     
     ax2.plot(resolutions, speedups, '--x', label='MLMC Speedup')
     
+    ax2.set_ylabel("Potential MLMC speedup")
             
     plot_info.savePlot(f'variance_decay_with_speedup_{norm_ord}_{title}_{variable}')
     
