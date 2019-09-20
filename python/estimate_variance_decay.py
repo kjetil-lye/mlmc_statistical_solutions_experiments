@@ -2,6 +2,7 @@ import netCDF4
 import numpy as np
 import plot_info
 import matplotlib.pyplot as plt
+import sys
 
 def load(filename):
     samples = []
@@ -14,6 +15,8 @@ def load(filename):
         sample = 0
         shape = f.variables['sample_0_rho'][:,:,0].shape
         while f'sample_{sample}_rho' in f.variables.keys():
+            sys.stdout.write(f"Reading sample: {sample:04d}\r")
+            sys.stdout.flush()
             data = np.zeros((*shape, len(variables)))
             for n, variable in enumerate(variables):
                 key = f'sample_{sample}_{variable}'
@@ -21,7 +24,7 @@ def load(filename):
             samples.append(data)
             sample += 1
                 
-                
+    print()
     return np.array(samples)
 
 def compute_variance_decay_normed(resolutions, basenames, norm_ord):
