@@ -13,7 +13,7 @@ def load(filename):
         
         sample = 0
         shape = f.variables['sample_0_rho'][:,:,0].shape
-        while f'sample_{sample}_rho' in f:
+        while f'sample_{sample}_rho' in f.variables.keys():
             data = np.zeros((*shape, len(variables)))
             for n, variable in enumerate(variables):
                 key = f'sample_{sample}_{variable}'
@@ -92,7 +92,7 @@ Computes the variance decay
 
 
 
-    parser.add_argument('--starting_resolution', type=int, default=32,
+    parser.add_argument('--starting_resolution', type=int, default=64,
                         help='Starting resolution (smallest resolution)')
     
 
