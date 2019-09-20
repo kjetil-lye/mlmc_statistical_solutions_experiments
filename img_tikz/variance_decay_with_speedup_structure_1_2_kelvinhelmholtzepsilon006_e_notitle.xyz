@@ -52,7 +52,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 113118141d48dae72206d7f6f7d4b948d5ed658d
+Commit: 2ef4211eca4bd8e27688b32d3f14cf7c176c6c47
 Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
 Hostname: galerkin};
 \node at (axis cs:0.2,0.93)[
@@ -60,7 +60,7 @@ Hostname: galerkin};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@1131};
+]{@2ef4};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -68,7 +68,7 @@ Hostname: galerkin};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 113118141d48dae72206d7f6f7d4b948d5ed658d
+Commit: 2ef4211eca4bd8e27688b32d3f14cf7c176c6c47
 Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
 Hostname: galerkin};
 \end{axis}
@@ -88,7 +88,7 @@ xtick pos=left,
 xtick style={color=black},
 y grid style={white!69.01960784313725!black},
 ylabel={Potential MLMC speedup},
-ymin=0.998864798527306, ymax=1.02383923092657,
+ymin=0.5, ymax=3,
 ytick pos=right,
 ytick style={color=black}
 ]
@@ -108,7 +108,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 113118141d48dae72206d7f6f7d4b948d5ed658d
+Commit: 2ef4211eca4bd8e27688b32d3f14cf7c176c6c47
 Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
 Hostname: galerkin};
 \node at (axis cs:0.2,0.93)[
@@ -116,7 +116,7 @@ Hostname: galerkin};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@1131};
+]{@2ef4};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -124,7 +124,7 @@ Hostname: galerkin};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 113118141d48dae72206d7f6f7d4b948d5ed658d
+Commit: 2ef4211eca4bd8e27688b32d3f14cf7c176c6c47
 Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
 Hostname: galerkin};
 \end{axis}
@@ -138,14 +138,14 @@ Hostname: galerkin};
 %% script name: python/estimate_variance_decay.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 113118141d48dae72206d7f6f7d4b948d5ed658d
+%% GIT git_commit : 2ef4211eca4bd8e27688b32d3f14cf7c176c6c47
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-%% GIT git_short_commit : 1131
+%% GIT git_short_commit : 2ef4
 %% working_directory : /home/kjetil/projects/mlmc_statistical_solutions_experiments
 %% hostname : galerkin
-%% generated_on_date : 2019-09-20 22:40:02.370890
+%% generated_on_date : 2019-09-20 23:17:54.567355
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/usr/bin/python python/estimate_variance_decay.py --input_basename single_sample_structure_functions/experiments_multiple_samples/kh/p0_06/N{resolution}/kh_functional_structure_cube_1_8.nc --starting_resolution 64 --max_resolution 1024 --title Kelvin-Helmholtz $\epsilon=0.06$ --variable E --norm_order 2 --structure --power 1
@@ -1456,5 +1456,5 @@ Hostname: galerkin};
 %% stacktrace:
 %%     [function: savePlot, line: 307, file: /home/kjetil/projects/mlmc_statistical_solutions_experiments/python/plot_info.py]
 %%     [function: savePlot, line: 329, file: /home/kjetil/projects/mlmc_statistical_solutions_experiments/python/plot_info.py]
-%%     [function: plot_variance_decay_structure, line: 247, file: python/estimate_variance_decay.py]
-%%     [function: <module>, line: 404, file: python/estimate_variance_decay.py]
+%%     [function: plot_variance_decay_structure, line: 252, file: python/estimate_variance_decay.py]
+%%     [function: <module>, line: 413, file: python/estimate_variance_decay.py]
