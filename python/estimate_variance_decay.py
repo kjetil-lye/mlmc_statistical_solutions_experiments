@@ -244,6 +244,11 @@ def plot_variance_decay_structure(title, resolutions, basenames, norm_ord, varia
     ax2.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
     ax2.set_ylabel("Potential MLMC speedup")
             
+    ylims = ax2.get_ylim()
+    
+    ax2.set_ylim([min(ylims[0], 0.5), max(ylims[1], 3)])
+    
+    
     plot_info.savePlot(f'variance_decay_with_speedup_structure_{p}_{norm_ord}_{title}_{variable}')
     
     plot_info.saveData(f'variance_decay_speedups_structure_{p}_{norm_ord}_{title}_{variable}', speedups)
@@ -343,6 +348,10 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable
     ax2.legend(loc=1)
     ax2.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
     ax2.set_ylabel("Potential MLMC speedup")
+    
+    ylims = ax2.get_ylim()
+    
+    ax2.set_ylim([min(ylims[0], 0.5), max(ylims[1], 3)])
             
     plot_info.savePlot(f'variance_decay_with_speedup_{norm_ord}_{title}_{variable}')
     
