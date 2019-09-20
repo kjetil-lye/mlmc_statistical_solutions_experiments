@@ -225,7 +225,7 @@ def plot_variance_decay_structure(title, resolutions, basenames, norm_ord, varia
     
     ax1.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
     
-    plt.title(f'Structure function variance decay\n{title}\nVariable: {variable}')
+    #plt.title(f'Structure function variance decay\n{title}\nVariable: {variable}')
     
     plot_info.savePlot(f'variance_decay_structure_{p}_{norm_ord}_{title}_{variable}')
     
@@ -325,7 +325,7 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable
     
     ax1.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
     
-    plt.title(f'Variance decay\n{title}\nVariable: {variable}')
+    #plt.title(f'Variance decay\n{title}\nVariable: {variable}')
     
     plot_info.savePlot(f'variance_decay_{norm_ord}_{title}_{variable}')
     
