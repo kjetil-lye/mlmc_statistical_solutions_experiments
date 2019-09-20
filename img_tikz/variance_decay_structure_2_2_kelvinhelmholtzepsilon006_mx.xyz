@@ -12,9 +12,6 @@ log basis x={2},
 log basis y={2},
 tick align=outside,
 tick pos=left,
-title={Structure function variance decay
-Kelvin-Helmholtz $\epsilon=0.06$
-Variable: mx},
 width=\figurewidth,
 x grid style={white!69.01960784313725!black},
 xlabel={Resolution (\(\displaystyle N\times N\))},
@@ -51,7 +48,7 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 6d50d2f4259719ab564d45cbe258cd877ccaae85
+Commit: 113118141d48dae72206d7f6f7d4b948d5ed658d
 Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
 Hostname: galerkin};
 \node at (axis cs:0.2,0.93)[
@@ -59,28 +56,25 @@ Hostname: galerkin};
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@6d50};
+]{@1131};
 \end{axis}
 
 \end{tikzpicture}
 
 %% INCLUDE THE COMMENTS AT THE END WHEN COPYING
 %%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
-%% Structure function variance decay
-%% Kelvin-Helmholtz $\epsilon=0.06$
-%% Variable: mx
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% script name: python/estimate_variance_decay.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 6d50d2f4259719ab564d45cbe258cd877ccaae85
+%% GIT git_commit : 113118141d48dae72206d7f6f7d4b948d5ed658d
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-%% GIT git_short_commit : 6d50
+%% GIT git_short_commit : 1131
 %% working_directory : /home/kjetil/projects/mlmc_statistical_solutions_experiments
 %% hostname : galerkin
-%% generated_on_date : 2019-09-20 22:31:11.580409
+%% generated_on_date : 2019-09-20 22:40:55.236814
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/usr/bin/python python/estimate_variance_decay.py --input_basename single_sample_structure_functions/experiments_multiple_samples/kh/p0_06/N{resolution}/kh_functional_structure_cube_2_8.nc --starting_resolution 64 --max_resolution 1024 --title Kelvin-Helmholtz $\epsilon=0.06$ --variable mx --norm_order 2 --structure --power 2
