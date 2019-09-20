@@ -42,13 +42,13 @@ def compute_variance_decay_normed(resolutions, basenames, norm_ord, variable):
     for resolution in resolutions:
         print(f"Resolution: {resolution}")
         data = load(basenames.format(resolution=resolution), variable)
-        variance_single_level = np.linalg.norm(np.var(data, axis=0).flatten(), ord=norm_ord)/resolution**2
+        variance_single_level = np.linalg.norm(np.var(data, axis=0).flatten(), ord=norm_ord)/float(resolution)**(2/norm_ord)
         
         variances.append(variance_single_level)
         if resolution > resolutions[0]:
             detail = data - data_coarse
             
-            variance_detail = np.linalg.norm(np.var(detail, axis=0).flatten(), ord=norm_ord)/resolution**2
+            variance_detail = np.linalg.norm(np.var(detail, axis=0).flatten(), ord=norm_ord)/float(resolution)**(2/norm_ord)
             
             
             variances_details.append(variance_detail)
