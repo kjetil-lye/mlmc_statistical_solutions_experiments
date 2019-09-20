@@ -3,7 +3,7 @@ set -e
 export PYTHONPATH=$(pwd)/python:$PYTHONPATH
 
 function submit() {
-    bsub -N -B -W 120:00 -R 'rusage[mem=128000]' "$@"
+    bsub -W 120:00 -R 'rusage[mem=128000]' "$@"
 }
 
 for order in 1 2
