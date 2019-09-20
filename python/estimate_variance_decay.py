@@ -188,9 +188,11 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable
     plot_info.saveData(f'variance_decay_resolutions_{norm_ord}_{title}_{variable}.txt', resolutions)
     
     ax2 = ax1.twinx()
+
+    
     
     ax2.plot(resolutions, speedups, '--x', label='MLMC Speedup')
-    
+    ax2.legend(loc=0)
     ax2.set_ylabel("Potential MLMC speedup")
             
     plot_info.savePlot(f'variance_decay_with_speedup_{norm_ord}_{title}_{variable}')
