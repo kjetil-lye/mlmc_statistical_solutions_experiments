@@ -16,10 +16,10 @@ def load(filename):
         shape = f.variables['sample_0_rho'][:,:,0].shape
         next_sample_to_print = 1
         while f'sample_{sample}_rho' in f.variables.keys():
-            if sample % (1024//80) > next_sample_to_print:
+            if sample % 80 > next_sample_to_print:
                 sys.stdout.write("#")
                 sys.stdout.flush()
-                next_sample_to_print = sample % (1024//80)
+                next_sample_to_print += 1
             
             data = np.zeros((*shape, len(variables)))
             for n, variable in enumerate(variables):
