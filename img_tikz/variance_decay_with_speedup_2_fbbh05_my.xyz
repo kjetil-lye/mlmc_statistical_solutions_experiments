@@ -52,15 +52,15 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: f90eaaedb3142ed15275e7ef4b7f9352a32a8437
+Commit: 923bf01a41a63d5a84fbdffcc1e9cb9fb4d415f3
 Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-Hostname: lo-a2-016};
+Hostname: lo-amd-fp-002};
 \node at (axis cs:0.2,0.93)[
   scale=0.5,
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@f90e};
+]{@923b};
 \node at (axis cs:0.95,0.01)[
   scale=0.15,
   anchor=south east,
@@ -68,9 +68,9 @@ Hostname: lo-a2-016};
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: f90eaaedb3142ed15275e7ef4b7f9352a32a8437
+Commit: 923bf01a41a63d5a84fbdffcc1e9cb9fb4d415f3
 Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-Hostname: lo-a2-016};
+Hostname: lo-amd-fp-002};
 \end{axis}
 
 \begin{axis}[
@@ -88,7 +88,7 @@ xtick pos=left,
 xtick style={color=black},
 y grid style={white!69.01960784313725!black},
 ylabel={Potential MLMC speedup},
-ymin=0.907945559855415, ymax=2.93314324303628,
+ymin=0.5, ymax=3,
 ytick pos=right,
 ytick style={color=black}
 ]
@@ -108,15 +108,15 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: f90eaaedb3142ed15275e7ef4b7f9352a32a8437
+Commit: 923bf01a41a63d5a84fbdffcc1e9cb9fb4d415f3
 Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-Hostname: lo-a2-016};
+Hostname: lo-amd-fp-002};
 \node at (axis cs:0.2,0.93)[
   scale=0.5,
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@f90e};
+]{@923b};
 \end{axis}
 
 \end{tikzpicture}
@@ -127,14 +127,14 @@ Hostname: lo-a2-016};
 %% script name: python/estimate_variance_decay.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : f90eaaedb3142ed15275e7ef4b7f9352a32a8437
+%% GIT git_commit : 923bf01a41a63d5a84fbdffcc1e9cb9fb4d415f3
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-%% GIT git_short_commit : f90e
+%% GIT git_short_commit : 923b
 %% working_directory : /cluster/scratch/klye/mlmc_statistical_solutions_experiments
-%% hostname : lo-a2-016
-%% generated_on_date : 2019-09-20 23:18:23.515493
+%% hostname : lo-amd-fp-002
+%% generated_on_date : 2019-09-20 23:43:49.483999
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/bin/python python/estimate_variance_decay.py --input_basename /cluster/work/math/klye/single_sample_structure_functions/experiments_mean_field/fbb/H0_5/N{resolution}/euler_fbb_1.nc --starting_resolution 64 --max_resolution 1024 --title fBb $H=0.5$ --variable my --norm_order 2
@@ -1164,5 +1164,5 @@ Hostname: lo-a2-016};
 %%     PIL.PngImagePlugin: 0.9 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/PIL/PngImagePlugin.py)
 %% stacktrace:
 %%     [function: savePlot, line: 307, file: /cluster/scratch/klye/mlmc_statistical_solutions_experiments/python/plot_info.py]
-%%     [function: plot_variance_decay_normed, line: 348, file: python/estimate_variance_decay.py]
-%%     [function: <module>, line: 399, file: python/estimate_variance_decay.py]
+%%     [function: plot_variance_decay_normed, line: 358, file: python/estimate_variance_decay.py]
+%%     [function: <module>, line: 409, file: python/estimate_variance_decay.py]
