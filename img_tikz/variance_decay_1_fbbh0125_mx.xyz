@@ -1,0 +1,1098 @@
+% This file was created by tikzplotlib v0.8.2.
+\begin{tikzpicture}
+
+\definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
+\definecolor{color1}{rgb}{1,0.498039215686275,0.0549019607843137}
+
+\begin{axis}[
+height=\figureheight,
+legend cell align={left},
+legend style={at={(0.03,0.97)}, anchor=north west, draw=white!80.0!black},
+log basis x={2},
+log basis y={2},
+tick align=outside,
+tick pos=left,
+title={Variance decay
+fBb $H=0.125$
+Variable: mx},
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xlabel={Resolution (\(\displaystyle N\times N\))},
+xmin=55.7152360509519, xmax=1176.26711551696,
+xmode=log,
+xtick style={color=black},
+y grid style={white!69.01960784313725!black},
+ylabel={Variance},
+ymin=1.56236686184001, ymax=3.4605087101879,
+ymode=log,
+ytick style={color=black}
+]
+\addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
+table {%
+64 2.17841741967882
+128 2.38854774981112
+256 2.61503236909942
+512 2.76701456785136
+1024 2.84359772161562
+};
+\addlegendentry{$||\mathrm{Var}(m_x^{N})||_{L^{1}}$}
+\addplot [semithick, color1, mark=asterisk, mark size=3, mark options={solid}]
+table {%
+128 1.61987335210199
+256 2.27826830997208
+512 2.91398217781828
+1024 3.33765854404025
+};
+\addlegendentry{$||\mathrm{Var}(m_x^{N}-m_x^{N/2})||_{L^{1}}$}
+\node at (axis cs:0.95,0.01)[
+  scale=0.15,
+  anchor=south east,
+  text=white!50.19607843137255!black,
+  rotate=0.0,
+  align=right
+]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
+Commit: 668a85e3b0fbc02a9665d86ddbbe7df858d99e1b
+Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
+Hostname: lo-amd-fp-002};
+\node at (axis cs:0.2,0.93)[
+  scale=0.5,
+  anchor=south east,
+  text=white!50.19607843137255!black,
+  rotate=0.0
+]{@668a};
+\end{axis}
+
+\end{tikzpicture}
+
+%% INCLUDE THE COMMENTS AT THE END WHEN COPYING
+%%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
+%% Variance decay
+%% fBb $H=0.125$
+%% Variable: mx
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% script name: python/estimate_variance_decay.py
+%% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
+%% DO NOT REMOVE THE COMMENTS BELOW!
+%% GIT git_commit : 668a85e3b0fbc02a9665d86ddbbe7df858d99e1b
+%% GIT git_repo_modified : False
+%% GIT git_branch : master
+%% GIT git_remote_url : git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
+%% GIT git_short_commit : 668a
+%% working_directory : /cluster/scratch/klye/mlmc_statistical_solutions_experiments
+%% hostname : lo-amd-fp-002
+%% generated_on_date : 2019-09-20 15:35:03.671805
+%% accessed_environment:
+%% additional_parameters:
+%%    commandrun=/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/bin/python python/estimate_variance_decay.py --input_basename /cluster/work/math/klye/single_sample_structure_functions/experiments_mean_field/fbb/H0_125/N{resolution}/euler_fbb_1.nc --starting_resolution 64 --max_resolution 1024 --title fBb $H=0.125$ --variable mx --norm_order 1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.software=alsvinn https://github.com/alsvinn
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.softwareVersion=0.5.3
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.currentWorkingDirectory=/cluster/scratch/klye/single_sample_structure_functions_new/experiments_mean_field/fbb/H0_125/N64
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.operatingSystem=Linux: Linux 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 2018 x86_64
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.username=klye
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.host=lo-s4-046
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.standardCLibrary=GNU libc 2.17 stable
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.generatedAt=20190826T210330
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.revision=9b4bc89ce460a208bd0f7fc3de0d28dd694c4956
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.versionControlStatus=CLEAN
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.buildType=Release
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cxxFlags=
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cxxFlagsDebug=-g
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cxxFlagsRelease=-O3 -DNDEBUG
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cxxFlagsMinSizeRel=-Os -DNDEBUG
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cxxFlagsRelWithDebInfo=-O2 -g -DNDEBUG
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaFlags=--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_61,code=sm_61
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaVersion=10.0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cxxCompiler=GNU 6.3.0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaCompiler=NVIDIA 10.0.130
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.boost.BOOST_VERSION=106900
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.boost.BOOST_LIB_VERSION=1_69
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.boost.BOOST_PLATFORM=linux
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.boost.BOOST_PLATFORM_CONFIG=boost/config/platform/linux.hpp
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.boost.BOOST_COMPILER=GNU C++ version 6.3.0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.boost.BOOST_LIBSTDCXX_VERSION=60300
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.boost.C++11=true
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.boost.BOOST_STDLIB=GNU libstdc++ version 20161221
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.boost.BOOST_STDLIB_CONFIG=boost/config/stdlib/libstdcpp3.hpp
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.floatingPointPrecisionDescription=double (double precision, 64 bits)
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.floatingPointType=double
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.floatingPointMax=1.79769e+308
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.floatingPointMin=2.22507e-308
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.floatingPointEpsilon=2.22045e-16
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.name=GeForce GTX 1080 Ti
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.totalGlobalMem=11721506816
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.sharedMemPerBlock=49152
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.regsPerBlock=65536
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.warpSize=32
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.memPitch=2147483647
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.maxThreadsPerBlock=1024
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.maxThreadsDim=1024, 1024, 64
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.maxGridSize=2147483647, 65535, 65535
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.totalConstMem=65536
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.major=6
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.minor=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.clockRate=1582000
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.textureAlignment=512
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.deviceOverlap=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.multiProcessorCount=28
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.kernelExecTimeoutEnabled=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.integrated=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.canMapHostMemory=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.computeMode=3
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.concurrentKernels=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.ECCEnabled=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.pciBusID=4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.pciDeviceID=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.cudaProperties.tccDriver=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.mpiEnabled=true
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.mpiProcesses=8
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.mpiVersion=Open MPI v2.1.0, package: Open MPI spackapps@lo-login-02 Distribution, ident: 2.1.0, repo rev: v2.0.1-696-g1cd1edf, Mar 20, 2017
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.ompEnabled=true
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.ompThreads=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_mean_field_dash_fbb_dash_H0_125_dash_N64_dash_euler_fbb_DOT_py=import scipy.stats# Uses fbmpy from https://github.com/kjetil-lye/fractional_brownian_motion# (this is also a part of alsvinn)def init_global(rho, ux, uy, p, nx, ny, nz, ax, ay, az, bx, by, bz):    MAX_RESOLUTION=2048        Y = scipy.stats.norm.ppf(X)    # Note that we skip the random variables for higher resolutions, this    # is to make sure we get a convergent sequence (there are other ways of doing this, but this is by far the simplest)    start_dux = 0    end_dux = (MAX_RESOLUTION-1)**2        dux = fbmpy.fractional_brownian_bridge_2d(hurst_index, nx,                                              Y[start_dux:end_dux]).reshape(nx+1, nx+1)    start_duy = end_dux    end_duy = 2*(MAX_RESOLUTION-1)**2    duy = fbmpy.fractional_brownian_bridge_2d(hurst_index, nx,                                              Y[start_duy:end_duy]).reshape(nx+1, nx+1)    rho[:,:,0] = 4*ones_like(rho[:,:,0])    ux[:,:,0] = dux[:-1,:-1]    uy[:,:,0] = duy[:-1,:-1]    p[:,:,0] = 2.5*ones_like(rho[:,:,0])
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_mean_field_dash_fbb_dash_H0_125_dash_N64_dash_euler_fbb_DOT_xml=<?xml version="1.0" ?><config>  <fvm>    <name>    euler_fbb  </name>    <platform>cuda</platform>    <grid>      <lowerCorner>0 0 0</lowerCorner>      <upperCorner>1 1 0</upperCorner>      <dimension>64 64 1</dimension>    </grid>    <boundary>periodic</boundary>    <flux>hll3</flux>    <endTime>4</endTime>    <equation>euler2</equation>    <equationParameters>      <gamma>1.4</gamma>    </equationParameters>    <reconstruction>wenof2</reconstruction>    <cfl>auto</cfl>    <integrator>auto</integrator>    <initialData>      <python>euler_fbb.py</python>      <parameters>        <parameter>          <name>hurst_index</name>          <length>1</length>          <value>0.125</value>        </parameter>        <parameter>          <name>X</name>          <length>8380418</length>          <values>            <value>0</value>          </values>        </parameter>      </parameters>    </initialData>    <diffusion>      <name>none</name>      <reconstruction>none</reconstruction>    </diffusion>    <writer>      <basename>euler_fbb</basename>      <type>netcdf</type>      <numberOfSaves>1</numberOfSaves>      <writeInitialTimestep>1</writeInitialTimestep>    </writer>  </fvm>  <uq>    <samples>1024</samples>    <generator>auto</generator>    <sampleStart>0</sampleStart>    <parameters>      <parameter>        <name>X</name>        <length>8380418</length>        <type>uniform</type>      </parameter>    </parameters>    <stats>      <stat>        <name>meanvar</name>        <numberOfSaves>1</numberOfSaves>        <writeInitialTimestep>1</writeInitialTimestep>        <writer>          <basename>euler_fbb</basename>          <type>netcdf</type>        </writer>      </stat>    </stats>  </uq></config>
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.pythonVersion=Runtime: 3.6.4 (default, Apr 10 2018, 07:54:00) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)], compile time: 3.6.4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_alsvinn_report.alsvinnInDocker=false
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.name=    euler_fbb  
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.platform=cuda
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.grid.lowerCorner=0 0 0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.grid.upperCorner=1 1 0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.grid.dimension=64 64 1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.boundary=periodic
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.flux=hll3
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.endTime=4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.equation=euler2
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.equationParameters.gamma=1.4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.reconstruction=wenof2
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.cfl=auto
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.integrator=auto
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.initialData.python=euler_fbb.py
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.name=X
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.length=8380418
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.value=0.125
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.values.value=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.diffusion.name=none
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.diffusion.reconstruction=none
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.writer.basename=euler_fbb
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.writer.type=netcdf
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.writer.numberOfSaves=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.fvm.writer.writeInitialTimestep=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.uq.samples=1024
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.uq.generator=auto
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.uq.sampleStart=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.uq.parameters.parameter.name=X
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.uq.parameters.parameter.length=8380418
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.uq.parameters.parameter.type=uniform
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.name=meanvar
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.numberOfSaves=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.writeInitialTimestep=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.writer.basename=euler_fbb
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N64_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.writer.type=netcdf
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.software=alsvinn https://github.com/alsvinn
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.softwareVersion=0.5.3
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.currentWorkingDirectory=/cluster/scratch/klye/single_sample_structure_functions_new/experiments_mean_field/fbb/H0_125/N128
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.operatingSystem=Linux: Linux 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 2018 x86_64
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.username=klye
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.host=lo-s4-024
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.standardCLibrary=GNU libc 2.17 stable
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.generatedAt=20190827T025209
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.revision=9b4bc89ce460a208bd0f7fc3de0d28dd694c4956
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.versionControlStatus=CLEAN
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.buildType=Release
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cxxFlags=
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cxxFlagsDebug=-g
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cxxFlagsRelease=-O3 -DNDEBUG
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cxxFlagsMinSizeRel=-Os -DNDEBUG
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cxxFlagsRelWithDebInfo=-O2 -g -DNDEBUG
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaFlags=--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_61,code=sm_61
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaVersion=10.0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cxxCompiler=GNU 6.3.0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaCompiler=NVIDIA 10.0.130
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.boost.BOOST_VERSION=106900
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.boost.BOOST_LIB_VERSION=1_69
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.boost.BOOST_PLATFORM=linux
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.boost.BOOST_PLATFORM_CONFIG=boost/config/platform/linux.hpp
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.boost.BOOST_COMPILER=GNU C++ version 6.3.0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.boost.BOOST_LIBSTDCXX_VERSION=60300
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.boost.C++11=true
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.boost.BOOST_STDLIB=GNU libstdc++ version 20161221
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.boost.BOOST_STDLIB_CONFIG=boost/config/stdlib/libstdcpp3.hpp
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.floatingPointPrecisionDescription=double (double precision, 64 bits)
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.floatingPointType=double
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.floatingPointMax=1.79769e+308
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.floatingPointMin=2.22507e-308
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.floatingPointEpsilon=2.22045e-16
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.name=GeForce GTX 1080 Ti
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.totalGlobalMem=11721506816
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.sharedMemPerBlock=49152
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.regsPerBlock=65536
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.warpSize=32
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.memPitch=2147483647
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.maxThreadsPerBlock=1024
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.maxThreadsDim=1024, 1024, 64
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.maxGridSize=2147483647, 65535, 65535
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.totalConstMem=65536
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.major=6
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.minor=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.clockRate=1582000
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.textureAlignment=512
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.deviceOverlap=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.multiProcessorCount=28
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.kernelExecTimeoutEnabled=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.integrated=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.canMapHostMemory=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.computeMode=3
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.concurrentKernels=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.ECCEnabled=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.pciBusID=4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.pciDeviceID=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.cudaProperties.tccDriver=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.mpiEnabled=true
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.mpiProcesses=8
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.mpiVersion=Open MPI v2.1.0, package: Open MPI spackapps@lo-login-02 Distribution, ident: 2.1.0, repo rev: v2.0.1-696-g1cd1edf, Mar 20, 2017
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.ompEnabled=true
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.ompThreads=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_mean_field_dash_fbb_dash_H0_125_dash_N128_dash_euler_fbb_DOT_py=import scipy.stats# Uses fbmpy from https://github.com/kjetil-lye/fractional_brownian_motion# (this is also a part of alsvinn)def init_global(rho, ux, uy, p, nx, ny, nz, ax, ay, az, bx, by, bz):    MAX_RESOLUTION=2048        Y = scipy.stats.norm.ppf(X)    # Note that we skip the random variables for higher resolutions, this    # is to make sure we get a convergent sequence (there are other ways of doing this, but this is by far the simplest)    start_dux = 0    end_dux = (MAX_RESOLUTION-1)**2        dux = fbmpy.fractional_brownian_bridge_2d(hurst_index, nx,                                              Y[start_dux:end_dux]).reshape(nx+1, nx+1)    start_duy = end_dux    end_duy = 2*(MAX_RESOLUTION-1)**2    duy = fbmpy.fractional_brownian_bridge_2d(hurst_index, nx,                                              Y[start_duy:end_duy]).reshape(nx+1, nx+1)    rho[:,:,0] = 4*ones_like(rho[:,:,0])    ux[:,:,0] = dux[:-1,:-1]    uy[:,:,0] = duy[:-1,:-1]    p[:,:,0] = 2.5*ones_like(rho[:,:,0])
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_mean_field_dash_fbb_dash_H0_125_dash_N128_dash_euler_fbb_DOT_xml=<?xml version="1.0" ?><config>  <fvm>    <name>    euler_fbb  </name>    <platform>cuda</platform>    <grid>      <lowerCorner>0 0 0</lowerCorner>      <upperCorner>1 1 0</upperCorner>      <dimension>128 128 1</dimension>    </grid>    <boundary>periodic</boundary>    <flux>hll3</flux>    <endTime>4</endTime>    <equation>euler2</equation>    <equationParameters>      <gamma>1.4</gamma>    </equationParameters>    <reconstruction>wenof2</reconstruction>    <cfl>auto</cfl>    <integrator>auto</integrator>    <initialData>      <python>euler_fbb.py</python>      <parameters>        <parameter>          <name>hurst_index</name>          <length>1</length>          <value>0.125</value>        </parameter>        <parameter>          <name>X</name>          <length>8380418</length>          <values>            <value>0</value>          </values>        </parameter>      </parameters>    </initialData>    <diffusion>      <name>none</name>      <reconstruction>none</reconstruction>    </diffusion>    <writer>      <basename>euler_fbb</basename>      <type>netcdf</type>      <numberOfSaves>1</numberOfSaves>      <writeInitialTimestep>1</writeInitialTimestep>    </writer>  </fvm>  <uq>    <samples>1024</samples>    <generator>auto</generator>    <sampleStart>0</sampleStart>    <parameters>      <parameter>        <name>X</name>        <length>8380418</length>        <type>uniform</type>      </parameter>    </parameters>    <stats>      <stat>        <name>meanvar</name>        <numberOfSaves>1</numberOfSaves>        <writeInitialTimestep>1</writeInitialTimestep>        <writer>          <basename>euler_fbb</basename>          <type>netcdf</type>        </writer>      </stat>    </stats>  </uq></config>
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.pythonVersion=Runtime: 3.6.4 (default, Apr 10 2018, 07:54:00) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)], compile time: 3.6.4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_alsvinn_report.alsvinnInDocker=false
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.name=    euler_fbb  
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.platform=cuda
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.grid.lowerCorner=0 0 0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.grid.upperCorner=1 1 0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.grid.dimension=128 128 1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.boundary=periodic
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.flux=hll3
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.endTime=4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.equation=euler2
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.equationParameters.gamma=1.4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.reconstruction=wenof2
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.cfl=auto
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.integrator=auto
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.initialData.python=euler_fbb.py
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.name=X
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.length=8380418
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.value=0.125
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.values.value=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.diffusion.name=none
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.diffusion.reconstruction=none
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.writer.basename=euler_fbb
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.writer.type=netcdf
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.writer.numberOfSaves=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.fvm.writer.writeInitialTimestep=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.uq.samples=1024
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.uq.generator=auto
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.uq.sampleStart=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.uq.parameters.parameter.name=X
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.uq.parameters.parameter.length=8380418
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.uq.parameters.parameter.type=uniform
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.name=meanvar
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.numberOfSaves=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.writeInitialTimestep=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.writer.basename=euler_fbb
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N128_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.writer.type=netcdf
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.software=alsvinn https://github.com/alsvinn
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.softwareVersion=0.5.3
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.currentWorkingDirectory=/cluster/scratch/klye/single_sample_structure_functions_new/experiments_mean_field/fbb/H0_125/N256
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.operatingSystem=Linux: Linux 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 2018 x86_64
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.username=klye
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.host=lo-s4-027
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.standardCLibrary=GNU libc 2.17 stable
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.generatedAt=20190827T011901
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.revision=9b4bc89ce460a208bd0f7fc3de0d28dd694c4956
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.versionControlStatus=CLEAN
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.buildType=Release
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cxxFlags=
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cxxFlagsDebug=-g
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cxxFlagsRelease=-O3 -DNDEBUG
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cxxFlagsMinSizeRel=-Os -DNDEBUG
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cxxFlagsRelWithDebInfo=-O2 -g -DNDEBUG
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaFlags=--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_61,code=sm_61
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaVersion=10.0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cxxCompiler=GNU 6.3.0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaCompiler=NVIDIA 10.0.130
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.boost.BOOST_VERSION=106900
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.boost.BOOST_LIB_VERSION=1_69
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.boost.BOOST_PLATFORM=linux
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.boost.BOOST_PLATFORM_CONFIG=boost/config/platform/linux.hpp
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.boost.BOOST_COMPILER=GNU C++ version 6.3.0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.boost.BOOST_LIBSTDCXX_VERSION=60300
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.boost.C++11=true
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.boost.BOOST_STDLIB=GNU libstdc++ version 20161221
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.boost.BOOST_STDLIB_CONFIG=boost/config/stdlib/libstdcpp3.hpp
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.floatingPointPrecisionDescription=double (double precision, 64 bits)
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.floatingPointType=double
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.floatingPointMax=1.79769e+308
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.floatingPointMin=2.22507e-308
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.floatingPointEpsilon=2.22045e-16
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.name=GeForce GTX 1080 Ti
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.totalGlobalMem=11721506816
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.sharedMemPerBlock=49152
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.regsPerBlock=65536
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.warpSize=32
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.memPitch=2147483647
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.maxThreadsPerBlock=1024
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.maxThreadsDim=1024, 1024, 64
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.maxGridSize=2147483647, 65535, 65535
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.totalConstMem=65536
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.major=6
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.minor=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.clockRate=1582000
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.textureAlignment=512
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.deviceOverlap=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.multiProcessorCount=28
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.kernelExecTimeoutEnabled=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.integrated=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.canMapHostMemory=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.computeMode=3
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.concurrentKernels=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.ECCEnabled=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.pciBusID=4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.pciDeviceID=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.cudaProperties.tccDriver=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.mpiEnabled=true
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.mpiProcesses=8
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.mpiVersion=Open MPI v2.1.0, package: Open MPI spackapps@lo-login-02 Distribution, ident: 2.1.0, repo rev: v2.0.1-696-g1cd1edf, Mar 20, 2017
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.ompEnabled=true
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.ompThreads=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_mean_field_dash_fbb_dash_H0_125_dash_N256_dash_euler_fbb_DOT_py=import scipy.stats# Uses fbmpy from https://github.com/kjetil-lye/fractional_brownian_motion# (this is also a part of alsvinn)def init_global(rho, ux, uy, p, nx, ny, nz, ax, ay, az, bx, by, bz):    MAX_RESOLUTION=2048        Y = scipy.stats.norm.ppf(X)    # Note that we skip the random variables for higher resolutions, this    # is to make sure we get a convergent sequence (there are other ways of doing this, but this is by far the simplest)    start_dux = 0    end_dux = (MAX_RESOLUTION-1)**2        dux = fbmpy.fractional_brownian_bridge_2d(hurst_index, nx,                                              Y[start_dux:end_dux]).reshape(nx+1, nx+1)    start_duy = end_dux    end_duy = 2*(MAX_RESOLUTION-1)**2    duy = fbmpy.fractional_brownian_bridge_2d(hurst_index, nx,                                              Y[start_duy:end_duy]).reshape(nx+1, nx+1)    rho[:,:,0] = 4*ones_like(rho[:,:,0])    ux[:,:,0] = dux[:-1,:-1]    uy[:,:,0] = duy[:-1,:-1]    p[:,:,0] = 2.5*ones_like(rho[:,:,0])
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_mean_field_dash_fbb_dash_H0_125_dash_N256_dash_euler_fbb_DOT_xml=<?xml version="1.0" ?><config>  <fvm>    <name>    euler_fbb  </name>    <platform>cuda</platform>    <grid>      <lowerCorner>0 0 0</lowerCorner>      <upperCorner>1 1 0</upperCorner>      <dimension>256 256 1</dimension>    </grid>    <boundary>periodic</boundary>    <flux>hll3</flux>    <endTime>4</endTime>    <equation>euler2</equation>    <equationParameters>      <gamma>1.4</gamma>    </equationParameters>    <reconstruction>wenof2</reconstruction>    <cfl>auto</cfl>    <integrator>auto</integrator>    <initialData>      <python>euler_fbb.py</python>      <parameters>        <parameter>          <name>hurst_index</name>          <length>1</length>          <value>0.125</value>        </parameter>        <parameter>          <name>X</name>          <length>8380418</length>          <values>            <value>0</value>          </values>        </parameter>      </parameters>    </initialData>    <diffusion>      <name>none</name>      <reconstruction>none</reconstruction>    </diffusion>    <writer>      <basename>euler_fbb</basename>      <type>netcdf</type>      <numberOfSaves>1</numberOfSaves>      <writeInitialTimestep>1</writeInitialTimestep>    </writer>  </fvm>  <uq>    <samples>1024</samples>    <generator>auto</generator>    <sampleStart>0</sampleStart>    <parameters>      <parameter>        <name>X</name>        <length>8380418</length>        <type>uniform</type>      </parameter>    </parameters>    <stats>      <stat>        <name>meanvar</name>        <numberOfSaves>1</numberOfSaves>        <writeInitialTimestep>1</writeInitialTimestep>        <writer>          <basename>euler_fbb</basename>          <type>netcdf</type>        </writer>      </stat>    </stats>  </uq></config>
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.pythonVersion=Runtime: 3.6.4 (default, Apr 10 2018, 07:54:00) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)], compile time: 3.6.4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_alsvinn_report.alsvinnInDocker=false
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.name=    euler_fbb  
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.platform=cuda
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.grid.lowerCorner=0 0 0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.grid.upperCorner=1 1 0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.grid.dimension=256 256 1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.boundary=periodic
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.flux=hll3
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.endTime=4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.equation=euler2
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.equationParameters.gamma=1.4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.reconstruction=wenof2
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.cfl=auto
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.integrator=auto
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.initialData.python=euler_fbb.py
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.name=X
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.length=8380418
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.value=0.125
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.values.value=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.diffusion.name=none
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.diffusion.reconstruction=none
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.writer.basename=euler_fbb
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.writer.type=netcdf
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.writer.numberOfSaves=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.fvm.writer.writeInitialTimestep=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.uq.samples=1024
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.uq.generator=auto
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.uq.sampleStart=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.uq.parameters.parameter.name=X
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.uq.parameters.parameter.length=8380418
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.uq.parameters.parameter.type=uniform
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.name=meanvar
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.numberOfSaves=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.writeInitialTimestep=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.writer.basename=euler_fbb
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N256_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.writer.type=netcdf
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.software=alsvinn https://github.com/alsvinn
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.softwareVersion=0.5.3
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.currentWorkingDirectory=/cluster/scratch/klye/single_sample_structure_functions_new/experiments_mean_field/fbb/H0_125/N512
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.operatingSystem=Linux: Linux 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 2018 x86_64
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.username=klye
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.host=lo-s4-041
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.standardCLibrary=GNU libc 2.17 stable
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.generatedAt=20190826T213419
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.revision=9b4bc89ce460a208bd0f7fc3de0d28dd694c4956
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.versionControlStatus=CLEAN
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.buildType=Release
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cxxFlags=
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cxxFlagsDebug=-g
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cxxFlagsRelease=-O3 -DNDEBUG
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cxxFlagsMinSizeRel=-Os -DNDEBUG
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cxxFlagsRelWithDebInfo=-O2 -g -DNDEBUG
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaFlags=--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_61,code=sm_61
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaVersion=10.0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cxxCompiler=GNU 6.3.0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaCompiler=NVIDIA 10.0.130
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.boost.BOOST_VERSION=106900
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.boost.BOOST_LIB_VERSION=1_69
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.boost.BOOST_PLATFORM=linux
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.boost.BOOST_PLATFORM_CONFIG=boost/config/platform/linux.hpp
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.boost.BOOST_COMPILER=GNU C++ version 6.3.0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.boost.BOOST_LIBSTDCXX_VERSION=60300
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.boost.C++11=true
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.boost.BOOST_STDLIB=GNU libstdc++ version 20161221
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.boost.BOOST_STDLIB_CONFIG=boost/config/stdlib/libstdcpp3.hpp
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.floatingPointPrecisionDescription=double (double precision, 64 bits)
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.floatingPointType=double
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.floatingPointMax=1.79769e+308
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.floatingPointMin=2.22507e-308
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.floatingPointEpsilon=2.22045e-16
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.name=GeForce GTX 1080 Ti
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.totalGlobalMem=11721506816
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.sharedMemPerBlock=49152
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.regsPerBlock=65536
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.warpSize=32
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.memPitch=2147483647
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.maxThreadsPerBlock=1024
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.maxThreadsDim=1024, 1024, 64
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.maxGridSize=2147483647, 65535, 65535
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.totalConstMem=65536
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.major=6
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.minor=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.clockRate=1582000
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.textureAlignment=512
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.deviceOverlap=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.multiProcessorCount=28
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.kernelExecTimeoutEnabled=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.integrated=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.canMapHostMemory=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.computeMode=3
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.concurrentKernels=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.ECCEnabled=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.pciBusID=4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.pciDeviceID=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.cudaProperties.tccDriver=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.mpiEnabled=true
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.mpiProcesses=8
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.mpiVersion=Open MPI v2.1.0, package: Open MPI spackapps@lo-login-02 Distribution, ident: 2.1.0, repo rev: v2.0.1-696-g1cd1edf, Mar 20, 2017
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.ompEnabled=true
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.ompThreads=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_mean_field_dash_fbb_dash_H0_125_dash_N512_dash_euler_fbb_DOT_py=import scipy.stats# Uses fbmpy from https://github.com/kjetil-lye/fractional_brownian_motion# (this is also a part of alsvinn)def init_global(rho, ux, uy, p, nx, ny, nz, ax, ay, az, bx, by, bz):    MAX_RESOLUTION=2048        Y = scipy.stats.norm.ppf(X)    # Note that we skip the random variables for higher resolutions, this    # is to make sure we get a convergent sequence (there are other ways of doing this, but this is by far the simplest)    start_dux = 0    end_dux = (MAX_RESOLUTION-1)**2        dux = fbmpy.fractional_brownian_bridge_2d(hurst_index, nx,                                              Y[start_dux:end_dux]).reshape(nx+1, nx+1)    start_duy = end_dux    end_duy = 2*(MAX_RESOLUTION-1)**2    duy = fbmpy.fractional_brownian_bridge_2d(hurst_index, nx,                                              Y[start_duy:end_duy]).reshape(nx+1, nx+1)    rho[:,:,0] = 4*ones_like(rho[:,:,0])    ux[:,:,0] = dux[:-1,:-1]    uy[:,:,0] = duy[:-1,:-1]    p[:,:,0] = 2.5*ones_like(rho[:,:,0])
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_mean_field_dash_fbb_dash_H0_125_dash_N512_dash_euler_fbb_DOT_xml=<?xml version="1.0" ?><config>  <fvm>    <name>    euler_fbb  </name>    <platform>cuda</platform>    <grid>      <lowerCorner>0 0 0</lowerCorner>      <upperCorner>1 1 0</upperCorner>      <dimension>512 512 1</dimension>    </grid>    <boundary>periodic</boundary>    <flux>hll3</flux>    <endTime>4</endTime>    <equation>euler2</equation>    <equationParameters>      <gamma>1.4</gamma>    </equationParameters>    <reconstruction>wenof2</reconstruction>    <cfl>auto</cfl>    <integrator>auto</integrator>    <initialData>      <python>euler_fbb.py</python>      <parameters>        <parameter>          <name>hurst_index</name>          <length>1</length>          <value>0.125</value>        </parameter>        <parameter>          <name>X</name>          <length>8380418</length>          <values>            <value>0</value>          </values>        </parameter>      </parameters>    </initialData>    <diffusion>      <name>none</name>      <reconstruction>none</reconstruction>    </diffusion>    <writer>      <basename>euler_fbb</basename>      <type>netcdf</type>      <numberOfSaves>1</numberOfSaves>      <writeInitialTimestep>1</writeInitialTimestep>    </writer>  </fvm>  <uq>    <samples>1024</samples>    <generator>auto</generator>    <sampleStart>0</sampleStart>    <parameters>      <parameter>        <name>X</name>        <length>8380418</length>        <type>uniform</type>      </parameter>    </parameters>    <stats>      <stat>        <name>meanvar</name>        <numberOfSaves>1</numberOfSaves>        <writeInitialTimestep>1</writeInitialTimestep>        <writer>          <basename>euler_fbb</basename>          <type>netcdf</type>        </writer>      </stat>    </stats>  </uq></config>
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.pythonVersion=Runtime: 3.6.4 (default, Apr 10 2018, 07:54:00) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)], compile time: 3.6.4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_alsvinn_report.alsvinnInDocker=false
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.name=    euler_fbb  
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.platform=cuda
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.grid.lowerCorner=0 0 0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.grid.upperCorner=1 1 0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.grid.dimension=512 512 1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.boundary=periodic
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.flux=hll3
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.endTime=4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.equation=euler2
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.equationParameters.gamma=1.4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.reconstruction=wenof2
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.cfl=auto
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.integrator=auto
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.initialData.python=euler_fbb.py
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.name=X
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.length=8380418
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.value=0.125
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.values.value=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.diffusion.name=none
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.diffusion.reconstruction=none
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.writer.basename=euler_fbb
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.writer.type=netcdf
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.writer.numberOfSaves=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.fvm.writer.writeInitialTimestep=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.uq.samples=1024
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.uq.generator=auto
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.uq.sampleStart=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.uq.parameters.parameter.name=X
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.uq.parameters.parameter.length=8380418
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.uq.parameters.parameter.type=uniform
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.name=meanvar
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.numberOfSaves=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.writeInitialTimestep=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.writer.basename=euler_fbb
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N512_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.writer.type=netcdf
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.software=alsvinn https://github.com/alsvinn
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.softwareVersion=0.5.3
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.currentWorkingDirectory=/cluster/scratch/klye/single_sample_structure_functions_new/experiments_mean_field/fbb/H0_125/N1024
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.operatingSystem=Linux: Linux 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 2018 x86_64
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.username=klye
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.host=lo-s4-042
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.standardCLibrary=GNU libc 2.17 stable
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.generatedAt=20190826T205325
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.revision=9b4bc89ce460a208bd0f7fc3de0d28dd694c4956
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.versionControlStatus=CLEAN
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.buildType=Release
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cxxFlags=
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cxxFlagsDebug=-g
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cxxFlagsRelease=-O3 -DNDEBUG
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cxxFlagsMinSizeRel=-Os -DNDEBUG
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cxxFlagsRelWithDebInfo=-O2 -g -DNDEBUG
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaFlags=--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_61,code=sm_61
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaVersion=10.0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cxxCompiler=GNU 6.3.0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaCompiler=NVIDIA 10.0.130
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.boost.BOOST_VERSION=106900
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.boost.BOOST_LIB_VERSION=1_69
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.boost.BOOST_PLATFORM=linux
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.boost.BOOST_PLATFORM_CONFIG=boost/config/platform/linux.hpp
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.boost.BOOST_COMPILER=GNU C++ version 6.3.0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.boost.BOOST_LIBSTDCXX_VERSION=60300
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.boost.C++11=true
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.boost.BOOST_STDLIB=GNU libstdc++ version 20161221
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.boost.BOOST_STDLIB_CONFIG=boost/config/stdlib/libstdcpp3.hpp
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.floatingPointPrecisionDescription=double (double precision, 64 bits)
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.floatingPointType=double
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.floatingPointMax=1.79769e+308
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.floatingPointMin=2.22507e-308
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.floatingPointEpsilon=2.22045e-16
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.name=GeForce GTX 1080 Ti
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.totalGlobalMem=11721506816
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.sharedMemPerBlock=49152
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.regsPerBlock=65536
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.warpSize=32
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.memPitch=2147483647
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.maxThreadsPerBlock=1024
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.maxThreadsDim=1024, 1024, 64
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.maxGridSize=2147483647, 65535, 65535
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.totalConstMem=65536
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.major=6
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.minor=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.clockRate=1582000
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.textureAlignment=512
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.deviceOverlap=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.multiProcessorCount=28
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.kernelExecTimeoutEnabled=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.integrated=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.canMapHostMemory=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.computeMode=3
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.concurrentKernels=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.ECCEnabled=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.pciBusID=4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.pciDeviceID=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.cudaProperties.tccDriver=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.mpiEnabled=true
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.mpiProcesses=8
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.mpiVersion=Open MPI v2.1.0, package: Open MPI spackapps@lo-login-02 Distribution, ident: 2.1.0, repo rev: v2.0.1-696-g1cd1edf, Mar 20, 2017
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.ompEnabled=true
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.ompThreads=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_mean_field_dash_fbb_dash_H0_125_dash_N1024_dash_euler_fbb_DOT_py=import scipy.stats# Uses fbmpy from https://github.com/kjetil-lye/fractional_brownian_motion# (this is also a part of alsvinn)def init_global(rho, ux, uy, p, nx, ny, nz, ax, ay, az, bx, by, bz):    MAX_RESOLUTION=2048        Y = scipy.stats.norm.ppf(X)    # Note that we skip the random variables for higher resolutions, this    # is to make sure we get a convergent sequence (there are other ways of doing this, but this is by far the simplest)    start_dux = 0    end_dux = (MAX_RESOLUTION-1)**2        dux = fbmpy.fractional_brownian_bridge_2d(hurst_index, nx,                                              Y[start_dux:end_dux]).reshape(nx+1, nx+1)    start_duy = end_dux    end_duy = 2*(MAX_RESOLUTION-1)**2    duy = fbmpy.fractional_brownian_bridge_2d(hurst_index, nx,                                              Y[start_duy:end_duy]).reshape(nx+1, nx+1)    rho[:,:,0] = 4*ones_like(rho[:,:,0])    ux[:,:,0] = dux[:-1,:-1]    uy[:,:,0] = duy[:-1,:-1]    p[:,:,0] = 2.5*ones_like(rho[:,:,0])
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_mean_field_dash_fbb_dash_H0_125_dash_N1024_dash_euler_fbb_DOT_xml=<?xml version="1.0" ?><config>  <fvm>    <name>    euler_fbb  </name>    <platform>cuda</platform>    <grid>      <lowerCorner>0 0 0</lowerCorner>      <upperCorner>1 1 0</upperCorner>      <dimension>1024 1024 1</dimension>    </grid>    <boundary>periodic</boundary>    <flux>hll3</flux>    <endTime>4</endTime>    <equation>euler2</equation>    <equationParameters>      <gamma>1.4</gamma>    </equationParameters>    <reconstruction>wenof2</reconstruction>    <cfl>auto</cfl>    <integrator>auto</integrator>    <initialData>      <python>euler_fbb.py</python>      <parameters>        <parameter>          <name>hurst_index</name>          <length>1</length>          <value>0.125</value>        </parameter>        <parameter>          <name>X</name>          <length>8380418</length>          <values>            <value>0</value>          </values>        </parameter>      </parameters>    </initialData>    <diffusion>      <name>none</name>      <reconstruction>none</reconstruction>    </diffusion>    <writer>      <basename>euler_fbb</basename>      <type>netcdf</type>      <numberOfSaves>1</numberOfSaves>      <writeInitialTimestep>1</writeInitialTimestep>    </writer>  </fvm>  <uq>    <samples>1024</samples>    <generator>auto</generator>    <sampleStart>0</sampleStart>    <parameters>      <parameter>        <name>X</name>        <length>8380418</length>        <type>uniform</type>      </parameter>    </parameters>    <stats>      <stat>        <name>meanvar</name>        <numberOfSaves>1</numberOfSaves>        <writeInitialTimestep>1</writeInitialTimestep>        <writer>          <basename>euler_fbb</basename>          <type>netcdf</type>        </writer>      </stat>    </stats>  </uq></config>
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.pythonVersion=Runtime: 3.6.4 (default, Apr 10 2018, 07:54:00) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)], compile time: 3.6.4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_alsvinn_report.alsvinnInDocker=false
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.name=    euler_fbb  
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.platform=cuda
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.grid.lowerCorner=0 0 0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.grid.upperCorner=1 1 0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.grid.dimension=1024 1024 1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.boundary=periodic
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.flux=hll3
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.endTime=4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.equation=euler2
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.equationParameters.gamma=1.4
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.reconstruction=wenof2
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.cfl=auto
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.integrator=auto
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.initialData.python=euler_fbb.py
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.name=X
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.length=8380418
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.value=0.125
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.initialData.parameters.parameter.values.value=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.diffusion.name=none
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.diffusion.reconstruction=none
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.writer.basename=euler_fbb
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.writer.type=netcdf
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.writer.numberOfSaves=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.fvm.writer.writeInitialTimestep=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.uq.samples=1024
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.uq.generator=auto
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.uq.sampleStart=0
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.uq.parameters.parameter.name=X
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.uq.parameters.parameter.length=8380418
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.uq.parameters.parameter.type=uniform
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.name=meanvar
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.numberOfSaves=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.writeInitialTimestep=1
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.writer.basename=euler_fbb
+%%    _cluster_work_math_klye_single_sample_structure_functions_experiments_mean_field_fbb_H0_125_N1024_euler_fbb_1.nc_fvm_configuration.uq.stats.stat.writer.type=netcdf
+%% python_version: 
+%%    /cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/bin/python (Version: 3.6.4 (default, Apr 10 2018, 07:54:00) 
+%%    [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)])
+%% python modules:
+%%     builtins: Unknown (Unknown)
+%%     sys: Unknown (Unknown)
+%%     importlib._bootstrap: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/importlib/_bootstrap.py)
+%%     _imp: Unknown (Unknown)
+%%     _warnings: Unknown (Unknown)
+%%     _thread: Unknown (Unknown)
+%%     _weakref: Unknown (Unknown)
+%%     importlib._bootstrap_external: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/importlib/_bootstrap_external.py)
+%%     io: Unknown (Unknown)
+%%     marshal: Unknown (Unknown)
+%%     posix: Unknown (Unknown)
+%%     zipimport: Unknown (Unknown)
+%%     encodings: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/encodings/__init__.py)
+%%     codecs: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/codecs.py)
+%%     _codecs: Unknown (Unknown)
+%%     encodings.aliases: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/encodings/aliases.py)
+%%     encodings.utf_8: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/encodings/utf_8.py)
+%%     _signal: Unknown (Unknown)
+%%     __main__: Unknown (python/estimate_variance_decay.py)
+%%     encodings.latin_1: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/encodings/latin_1.py)
+%%     io: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/io.py)
+%%     abc: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/abc.py)
+%%     _weakrefset: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/_weakrefset.py)
+%%     _bootlocale: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/_bootlocale.py)
+%%     _locale: Unknown (Unknown)
+%%     site: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/site.py)
+%%     os: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/os.py)
+%%     errno: Unknown (Unknown)
+%%     stat: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/stat.py)
+%%     _stat: Unknown (Unknown)
+%%     posixpath: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/posixpath.py)
+%%     genericpath: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/genericpath.py)
+%%     posixpath: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/posixpath.py)
+%%     collections.abc: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/_collections_abc.py)
+%%     _sitebuiltins: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/_sitebuiltins.py)
+%%     types: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/types.py)
+%%     functools: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/functools.py)
+%%     _functools: Unknown (Unknown)
+%%     collections: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/collections/__init__.py)
+%%     operator: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/operator.py)
+%%     _operator: Unknown (Unknown)
+%%     keyword: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/keyword.py)
+%%     heapq: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/heapq.py)
+%%     _heapq: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_heapq.cpython-36m-x86_64-linux-gnu.so)
+%%     itertools: Unknown (Unknown)
+%%     reprlib: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/reprlib.py)
+%%     _collections: Unknown (Unknown)
+%%     weakref: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/weakref.py)
+%%     collections.abc: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/collections/abc.py)
+%%     importlib: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/importlib/__init__.py)
+%%     importlib._bootstrap: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/importlib/_bootstrap.py)
+%%     importlib._bootstrap_external: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/importlib/_bootstrap_external.py)
+%%     warnings: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/warnings.py)
+%%     importlib.util: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/importlib/util.py)
+%%     importlib.abc: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/importlib/abc.py)
+%%     importlib.machinery: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/importlib/machinery.py)
+%%     contextlib: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/contextlib.py)
+%%     mpl_toolkits: Unknown (Unknown)
+%%     sysconfig: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/sysconfig.py)
+%%     _sysconfigdata_m_linux_x86_64-linux-gnu: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/_sysconfigdata_m_linux_x86_64-linux-gnu.py)
+%%     netCDF4: 1.5.2 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/netCDF4/__init__.py)
+%%     netCDF4._netCDF4: 1.5.2 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/netCDF4/_netCDF4.cpython-36m-x86_64-linux-gnu.so)
+%%     _cython_0_29_13: Unknown (Unknown)
+%%     cython_runtime: Unknown (Unknown)
+%%     numpy: 1.17.2 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/__init__.py)
+%%     __future__: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/__future__.py)
+%%     numpy._globals: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/_globals.py)
+%%     numpy.__config__: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/__config__.py)
+%%     numpy.version: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/version.py)
+%%     numpy._distributor_init: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/_distributor_init.py)
+%%     numpy.core: 1.17.2 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/__init__.py)
+%%     numpy.core.info: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/info.py)
+%%     numpy.core.multiarray: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/multiarray.py)
+%%     numpy.core.overrides: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/overrides.py)
+%%     textwrap: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/textwrap.py)
+%%     re: 2.2.1 (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/re.py)
+%%     enum: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/enum.py)
+%%     sre_compile: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/sre_compile.py)
+%%     _sre: Unknown (Unknown)
+%%     sre_parse: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/sre_parse.py)
+%%     sre_constants: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/sre_constants.py)
+%%     copyreg: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/copyreg.py)
+%%     datetime: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/datetime.py)
+%%     time: Unknown (Unknown)
+%%     math: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/math.cpython-36m-x86_64-linux-gnu.so)
+%%     _datetime: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_datetime.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.core._multiarray_umath: 3.1 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/_multiarray_umath.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.compat: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/compat/__init__.py)
+%%     numpy.compat._inspect: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/compat/_inspect.py)
+%%     numpy.compat.py3k: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/compat/py3k.py)
+%%     pathlib: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/pathlib.py)
+%%     fnmatch: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/fnmatch.py)
+%%     ntpath: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/ntpath.py)
+%%     urllib: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/urllib/__init__.py)
+%%     urllib.parse: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/urllib/parse.py)
+%%     pickle: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/pickle.py)
+%%     struct: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/struct.py)
+%%     _struct: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_struct.cpython-36m-x86_64-linux-gnu.so)
+%%     _compat_pickle: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/_compat_pickle.py)
+%%     _pickle: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_pickle.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.core.umath: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/umath.py)
+%%     numpy.core.numerictypes: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/numerictypes.py)
+%%     numbers: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/numbers.py)
+%%     numpy.core._string_helpers: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/_string_helpers.py)
+%%     numpy.core._type_aliases: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/_type_aliases.py)
+%%     numpy.core._dtype: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/_dtype.py)
+%%     numpy.core.numeric: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/numeric.py)
+%%     numpy.core._exceptions: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/_exceptions.py)
+%%     numpy.core._asarray: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/_asarray.py)
+%%     numpy.core._ufunc_config: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/_ufunc_config.py)
+%%     numpy.core.fromnumeric: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/fromnumeric.py)
+%%     numpy.core._methods: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/_methods.py)
+%%     numpy.core.arrayprint: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/arrayprint.py)
+%%     numpy.core.defchararray: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/defchararray.py)
+%%     numpy.core.records: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/records.py)
+%%     numpy.core.memmap: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/memmap.py)
+%%     numpy.core.function_base: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/function_base.py)
+%%     numpy.core.machar: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/machar.py)
+%%     numpy.core.getlimits: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/getlimits.py)
+%%     numpy.core.shape_base: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/shape_base.py)
+%%     numpy.core.einsumfunc: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/einsumfunc.py)
+%%     numpy.core._add_newdocs: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/_add_newdocs.py)
+%%     numpy.core._multiarray_tests: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/_multiarray_tests.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.core._dtype_ctypes: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/_dtype_ctypes.py)
+%%     _ctypes: 1.1.0 (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so)
+%%     ctypes: 1.1.0 (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/ctypes/__init__.py)
+%%     ctypes._endian: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/ctypes/_endian.py)
+%%     numpy.core._internal: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/core/_internal.py)
+%%     platform: 1.0.8 (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/platform.py)
+%%     subprocess: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/subprocess.py)
+%%     signal: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/signal.py)
+%%     _posixsubprocess: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_posixsubprocess.cpython-36m-x86_64-linux-gnu.so)
+%%     select: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/select.cpython-36m-x86_64-linux-gnu.so)
+%%     selectors: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/selectors.py)
+%%     threading: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/threading.py)
+%%     traceback: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/traceback.py)
+%%     linecache: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/linecache.py)
+%%     tokenize: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/tokenize.py)
+%%     token: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/token.py)
+%%     numpy._pytesttester: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/_pytesttester.py)
+%%     numpy.lib: 1.17.2 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/__init__.py)
+%%     numpy.lib.info: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/info.py)
+%%     numpy.lib.type_check: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/type_check.py)
+%%     numpy.lib.ufunclike: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/ufunclike.py)
+%%     numpy.lib.index_tricks: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/index_tricks.py)
+%%     numpy.matrixlib: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/matrixlib/__init__.py)
+%%     numpy.matrixlib.defmatrix: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/matrixlib/defmatrix.py)
+%%     ast: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/ast.py)
+%%     _ast: Unknown (Unknown)
+%%     numpy.linalg: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/linalg/__init__.py)
+%%     numpy.linalg.info: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/linalg/info.py)
+%%     numpy.linalg.linalg: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/linalg/linalg.py)
+%%     numpy.lib.twodim_base: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/twodim_base.py)
+%%     numpy.linalg.lapack_lite: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/linalg/lapack_lite.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.linalg._umath_linalg: b'0.1.5' (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/linalg/_umath_linalg.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.lib.function_base: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/function_base.py)
+%%     numpy.lib.histograms: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/histograms.py)
+%%     numpy.lib.stride_tricks: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/stride_tricks.py)
+%%     numpy.lib.mixins: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/mixins.py)
+%%     numpy.lib.nanfunctions: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/nanfunctions.py)
+%%     numpy.lib.shape_base: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/shape_base.py)
+%%     numpy.lib.scimath: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/scimath.py)
+%%     numpy.lib.polynomial: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/polynomial.py)
+%%     numpy.lib.utils: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/utils.py)
+%%     numpy.lib.arraysetops: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/arraysetops.py)
+%%     numpy.lib.npyio: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/npyio.py)
+%%     numpy.lib.format: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/format.py)
+%%     numpy.lib._datasource: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/_datasource.py)
+%%     shutil: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/shutil.py)
+%%     zlib: 1.0 (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/zlib.cpython-36m-x86_64-linux-gnu.so)
+%%     bz2: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/bz2.py)
+%%     _compression: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/_compression.py)
+%%     _bz2: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_bz2.cpython-36m-x86_64-linux-gnu.so)
+%%     lzma: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lzma.py)
+%%     _lzma: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_lzma.cpython-36m-x86_64-linux-gnu.so)
+%%     pwd: Unknown (Unknown)
+%%     grp: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/grp.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.lib._iotools: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/_iotools.py)
+%%     numpy.lib.financial: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/financial.py)
+%%     decimal: 1.70 (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/decimal.py)
+%%     decimal: 1.70 (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_decimal.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.lib.arrayterator: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/arrayterator.py)
+%%     numpy.lib.arraypad: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/arraypad.py)
+%%     numpy.lib._version: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/lib/_version.py)
+%%     numpy.fft: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/fft/__init__.py)
+%%     numpy.fft.info: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/fft/info.py)
+%%     numpy.fft.pocketfft: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/fft/pocketfft.py)
+%%     numpy.fft.pocketfft_internal: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/fft/pocketfft_internal.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.fft.helper: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/fft/helper.py)
+%%     numpy.polynomial: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/polynomial/__init__.py)
+%%     numpy.polynomial.polynomial: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/polynomial/polynomial.py)
+%%     numpy.polynomial.polyutils: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/polynomial/polyutils.py)
+%%     numpy.polynomial._polybase: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/polynomial/_polybase.py)
+%%     numpy.polynomial.chebyshev: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/polynomial/chebyshev.py)
+%%     numpy.polynomial.legendre: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/polynomial/legendre.py)
+%%     numpy.polynomial.hermite: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/polynomial/hermite.py)
+%%     numpy.polynomial.hermite_e: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/polynomial/hermite_e.py)
+%%     numpy.polynomial.laguerre: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/polynomial/laguerre.py)
+%%     numpy.random: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/random/__init__.py)
+%%     numpy.random._pickle: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/random/_pickle.py)
+%%     numpy.random.mtrand: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/random/mtrand.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.random.common: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/random/common.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.random.bounded_integers: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/random/bounded_integers.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.random.mt19937: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/random/mt19937.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.random.bit_generator: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/random/bit_generator.cpython-36m-x86_64-linux-gnu.so)
+%%     secrets: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/secrets.py)
+%%     base64: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/base64.py)
+%%     binascii: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/binascii.cpython-36m-x86_64-linux-gnu.so)
+%%     hmac: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/hmac.py)
+%%     hashlib: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/hashlib.py)
+%%     _hashlib: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_hashlib.cpython-36m-x86_64-linux-gnu.so)
+%%     _blake2: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_blake2.cpython-36m-x86_64-linux-gnu.so)
+%%     _sha3: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_sha3.cpython-36m-x86_64-linux-gnu.so)
+%%     random: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/random.py)
+%%     bisect: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/bisect.py)
+%%     _bisect: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_bisect.cpython-36m-x86_64-linux-gnu.so)
+%%     _random: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_random.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.random.entropy: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/random/entropy.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.random.philox: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/random/philox.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.random.pcg64: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/random/pcg64.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.random.sfc64: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/random/sfc64.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.random.generator: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/random/generator.cpython-36m-x86_64-linux-gnu.so)
+%%     numpy.ctypeslib: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/ctypeslib.py)
+%%     numpy.ma: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/ma/__init__.py)
+%%     numpy.ma.core: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/ma/core.py)
+%%     numpy.ma.extras: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/ma/extras.py)
+%%     numpy.testing: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/testing/__init__.py)
+%%     unittest: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/unittest/__init__.py)
+%%     unittest.result: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/unittest/result.py)
+%%     unittest.util: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/unittest/util.py)
+%%     unittest.case: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/unittest/case.py)
+%%     difflib: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/difflib.py)
+%%     logging: 0.5.1.2 (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/logging/__init__.py)
+%%     string: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/string.py)
+%%     _string: Unknown (Unknown)
+%%     atexit: Unknown (Unknown)
+%%     pprint: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/pprint.py)
+%%     unittest.suite: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/unittest/suite.py)
+%%     unittest.loader: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/unittest/loader.py)
+%%     unittest.main: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/unittest/main.py)
+%%     argparse: 1.1 (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/argparse.py)
+%%     copy: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/copy.py)
+%%     gettext: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/gettext.py)
+%%     locale: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/locale.py)
+%%     unittest.runner: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/unittest/runner.py)
+%%     unittest.signals: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/unittest/signals.py)
+%%     numpy.testing._private: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/testing/_private/__init__.py)
+%%     numpy.testing._private.utils: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/testing/_private/utils.py)
+%%     gc: Unknown (Unknown)
+%%     tempfile: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/tempfile.py)
+%%     numpy.testing._private.decorators: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/testing/_private/decorators.py)
+%%     numpy.testing._private.nosetester: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/numpy/testing/_private/nosetester.py)
+%%     netCDF4.utils: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/netCDF4/utils.py)
+%%     getopt: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/getopt.py)
+%%     cftime: 1.0.3.4 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/cftime/__init__.py)
+%%     cftime._cftime: 1.0.3.4 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/cftime/_cftime.cpython-36m-x86_64-linux-gnu.so)
+%%     _cython_0_29_1: Unknown (Unknown)
+%%     glob: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/glob.py)
+%%     plot_info: 1.17.2 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/python/plot_info.py)
+%%     matplotlib: 3.1.1 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/__init__.py)
+%%     distutils: 3.6.4 (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/distutils/__init__.py)
+%%     distutils.version: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/distutils/version.py)
+%%     inspect: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/inspect.py)
+%%     dis: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/dis.py)
+%%     opcode: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/opcode.py)
+%%     _opcode: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_opcode.cpython-36m-x86_64-linux-gnu.so)
+%%     matplotlib.cbook: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/cbook/__init__.py)
+%%     gzip: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/gzip.py)
+%%     matplotlib.cbook.deprecation: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/cbook/deprecation.py)
+%%     matplotlib.rcsetup: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/rcsetup.py)
+%%     matplotlib.fontconfig_pattern: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/fontconfig_pattern.py)
+%%     pyparsing: 2.4.2 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/pyparsing.py)
+%%     matplotlib.colors: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/colors.py)
+%%     matplotlib._color_data: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/_color_data.py)
+%%     cycler: 0.10.0 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/cycler.py)
+%%     six: 1.12.0 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/six.py)
+%%     six.moves: Unknown (Unknown)
+%%     matplotlib._version: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/_version.py)
+%%     json: 2.0.9 (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/json/__init__.py)
+%%     json.decoder: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/json/decoder.py)
+%%     json.scanner: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/json/scanner.py)
+%%     _json: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_json.cpython-36m-x86_64-linux-gnu.so)
+%%     json.encoder: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/json/encoder.py)
+%%     matplotlib.ft2font: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/ft2font.cpython-36m-x86_64-linux-gnu.so)
+%%     dateutil: 2.8.0 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/dateutil/__init__.py)
+%%     dateutil._version: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/dateutil/_version.py)
+%%     kiwisolver: 1.1.0 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/kiwisolver.cpython-36m-x86_64-linux-gnu.so)
+%%     socket: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/socket.py)
+%%     _socket: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_socket.cpython-36m-x86_64-linux-gnu.so)
+%%     matplotlib.pyplot: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/pyplot.py)
+%%     matplotlib.colorbar: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/colorbar.py)
+%%     matplotlib.artist: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/artist.py)
+%%     matplotlib.docstring: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/docstring.py)
+%%     matplotlib.path: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/path.py)
+%%     matplotlib._path: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/_path.cpython-36m-x86_64-linux-gnu.so)
+%%     matplotlib.transforms: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/transforms.py)
+%%     matplotlib.collections: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/collections.py)
+%%     matplotlib.cm: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/cm.py)
+%%     matplotlib._cm: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/_cm.py)
+%%     matplotlib._cm_listed: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/_cm_listed.py)
+%%     matplotlib.lines: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/lines.py)
+%%     matplotlib.markers: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/markers.py)
+%%     matplotlib.contour: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/contour.py)
+%%     matplotlib.ticker: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/ticker.py)
+%%     matplotlib.font_manager: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/font_manager.py)
+%%     matplotlib.afm: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/afm.py)
+%%     matplotlib._mathtext_data: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/_mathtext_data.py)
+%%     matplotlib.text: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/text.py)
+%%     matplotlib.patches: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/patches.py)
+%%     matplotlib.bezier: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/bezier.py)
+%%     matplotlib.textpath: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/textpath.py)
+%%     matplotlib.dviread: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/dviread.py)
+%%     matplotlib.mathtext: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/mathtext.py)
+%%     unicodedata: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/unicodedata.cpython-36m-x86_64-linux-gnu.so)
+%%     matplotlib.texmanager: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/texmanager.py)
+%%     matplotlib.blocking_input: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/blocking_input.py)
+%%     matplotlib.gridspec: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/gridspec.py)
+%%     matplotlib._pylab_helpers: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/_pylab_helpers.py)
+%%     matplotlib.tight_layout: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/tight_layout.py)
+%%     matplotlib._layoutbox: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/_layoutbox.py)
+%%     matplotlib._constrained_layout: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/_constrained_layout.py)
+%%     matplotlib.image: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/image.py)
+%%     matplotlib.backend_bases: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/backend_bases.py)
+%%     matplotlib.backend_tools: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/backend_tools.py)
+%%     matplotlib.tight_bbox: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/tight_bbox.py)
+%%     matplotlib.widgets: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/widgets.py)
+%%     PIL: 6.1.0 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/PIL/__init__.py)
+%%     PIL._version: 6.1.0 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/PIL/_version.py)
+%%     matplotlib._image: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/_image.cpython-36m-x86_64-linux-gnu.so)
+%%     matplotlib.style: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/style/__init__.py)
+%%     matplotlib.style.core: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/style/core.py)
+%%     matplotlib.figure: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/figure.py)
+%%     matplotlib.backends: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/backends/__init__.py)
+%%     matplotlib.projections: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/projections/__init__.py)
+%%     matplotlib.axes: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/axes/__init__.py)
+%%     matplotlib.axes._subplots: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/axes/_subplots.py)
+%%     uuid: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/uuid.py)
+%%     ctypes.util: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/ctypes/util.py)
+%%     matplotlib.axes._axes: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/axes/_axes.py)
+%%     matplotlib.category: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/category.py)
+%%     dateutil.parser: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/dateutil/parser/__init__.py)
+%%     dateutil.parser._parser: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/dateutil/parser/_parser.py)
+%%     calendar: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/calendar.py)
+%%     dateutil.relativedelta: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/dateutil/relativedelta.py)
+%%     dateutil._common: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/dateutil/_common.py)
+%%     dateutil.tz: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/dateutil/tz/__init__.py)
+%%     dateutil.tz.tz: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/dateutil/tz/tz.py)
+%%     dateutil.tz._common: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/dateutil/tz/_common.py)
+%%     dateutil.tz._factories: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/dateutil/tz/_factories.py)
+%%     dateutil.parser.isoparser: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/dateutil/parser/isoparser.py)
+%%     matplotlib.units: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/units.py)
+%%     matplotlib.dates: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/dates.py)
+%%     dateutil.rrule: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/dateutil/rrule.py)
+%%     matplotlib.legend: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/legend.py)
+%%     matplotlib.offsetbox: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/offsetbox.py)
+%%     matplotlib.container: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/container.py)
+%%     matplotlib.legend_handler: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/legend_handler.py)
+%%     matplotlib.mlab: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/mlab.py)
+%%     csv: 1.0 (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/csv.py)
+%%     _csv: 1.0 (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_csv.cpython-36m-x86_64-linux-gnu.so)
+%%     matplotlib.quiver: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/quiver.py)
+%%     matplotlib.stackplot: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/stackplot.py)
+%%     matplotlib.streamplot: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/streamplot.py)
+%%     matplotlib.table: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/table.py)
+%%     matplotlib.tri: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/tri/__init__.py)
+%%     matplotlib.tri.triangulation: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/tri/triangulation.py)
+%%     matplotlib.tri.tricontour: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/tri/tricontour.py)
+%%     matplotlib.tri.tritools: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/tri/tritools.py)
+%%     matplotlib.tri.trifinder: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/tri/trifinder.py)
+%%     matplotlib.tri.triinterpolate: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/tri/triinterpolate.py)
+%%     matplotlib.tri.trirefine: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/tri/trirefine.py)
+%%     matplotlib.tri.tripcolor: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/tri/tripcolor.py)
+%%     matplotlib.tri.triplot: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/tri/triplot.py)
+%%     matplotlib.axes._base: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/axes/_base.py)
+%%     matplotlib.axis: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/axis.py)
+%%     matplotlib.scale: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/scale.py)
+%%     matplotlib.spines: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/spines.py)
+%%     matplotlib.axes._secondary_axes: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/axes/_secondary_axes.py)
+%%     matplotlib.projections.geo: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/projections/geo.py)
+%%     matplotlib.projections.polar: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/projections/polar.py)
+%%     matplotlib.backends.backend_agg: 3.1.1 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/backends/backend_agg.py)
+%%     matplotlib.backends._backend_agg: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/backends/_backend_agg.cpython-36m-x86_64-linux-gnu.so)
+%%     PIL.Image: 6.1.0 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/PIL/Image.py)
+%%     PIL._util: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/PIL/_util.py)
+%%     PIL.ImageMode: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/PIL/ImageMode.py)
+%%     PIL.TiffTags: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/PIL/TiffTags.py)
+%%     PIL._binary: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/PIL/_binary.py)
+%%     PIL._imaging: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/PIL/_imaging.cpython-36m-x86_64-linux-gnu.so)
+%%     matplotlib.backends.qt_editor: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/backends/qt_editor/__init__.py)
+%%     matplotlib.backends.backend_tkagg: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/backends/backend_tkagg.py)
+%%     matplotlib.backends._backend_tk: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/backends/_backend_tk.py)
+%%     tkinter: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/tkinter/__init__.py)
+%%     _tkinter: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/_tkinter.cpython-36m-x86_64-linux-gnu.so)
+%%     tkinter.constants: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/tkinter/constants.py)
+%%     tkinter.simpledialog: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/tkinter/simpledialog.py)
+%%     tkinter.messagebox: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/tkinter/messagebox.py)
+%%     tkinter.commondialog: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/tkinter/commondialog.py)
+%%     tkinter.filedialog: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/tkinter/filedialog.py)
+%%     tkinter.dialog: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/tkinter/dialog.py)
+%%     matplotlib.backend_managers: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/backend_managers.py)
+%%     matplotlib.backends._tkagg: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/backends/_tkagg.cpython-36m-x86_64-linux-gnu.so)
+%%     tikzplotlib: 0.8.2 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/tikzplotlib/__init__.py)
+%%     tikzplotlib.__about__: 0.8.2 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/tikzplotlib/__about__.py)
+%%     tikzplotlib.save: 0.8.2 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/tikzplotlib/save.py)
+%%     tikzplotlib.axes: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/tikzplotlib/axes.py)
+%%     matplotlib.backends.backend_pgf: 3.1.1 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/backends/backend_pgf.py)
+%%     matplotlib._png: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/_png.cpython-36m-x86_64-linux-gnu.so)
+%%     matplotlib.backends.backend_mixed: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/matplotlib/backends/backend_mixed.py)
+%%     tikzplotlib.color: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/tikzplotlib/color.py)
+%%     tikzplotlib.image: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/tikzplotlib/image.py)
+%%     tikzplotlib.files: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/tikzplotlib/files.py)
+%%     tikzplotlib.legend: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/tikzplotlib/legend.py)
+%%     tikzplotlib.line2d: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/tikzplotlib/line2d.py)
+%%     tikzplotlib.path: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/tikzplotlib/path.py)
+%%     tikzplotlib.util: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/tikzplotlib/util.py)
+%%     tikzplotlib.patch: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/tikzplotlib/patch.py)
+%%     tikzplotlib.quadmesh: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/tikzplotlib/quadmesh.py)
+%%     tikzplotlib.text: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/tikzplotlib/text.py)
+%%     git: 3.0.2 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/__init__.py)
+%%     gitdb: 2.0.5 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/__init__.py)
+%%     smmap: 2.0.5 (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/smmap/__init__.py)
+%%     smmap.mman: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/smmap/mman.py)
+%%     smmap.util: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/smmap/util.py)
+%%     mmap: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/mmap.cpython-36m-x86_64-linux-gnu.so)
+%%     smmap.buf: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/smmap/buf.py)
+%%     gitdb.base: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/base.py)
+%%     gitdb.util: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/util.py)
+%%     gitdb.const: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/const.py)
+%%     gitdb.fun: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/fun.py)
+%%     gitdb.utils: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/utils/__init__.py)
+%%     gitdb.utils.encoding: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/utils/encoding.py)
+%%     gitdb.utils.compat: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/utils/compat.py)
+%%     gitdb.typ: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/typ.py)
+%%     gitdb.db: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/db/__init__.py)
+%%     gitdb.db.base: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/db/base.py)
+%%     gitdb.exc: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/exc.py)
+%%     gitdb.db.loose: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/db/loose.py)
+%%     gitdb.stream: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/stream.py)
+%%     gitdb.db.mem: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/db/mem.py)
+%%     gitdb.db.pack: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/db/pack.py)
+%%     gitdb.pack: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/pack.py)
+%%     array: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/array.cpython-36m-x86_64-linux-gnu.so)
+%%     gitdb.db.git: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/db/git.py)
+%%     gitdb.db.ref: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/gitdb/db/ref.py)
+%%     git.exc: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/exc.py)
+%%     git.compat: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/compat.py)
+%%     encodings.ascii: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/encodings/ascii.py)
+%%     git.config: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/config.py)
+%%     git.util: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/util.py)
+%%     getpass: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/getpass.py)
+%%     termios: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/lib-dynload/termios.cpython-36m-x86_64-linux-gnu.so)
+%%     configparser: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/configparser.py)
+%%     git.objects: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/objects/__init__.py)
+%%     git.objects.base: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/objects/base.py)
+%%     git.objects.util: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/objects/util.py)
+%%     git.objects.blob: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/objects/blob.py)
+%%     mimetypes: Unknown (/cluster/apps/python/3.6.4_cpu/lib64/python3.6/mimetypes.py)
+%%     git.objects.commit: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/objects/commit.py)
+%%     git.diff: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/diff.py)
+%%     git.cmd: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/cmd.py)
+%%     git.objects.tree: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/objects/tree.py)
+%%     git.objects.submodule: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/objects/submodule/__init__.py)
+%%     git.objects.submodule.base: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/objects/submodule/base.py)
+%%     git.objects.submodule.util: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/objects/submodule/util.py)
+%%     git.objects.fun: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/objects/fun.py)
+%%     git.objects.submodule.root: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/objects/submodule/root.py)
+%%     git.objects.tag: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/objects/tag.py)
+%%     git.refs: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/refs/__init__.py)
+%%     git.refs.symbolic: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/refs/symbolic.py)
+%%     git.refs.log: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/refs/log.py)
+%%     git.refs.reference: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/refs/reference.py)
+%%     git.refs.head: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/refs/head.py)
+%%     git.refs.tag: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/refs/tag.py)
+%%     git.refs.remote: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/refs/remote.py)
+%%     git.db: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/db.py)
+%%     git.repo: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/repo/__init__.py)
+%%     git.repo.base: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/repo/base.py)
+%%     git.index: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/index/__init__.py)
+%%     git.index.base: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/index/base.py)
+%%     git.index.fun: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/index/fun.py)
+%%     git.index.typ: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/index/typ.py)
+%%     git.index.util: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/index/util.py)
+%%     git.remote: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/remote.py)
+%%     git.repo.fun: Unknown (/cluster/scratch/klye/mlmc_statistical_solutions_experiments/.venv/lib64/python3.6/site-packages/git/repo/fun.py)
+%% stacktrace:
+%%     [function: savePlot, line: 307, file: /cluster/scratch/klye/mlmc_statistical_solutions_experiments/python/plot_info.py]
+%%     [function: plot_variance_decay_normed, line: 182, file: python/estimate_variance_decay.py]
+%%     [function: <module>, line: 239, file: python/estimate_variance_decay.py]
