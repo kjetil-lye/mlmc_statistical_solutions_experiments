@@ -104,6 +104,151 @@ def load(filename, variable):
     print()
     return np.array(samples)
 
+
+def get_line_integral(d):
+    
+    for h in range(1,len(d)):
+        d[h] += d[h-1]
+    for h in range(1,len(d)):
+        d[h] /=(2*h+1)**2
+        #d[h] /= 4*(2*h+1)
+        
+    return d
+    
+
+def load_structure(filename, variable, p):
+    print(filename)
+    samples = []
+    
+    if variable == 'all':
+        variables = ['rho', 'mx', 'my', 'E']
+    else:
+        variables = [variable]
+    
+    with netCDF4.Dataset(filename) as f:
+        for attr in f.ncattrs():
+            plot_info.add_additional_plot_parameters(filename.replace("/", "_") + "_" + attr, f.getncattr(attr))
+        
+        sample = 0
+        shape = f.variables['sample_0_rho'][:,:,0].shape
+        next_sample_to_print = 1
+        while f'sample_{sample}_rho' in f.variables.keys():
+            if sample % 80 > next_sample_to_print:
+                sys.stdout.write("#")
+                sys.stdout.flush()
+                next_sample_to_print += 1
+            
+            data = np.zeros((shape[0]))
+            for n, variable in enumerate(variables):
+                key = f'sample_{sample}_{variable}'
+                data[:] += get_line_integral(f.variables[key][:,0,0])
+            data = data**(1/p)
+            samples.append(data)
+            sample += 1
+                
+    print()
+    return np.array(samples)
+
+
+def compute_variance_decay_structure(resolutions, basenames, norm_ord, variable, p):
+    variances = []
+    variances_details = []
+    
+    for resolution in resolutions:
+        print(f"Resolution: {resolution}")
+        data = load_structure(basenames.format(resolution=resolution), variable, p)
+        variance_single_level = np.linalg.norm(np.var(data, axis=0).flatten(), ord=norm_ord)/float(resolution)**(1/norm_ord)
+        
+        variances.append(variance_single_level)
+        if resolution > resolutions[0]:
+            detail = data - data_coarse
+            
+            variance_detail = np.linalg.norm(np.var(detail, axis=0).flatten(), ord=norm_ord)/float(resolution)**(1/norm_ord)
+            
+            
+            variances_details.append(variance_detail)
+        if resolution < resolutions[-1]:
+            data_coarse = np.repeat(data, 2, 1)
+            
+    return variances, variances_details
+
+
+def plot_variance_decay_structure(title, resolutions, basenames, norm_ord, variable, p):
+    variances, variances_details = compute_variance_decay_structure(resolutions, 
+                                                                 basenames,
+                                                                 norm_ord,
+                                                                 variable, p)
+    
+    
+    speedups = [1]
+    
+    for n in range(1, len(resolutions)):
+        local_resolutions = resolutions[:n+1]
+        
+        speedup = compute_speedup(local_resolutions, 
+                                  variances[:n+1],
+                                  variances_details[:n])
+        
+        speedups.append(speedup)
+        
+        
+    
+    if variable == 'all':
+        variable_latex = 'u'
+    elif variable == 'rho':
+        variable_latex = '\\rho'
+    elif variable == 'mx':
+        variable_latex = 'm_x'
+    elif variable == 'my':
+        variable_latex = 'm_y'
+    else:
+        variable_latex = variable
+    
+    
+        
+    fig, ax1 = plt.subplots()
+    ax1.loglog(resolutions, variances, '-o', 
+               label=f'$||\\mathrm{{Var}}(S^{{{p}}}_r({variable_latex}^{{N}}))||_{{L^{{{norm_ord}}}}}$')
+    
+    
+    ax1.loglog(resolutions[1:], variances_details, '-*', 
+               label=f'$||\\mathrm{{Var}}(S^{{{p}}}_r({variable_latex}^{{N}})-S^{{{p}}}_r({variable_latex}^{{N/2}}))||_{{L^{{{norm_ord}}}}}$',
+               basex=2, basey=2)
+    
+    ax1.legend()
+    
+    ax1.set_xlabel("Resolution ($N\\times N$)")
+    
+    ax1.set_ylabel("Variance")
+    
+    ax1.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
+    
+    plt.title(f'Structure function variance decay\n{title}\nVariable: {variable}')
+    
+    plot_info.savePlot(f'variance_decay_structure_{p}_{norm_ord}_{title}_{variable}')
+    
+    plot_info.saveData(f'variance_details_structure_{p}_{norm_ord}_{title}_{variable}', variances_details)
+
+    plot_info.saveData(f'variance_structure_{p}_{norm_ord}_{title}_{variable}', variances)
+    
+    plot_info.saveData(f'variance_decay_resolutions_structure_{p}_{norm_ord}_{title}_{variable}', resolutions)
+    
+    ax2 = ax1.twinx()
+
+    
+    
+    ax2.plot(resolutions, speedups, '--x', label='MLMC Speedup')
+    ax2.legend(loc=1)
+    ax2.set_ylabel("Potential MLMC speedup")
+            
+    plot_info.savePlot(f'variance_decay_with_speedup_structure_{p}_{norm_ord}_{title}_{variable}')
+    
+    plot_info.saveData(f'variance_decay_speedups_structure_{p}_{norm_ord}_{title}_{variable}', speedups)
+     
+
+
+
+
 def compute_variance_decay_normed(resolutions, basenames, norm_ord, variable):
     variances = []
     variances_details = []
@@ -229,6 +374,13 @@ Computes the variance decay
     parser.add_argument('--variable', type=str, default='all',
                         help='The variable to use (rho, mx, my, E)')
     
+    parser.add_argument('--structure', action='store_true', 
+                        help="Compute the variance decay for the structure functions")
+    
+    parser.add_argument('--power', type=int, default=1,
+                        help="When computing the variance decay for the structure functions, the exponent power for the structure function")
+    
+    
     args = parser.parse_args()
 
 
@@ -236,6 +388,14 @@ Computes the variance decay
                                int(np.log2(args.max_resolution)+1))
     
     
-    plot_variance_decay_normed(args.title, resolutions,
-                               args.input_basename, args.norm_order,
-                               args.variable)
+    if not args.structure:
+        plot_variance_decay_normed(args.title, resolutions,
+                                   args.input_basename, args.norm_order,
+                                   args.variable)
+        
+    else:
+        plot_variance_decay_structure(args.title, resolutions,
+                                   args.input_basename, args.norm_order,
+                                   args.variable, 
+                                   args.power)
+        
