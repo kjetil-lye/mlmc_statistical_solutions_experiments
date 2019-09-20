@@ -4,6 +4,75 @@ import plot_info
 import matplotlib.pyplot as plt
 import sys
 
+
+def speedup_mlmc(variances, levels, work):
+
+    # We assume we use 10 000 samples on the finest level for MC
+    # and find the work for MLMC using said error tolerance
+    Mbase = 10000
+    workBase = work[-1]*Mbase
+    errorMCBase = variances[-1]/Mbase
+
+    maxLevel = len(variances)
+
+    bestConfiguration = {'L':0,
+                         'M': [Mbase],
+                         'Speedup' : 1,
+                         'variance' : max(variances),
+                        'work' : [work[-1]],
+                        'sigma2':[variances[-1]],
+                         'workBase' : workBase,
+                                  'error': errorMCBase}
+
+    for L in range(1, maxLevel):
+        sigmas2 = zeros(L+1)
+        sigmas2[0] = variances[-L-1]
+        sigmas2[1:] = levels[-L:]
+        workLocal = work[-L-1:]
+        sumSigmaWork = sum(sqrt(sigmas2*workLocal))
+        M = zeros(L+1)
+        M = 1.0/errorMCBase * (sqrt(sigmas2/workLocal))*sumSigmaWork
+        M = ceil(M)
+        workConfiguration = sum(M*workLocal) + sum(M[1:]*workLocal[:-1])
+        speedup = workBase/workConfiguration
+
+        errorMLMC = sum(sigmas2/M)
+
+
+        # We actually get some floating point errors, therefore, we need to adjust our expectations a bit
+        epsilon = 10*max(errorMCBase*(finfo(type(errorMCBase)).eps), errorMLMC*finfo(type(errorMCBase)).eps)
+
+        if  errorMLMC > errorMCBase + epsilon:
+            raise Exception("MLMC could not match MC error, MLMC_Error=%s, MC_error=%s" %
+                            (float64(errorMLMC), float64(errorMCBase)))
+
+
+
+        if speedup > bestConfiguration['Speedup']:
+            bestConfiguration = {'L' : L,
+                                 'M':M,
+                                 'Speedup':speedup,
+                                'variance':max(variances),
+                                 'work' : workLocal,
+                                 'sigma2':sigmas2,
+                                 'workBase' : workBase,
+                                  'error': errorMCBase}
+
+
+    return bestConfiguration
+
+
+def compute_speedup(resolutions, variance_single_level, variance_multilevel):
+    resolutions = np.array(resolutions)
+    
+    work = resolutions**3
+    
+    best_speedup = speedup_mlmc(variance_single_level, variance_multilevel, work)
+    
+    
+    return best_speedup['Speedup']
+    
+
 def load(filename, variable):
     samples = []
     
@@ -63,6 +132,20 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable
                                                                  norm_ord,
                                                                  variable)
     
+    
+    speedups = [1]
+    
+    for n in range(1, len(resolutions)):
+        local_resolutions = resolutions[:n+1]
+        
+        speedup = compute_speedup(local_resolutions, 
+                                  variances[:n+1],
+                                  variances_details[:n])
+        
+        speedups.append(speedup)
+        
+        
+    
     if variable == 'all':
         variable_latex = 'u'
     elif variable == 'rho':
@@ -76,22 +159,22 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable
     
     
         
-    
-    plt.loglog(resolutions, variances, '-o', 
+    fig, ax1 = plt.subplots()
+    ax1.loglog(resolutions, variances, '-o', 
                label=f'$||\\mathrm{{Var}}({variable_latex}^{{N}})||_{{L^{{{norm_ord}}}}}$')
     
     
-    plt.loglog(resolutions[1:], variances_details, '-*', 
+    ax1.loglog(resolutions[1:], variances_details, '-*', 
                label=f'$||\\mathrm{{Var}}({variable_latex}^{{N}}-{variable_latex}^{{N/2}})||_{{L^{{{norm_ord}}}}}$',
                basex=2, basey=2)
     
-    plt.legend()
+    ax1.legend()
     
-    plt.xlabel("Resolution ($N\\times N$)")
+    ax1.set_xlabel("Resolution ($N\\times N$)")
     
-    plt.ylabel("Variance")
+    ax1.set_ylabel("Variance")
     
-    plt.xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
+    ax1.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
     
     plt.title(f'Variance decay\n{title}\nVariable: {variable}')
     
@@ -102,8 +185,16 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable
     plot_info.saveData(f'variance_{norm_ord}_{title}_{variable}.txt', variances)
     
     plot_info.saveData(f'variance_decay_resolutions_{norm_ord}_{title}_{variable}.txt', resolutions)
-            
     
+    ax2 = ax1.twinx()
+    
+    ax2.plot(resolutions, speedups, '--x', label='MLMC Speedup')
+    
+            
+    plot_info.savePlot(f'variance_decay_with_speedup_{norm_ord}_{title}_{variable}')
+    
+    plot_info.saveData(f'variance_decay_speedups_{norm_ord}_{title}_{variable}.txt', speedups)
+     
 if __name__ == '__main__':
     
     
