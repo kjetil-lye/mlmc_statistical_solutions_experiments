@@ -1,0 +1,1451 @@
+% This file was created by tikzplotlib v0.8.2.
+\begin{tikzpicture}
+
+\definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
+\definecolor{color1}{rgb}{1,0.498039215686275,0.0549019607843137}
+
+\begin{axis}[
+height=\figureheight,
+legend cell align={left},
+legend style={at={(0.03,0.03)}, anchor=south west, draw=white!80.0!black},
+log basis x={2},
+log basis y={2},
+tick align=outside,
+tick pos=left,
+title={Structure function variance decay
+Kelvin-Helmholtz $\epsilon=0.06$
+Variable: all},
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xlabel={Resolution (\(\displaystyle N\times N\))},
+xmin=55.7152360509519, xmax=1176.26711551696,
+xmode=log,
+xtick style={color=black},
+xtick={16,32,64,128,256,512,1024,2048,4096},
+xticklabels={\(\displaystyle {2^{4}}\),\(\displaystyle {2^{5}}\),\(\displaystyle {2^{6}}\),\(\displaystyle {2^{7}}\),\(\displaystyle {2^{8}}\),\(\displaystyle {2^{9}}\),\(\displaystyle {2^{10}}\),\(\displaystyle {2^{11}}\),\(\displaystyle {2^{12}}\)},
+y grid style={white!69.01960784313725!black},
+ylabel={Variance},
+ymin=4.77629666392713e-06, ymax=3.2375108935505e-05,
+ymode=log,
+ytick style={color=black},
+ytick={1.9073486328125e-06,3.814697265625e-06,7.62939453125e-06,1.52587890625e-05,3.0517578125e-05,6.103515625e-05,0.0001220703125},
+yticklabels={\(\displaystyle {2^{-19}}\),\(\displaystyle {2^{-18}}\),\(\displaystyle {2^{-17}}\),\(\displaystyle {2^{-16}}\),\(\displaystyle {2^{-15}}\),\(\displaystyle {2^{-14}}\),\(\displaystyle {2^{-13}}\)}
+]
+\addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
+table {%
+64 2.55489635127477e-05
+128 1.81655951774452e-05
+256 2.27454311620232e-05
+512 2.39620736357013e-05
+1024 2.96778926171506e-05
+};
+\addlegendentry{$||\mathrm{Var}(S^{1}_r(u^{N}))||_{L^{2}}$}
+\addplot [semithick, color1, mark=asterisk, mark size=3, mark options={solid}]
+table {%
+128 1.86852920653906e-05
+256 1.06118523287581e-05
+512 5.21038089859416e-06
+1024 1.18721023980744e-05
+};
+\addlegendentry{$||\mathrm{Var}(S^{1}_r(u^{N})-S^{1}_r(u^{N/2}))||_{L^{2}}$}
+\node at (axis cs:0.95,0.01)[
+  scale=0.15,
+  anchor=south east,
+  text=white!50.19607843137255!black,
+  rotate=0.0,
+  align=right
+]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
+Commit: 6d50d2f4259719ab564d45cbe258cd877ccaae85
+Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
+Hostname: galerkin};
+\node at (axis cs:0.2,0.93)[
+  scale=0.5,
+  anchor=south east,
+  text=white!50.19607843137255!black,
+  rotate=0.0
+]{@6d50};
+\node at (axis cs:0.95,0.01)[
+  scale=0.15,
+  anchor=south east,
+  text=white!50.19607843137255!black,
+  rotate=0.0,
+  align=right
+]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
+Commit: 6d50d2f4259719ab564d45cbe258cd877ccaae85
+Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
+Hostname: galerkin};
+\end{axis}
+
+\begin{axis}[
+axis y line=right,
+height=\figureheight,
+legend cell align={left},
+legend style={draw=white!80.0!black},
+log basis x={2},
+tick align=outside,
+width=\figurewidth,
+x grid style={white!69.01960784313725!black},
+xmin=55.7152360509519, xmax=1176.26711551696,
+xmode=log,
+xtick pos=left,
+xtick style={color=black},
+y grid style={white!69.01960784313725!black},
+ylabel={Potential MLMC speedup},
+ymin=0.979042787199319, ymax=1.44010146881431,
+ytick pos=right,
+ytick style={color=black}
+]
+\addplot [semithick, color0, dashed, mark=x, mark size=3, mark options={solid}]
+table {%
+64 1
+128 1
+256 1
+512 1.41914425601362
+1024 1.13750073315477
+};
+\addlegendentry{MLMC Speedup}
+\node at (axis cs:0.95,0.01)[
+  scale=0.15,
+  anchor=south east,
+  text=white!50.19607843137255!black,
+  rotate=0.0,
+  align=right
+]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
+Commit: 6d50d2f4259719ab564d45cbe258cd877ccaae85
+Repo: git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
+Hostname: galerkin};
+\node at (axis cs:0.2,0.93)[
+  scale=0.5,
+  anchor=south east,
+  text=white!50.19607843137255!black,
+  rotate=0.0
+]{@6d50};
+\end{axis}
+
+\end{tikzpicture}
+
+%% INCLUDE THE COMMENTS AT THE END WHEN COPYING
+%%%%%%%%%%%%%TITLE%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% script name: python/estimate_variance_decay.py
+%% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
+%% DO NOT REMOVE THE COMMENTS BELOW!
+%% GIT git_commit : 6d50d2f4259719ab564d45cbe258cd877ccaae85
+%% GIT git_repo_modified : True
+%% GIT git_branch : master
+%% GIT git_remote_url : git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
+%% GIT git_short_commit : 6d50
+%% working_directory : /home/kjetil/projects/mlmc_statistical_solutions_experiments
+%% hostname : galerkin
+%% generated_on_date : 2019-09-20 22:30:34.204446
+%% accessed_environment:
+%% additional_parameters:
+%%    commandrun=/usr/bin/python python/estimate_variance_decay.py --input_basename single_sample_structure_functions/experiments_multiple_samples/kh/p0_06/N{resolution}/kh_functional_structure_cube_1_8.nc --starting_resolution 64 --max_resolution 1024 --title Kelvin-Helmholtz $\epsilon=0.06$ --variable all --norm_order 2 --structure --power 1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.software=alsvinn https://github.com/alsvinn
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.softwareVersion=0.5.3
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.currentWorkingDirectory=/cluster/scratch/klye/single_sample_structure_functions_new/experiments_multiple_samples/kh/p0_06/N64
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.operatingSystem=Linux: Linux 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 2018 x86_64
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.username=klye
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.host=lo-s4-065
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.standardCLibrary=GNU libc 2.17 stable
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.generatedAt=20190825T072129
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.revision=9b4bc89ce460a208bd0f7fc3de0d28dd694c4956
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.versionControlStatus=CLEAN
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.buildType=Release
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlags=
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsDebug=-g
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsRelease=-O3 -DNDEBUG
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsMinSizeRel=-Os -DNDEBUG
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsRelWithDebInfo=-O2 -g -DNDEBUG
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaFlags=--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_61,code=sm_61
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaVersion=10.0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxCompiler=GNU 6.3.0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaCompiler=NVIDIA 10.0.130
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_VERSION=106900
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_LIB_VERSION=1_69
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_PLATFORM=linux
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_PLATFORM_CONFIG=boost/config/platform/linux.hpp
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_COMPILER=GNU C++ version 6.3.0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_LIBSTDCXX_VERSION=60300
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.C++11=true
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_STDLIB=GNU libstdc++ version 20161221
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_STDLIB_CONFIG=boost/config/stdlib/libstdcpp3.hpp
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointPrecisionDescription=double (double precision, 64 bits)
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointType=double
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointMax=1.79769e+308
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointMin=2.22507e-308
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointEpsilon=2.22045e-16
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.name=GeForce GTX 1080 Ti
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.totalGlobalMem=11721506816
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.sharedMemPerBlock=49152
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.regsPerBlock=65536
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.warpSize=32
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.memPitch=2147483647
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.maxThreadsPerBlock=1024
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.maxThreadsDim=1024, 1024, 64
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.maxGridSize=2147483647, 65535, 65535
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.totalConstMem=65536
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.major=6
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.minor=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.clockRate=1582000
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.textureAlignment=512
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.deviceOverlap=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.multiProcessorCount=28
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.kernelExecTimeoutEnabled=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.integrated=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.canMapHostMemory=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.computeMode=3
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.concurrentKernels=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.ECCEnabled=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.pciBusID=4
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.pciDeviceID=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.tccDriver=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.mpiEnabled=true
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.mpiProcesses=8
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.mpiVersion=Open MPI v2.1.0, package: Open MPI spackapps@lo-login-02 Distribution, ident: 2.1.0, repo rev: v2.0.1-696-g1cd1edf, Mar 20, 2017
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.ompEnabled=true
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.ompThreads=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_multiple_samples_dash_kh_dash_p0_06_dash_N64_dash_kelvinhelmholtz_DOT_py=def init_global(rho, ux, uy, p, nx, ny, nz, ax, ay, az, bx, by, bz):    N = len(a)/4    a1 = a[:10]    a2 = a[10:20]    b1 = a[20:40]    b2 = a[30:40]    perturbation = 0.1    normalization1 = sum(a1)    if abs(normalization1) < 1e-10:        normalization1 = 1    normalization2 = sum(a2)    if abs(normalization2) < 1e-10:        normalization2 = 1    x = linspace(ax, bx, nx)    y = linspace(ay, by, ny)    X, Y = meshgrid(x, y)    X = X.T    Y = Y.T    perturbation_upper = 0.75 + perturbation*sum([a1[i]*cos(2*pi*(i+1)*(X+b1[i])) for i in range(len(a1))], 0)/normalization1    perturbation_lower = 0.25 + perturbation*sum([a2[i]*cos(2*pi*(i+1)*(X+b2[i])) for i in range(len(a2))], 0)/normalization2    middle = (Y < perturbation_upper)*(Y > perturbation_lower)    rho[:, :, 0] = 2.0 * middle + 1.0*(1-middle)    ux[:, :, 0] = -0.5*middle + 0.5*(1-middle)    uy[:,:,0] = zeros_like(X)    p[:,:,0] = 2.5*ones_like(X)#### perturbation = 0.01# normalization1 = sum(a1)# if abs(normalization1) < 1e-10:#     normalization1 = 1# normalization2 = sum(a2)# if abs(normalization2) < 1e-10:#     normalization2 = 1## perturbation_upper = perturbation*sum([a1[i]*cos(2*pi*(i+1)*(x+b1[i])) for i in range(len(a1))])/normalization1# perturbation_lower = perturbation*sum([a2[i]*cos(2*pi*(i+1)*(x+b2[i])) for i in range(len(a2))])/normalization2## if y < 0.25 + perturbation_lower or y > 0.75 + perturbation_upper:#     rho = 1#     ux = 0.5#     uy = 0#     p = 2.5# else:#     rho = 2#     ux = -0.5#     uy = 0#     p = 2.5
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_multiple_samples_dash_kh_dash_p0_06_dash_N64_dash_kelvinhelmholtz_DOT_xml=<?xml version="1.0" ?><config>  <fvm>    <name>    kh  </name>    <platform>cuda</platform>    <grid>      <lowerCorner>0 0 0</lowerCorner>      <upperCorner>1 1 0</upperCorner>      <dimension>64 64 1</dimension>    </grid>    <boundary>periodic</boundary>    <flux>hll3</flux>    <endTime>2</endTime>    <equation>euler2</equation>    <equationParameters>      <gamma>1.4</gamma>    </equationParameters>    <reconstruction>weno2</reconstruction>    <cfl>auto</cfl>    <integrator>auto</integrator>    <functionals>      <functional>        <name>structure_cube</name>        <p>1</p>        <numberOfH>2</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_1</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>1</p>        <time>1.96</time>        <numberOfH>2</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_1</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>2</p>        <numberOfH>2</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_2</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>2</p>        <time>1.96</time>        <numberOfH>2</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_2</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>3</p>        <numberOfH>2</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_3</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>3</p>        <time>1.96</time>        <numberOfH>2</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_3</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>4</p>        <numberOfH>2</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_4</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>4</p>        <time>1.96</time>        <numberOfH>2</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_4</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>5</p>        <numberOfH>2</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_5</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>5</p>        <time>1.96</time>        <numberOfH>2</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_5</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>6</p>        <numberOfH>2</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_6</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>6</p>        <time>1.96</time>        <numberOfH>2</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_6</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>7</p>        <numberOfH>2</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_7</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>7</p>        <time>1.96</time>        <numberOfH>2</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_7</basename>        </writer>      </functional>    </functionals>    <initialData>      <python>kelvinhelmholtz.py</python>      <parameters>        <parameter>          <name>a</name>          <length>40</length>          <values>            <value>0</value>          </values>        </parameter>      </parameters>    </initialData>    <diffusion>      <name>none</name>      <reconstruction>none</reconstruction>    </diffusion>  </fvm>  <uq>    <samples>1024</samples>    <sampleStart>0</sampleStart>    <generator>auto</generator>    <parameters>      <parameter>        <name>a</name>        <length>40</length>        <type>uniform</type>      </parameter>    </parameters>    <stats>      <stat>        <name>	structure_cube      </name>        <numberOfSaves>1</numberOfSaves>        <numberOfH>2</numberOfH>        <p>1</p>        <writeInitialTimestep>true</writeInitialTimestep>        <writer>          <type>netcdf</type>          <basename>kh</basename>        </writer>      </stat>      <stat>        <name>	structure_cube      </name>        <numberOfSaves>1</numberOfSaves>        <numberOfH>2</numberOfH>        <p>2</p>        <writeInitialTimestep>true</writeInitialTimestep>        <writer>          <type>netcdf</type>          <basename>kh</basename>        </writer>      </stat>      <stat>        <name>	structure_cube      </name>        <numberOfSaves>1</numberOfSaves>        <numberOfH>2</numberOfH>        <p>3</p>        <writeInitialTimestep>true</writeInitialTimestep>        <writer>          <type>netcdf</type>          <basename>kh</basename>        </writer>      </stat>    </stats>  </uq></config>
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.pythonVersion=Runtime: 3.6.4 (default, Apr 10 2018, 07:54:00) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)], compile time: 3.6.4
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N64_kh_functional_structure_cube_1_8.nc_alsvinn_report.alsvinnInDocker=false
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.software=alsvinn https://github.com/alsvinn
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.softwareVersion=0.5.3
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.currentWorkingDirectory=/cluster/scratch/klye/single_sample_structure_functions_new/experiments_multiple_samples/kh/p0_06/N128
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.operatingSystem=Linux: Linux 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 2018 x86_64
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.username=klye
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.host=lo-s4-006
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.standardCLibrary=GNU libc 2.17 stable
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.generatedAt=20190825T162246
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.revision=9b4bc89ce460a208bd0f7fc3de0d28dd694c4956
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.versionControlStatus=CLEAN
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.buildType=Release
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlags=
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsDebug=-g
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsRelease=-O3 -DNDEBUG
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsMinSizeRel=-Os -DNDEBUG
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsRelWithDebInfo=-O2 -g -DNDEBUG
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaFlags=--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_61,code=sm_61
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaVersion=10.0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxCompiler=GNU 6.3.0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaCompiler=NVIDIA 10.0.130
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_VERSION=106900
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_LIB_VERSION=1_69
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_PLATFORM=linux
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_PLATFORM_CONFIG=boost/config/platform/linux.hpp
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_COMPILER=GNU C++ version 6.3.0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_LIBSTDCXX_VERSION=60300
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.C++11=true
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_STDLIB=GNU libstdc++ version 20161221
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_STDLIB_CONFIG=boost/config/stdlib/libstdcpp3.hpp
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointPrecisionDescription=double (double precision, 64 bits)
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointType=double
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointMax=1.79769e+308
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointMin=2.22507e-308
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointEpsilon=2.22045e-16
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.name=GeForce GTX 1080 Ti
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.totalGlobalMem=11721506816
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.sharedMemPerBlock=49152
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.regsPerBlock=65536
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.warpSize=32
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.memPitch=2147483647
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.maxThreadsPerBlock=1024
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.maxThreadsDim=1024, 1024, 64
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.maxGridSize=2147483647, 65535, 65535
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.totalConstMem=65536
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.major=6
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.minor=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.clockRate=1582000
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.textureAlignment=512
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.deviceOverlap=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.multiProcessorCount=28
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.kernelExecTimeoutEnabled=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.integrated=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.canMapHostMemory=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.computeMode=3
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.concurrentKernels=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.ECCEnabled=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.pciBusID=4
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.pciDeviceID=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.tccDriver=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.mpiEnabled=true
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.mpiProcesses=8
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.mpiVersion=Open MPI v2.1.0, package: Open MPI spackapps@lo-login-02 Distribution, ident: 2.1.0, repo rev: v2.0.1-696-g1cd1edf, Mar 20, 2017
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.ompEnabled=true
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.ompThreads=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_multiple_samples_dash_kh_dash_p0_06_dash_N128_dash_kelvinhelmholtz_DOT_py=def init_global(rho, ux, uy, p, nx, ny, nz, ax, ay, az, bx, by, bz):    N = len(a)/4    a1 = a[:10]    a2 = a[10:20]    b1 = a[20:40]    b2 = a[30:40]    perturbation = 0.1    normalization1 = sum(a1)    if abs(normalization1) < 1e-10:        normalization1 = 1    normalization2 = sum(a2)    if abs(normalization2) < 1e-10:        normalization2 = 1    x = linspace(ax, bx, nx)    y = linspace(ay, by, ny)    X, Y = meshgrid(x, y)    X = X.T    Y = Y.T    perturbation_upper = 0.75 + perturbation*sum([a1[i]*cos(2*pi*(i+1)*(X+b1[i])) for i in range(len(a1))], 0)/normalization1    perturbation_lower = 0.25 + perturbation*sum([a2[i]*cos(2*pi*(i+1)*(X+b2[i])) for i in range(len(a2))], 0)/normalization2    middle = (Y < perturbation_upper)*(Y > perturbation_lower)    rho[:, :, 0] = 2.0 * middle + 1.0*(1-middle)    ux[:, :, 0] = -0.5*middle + 0.5*(1-middle)    uy[:,:,0] = zeros_like(X)    p[:,:,0] = 2.5*ones_like(X)#### perturbation = 0.01# normalization1 = sum(a1)# if abs(normalization1) < 1e-10:#     normalization1 = 1# normalization2 = sum(a2)# if abs(normalization2) < 1e-10:#     normalization2 = 1## perturbation_upper = perturbation*sum([a1[i]*cos(2*pi*(i+1)*(x+b1[i])) for i in range(len(a1))])/normalization1# perturbation_lower = perturbation*sum([a2[i]*cos(2*pi*(i+1)*(x+b2[i])) for i in range(len(a2))])/normalization2## if y < 0.25 + perturbation_lower or y > 0.75 + perturbation_upper:#     rho = 1#     ux = 0.5#     uy = 0#     p = 2.5# else:#     rho = 2#     ux = -0.5#     uy = 0#     p = 2.5
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_multiple_samples_dash_kh_dash_p0_06_dash_N128_dash_kelvinhelmholtz_DOT_xml=<?xml version="1.0" ?><config>  <fvm>    <name>    kh  </name>    <platform>cuda</platform>    <grid>      <lowerCorner>0 0 0</lowerCorner>      <upperCorner>1 1 0</upperCorner>      <dimension>128 128 1</dimension>    </grid>    <boundary>periodic</boundary>    <flux>hll3</flux>    <endTime>2</endTime>    <equation>euler2</equation>    <equationParameters>      <gamma>1.4</gamma>    </equationParameters>    <reconstruction>weno2</reconstruction>    <cfl>auto</cfl>    <integrator>auto</integrator>    <functionals>      <functional>        <name>structure_cube</name>        <p>1</p>        <numberOfH>4</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_1</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>1</p>        <time>1.96</time>        <numberOfH>4</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_1</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>2</p>        <numberOfH>4</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_2</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>2</p>        <time>1.96</time>        <numberOfH>4</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_2</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>3</p>        <numberOfH>4</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_3</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>3</p>        <time>1.96</time>        <numberOfH>4</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_3</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>4</p>        <numberOfH>4</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_4</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>4</p>        <time>1.96</time>        <numberOfH>4</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_4</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>5</p>        <numberOfH>4</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_5</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>5</p>        <time>1.96</time>        <numberOfH>4</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_5</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>6</p>        <numberOfH>4</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_6</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>6</p>        <time>1.96</time>        <numberOfH>4</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_6</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>7</p>        <numberOfH>4</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_7</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>7</p>        <time>1.96</time>        <numberOfH>4</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_7</basename>        </writer>      </functional>    </functionals>    <initialData>      <python>kelvinhelmholtz.py</python>      <parameters>        <parameter>          <name>a</name>          <length>40</length>          <values>            <value>0</value>          </values>        </parameter>      </parameters>    </initialData>    <diffusion>      <name>none</name>      <reconstruction>none</reconstruction>    </diffusion>  </fvm>  <uq>    <samples>1024</samples>    <sampleStart>0</sampleStart>    <generator>auto</generator>    <parameters>      <parameter>        <name>a</name>        <length>40</length>        <type>uniform</type>      </parameter>    </parameters>    <stats>      <stat>        <name>	structure_cube      </name>        <numberOfSaves>1</numberOfSaves>        <numberOfH>4</numberOfH>        <p>1</p>        <writeInitialTimestep>true</writeInitialTimestep>        <writer>          <type>netcdf</type>          <basename>kh</basename>        </writer>      </stat>      <stat>        <name>	structure_cube      </name>        <numberOfSaves>1</numberOfSaves>        <numberOfH>4</numberOfH>        <p>2</p>        <writeInitialTimestep>true</writeInitialTimestep>        <writer>          <type>netcdf</type>          <basename>kh</basename>        </writer>      </stat>      <stat>        <name>	structure_cube      </name>        <numberOfSaves>1</numberOfSaves>        <numberOfH>4</numberOfH>        <p>3</p>        <writeInitialTimestep>true</writeInitialTimestep>        <writer>          <type>netcdf</type>          <basename>kh</basename>        </writer>      </stat>    </stats>  </uq></config>
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.pythonVersion=Runtime: 3.6.4 (default, Apr 10 2018, 07:54:00) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)], compile time: 3.6.4
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N128_kh_functional_structure_cube_1_8.nc_alsvinn_report.alsvinnInDocker=false
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.software=alsvinn https://github.com/alsvinn
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.softwareVersion=0.5.3
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.currentWorkingDirectory=/cluster/scratch/klye/single_sample_structure_functions_new/experiments_multiple_samples/kh/p0_06/N256
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.operatingSystem=Linux: Linux 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 2018 x86_64
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.username=klye
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.host=lo-s4-047
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.standardCLibrary=GNU libc 2.17 stable
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.generatedAt=20190825T153910
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.revision=9b4bc89ce460a208bd0f7fc3de0d28dd694c4956
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.versionControlStatus=CLEAN
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.buildType=Release
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlags=
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsDebug=-g
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsRelease=-O3 -DNDEBUG
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsMinSizeRel=-Os -DNDEBUG
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsRelWithDebInfo=-O2 -g -DNDEBUG
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaFlags=--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_61,code=sm_61
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaVersion=10.0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxCompiler=GNU 6.3.0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaCompiler=NVIDIA 10.0.130
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_VERSION=106900
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_LIB_VERSION=1_69
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_PLATFORM=linux
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_PLATFORM_CONFIG=boost/config/platform/linux.hpp
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_COMPILER=GNU C++ version 6.3.0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_LIBSTDCXX_VERSION=60300
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.C++11=true
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_STDLIB=GNU libstdc++ version 20161221
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_STDLIB_CONFIG=boost/config/stdlib/libstdcpp3.hpp
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointPrecisionDescription=double (double precision, 64 bits)
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointType=double
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointMax=1.79769e+308
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointMin=2.22507e-308
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointEpsilon=2.22045e-16
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.name=GeForce GTX 1080 Ti
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.totalGlobalMem=11721506816
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.sharedMemPerBlock=49152
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.regsPerBlock=65536
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.warpSize=32
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.memPitch=2147483647
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.maxThreadsPerBlock=1024
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.maxThreadsDim=1024, 1024, 64
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.maxGridSize=2147483647, 65535, 65535
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.totalConstMem=65536
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.major=6
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.minor=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.clockRate=1582000
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.textureAlignment=512
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.deviceOverlap=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.multiProcessorCount=28
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.kernelExecTimeoutEnabled=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.integrated=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.canMapHostMemory=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.computeMode=3
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.concurrentKernels=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.ECCEnabled=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.pciBusID=4
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.pciDeviceID=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.tccDriver=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.mpiEnabled=true
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.mpiProcesses=8
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.mpiVersion=Open MPI v2.1.0, package: Open MPI spackapps@lo-login-02 Distribution, ident: 2.1.0, repo rev: v2.0.1-696-g1cd1edf, Mar 20, 2017
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.ompEnabled=true
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.ompThreads=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_multiple_samples_dash_kh_dash_p0_06_dash_N256_dash_kelvinhelmholtz_DOT_py=def init_global(rho, ux, uy, p, nx, ny, nz, ax, ay, az, bx, by, bz):    N = len(a)/4    a1 = a[:10]    a2 = a[10:20]    b1 = a[20:40]    b2 = a[30:40]    perturbation = 0.1    normalization1 = sum(a1)    if abs(normalization1) < 1e-10:        normalization1 = 1    normalization2 = sum(a2)    if abs(normalization2) < 1e-10:        normalization2 = 1    x = linspace(ax, bx, nx)    y = linspace(ay, by, ny)    X, Y = meshgrid(x, y)    X = X.T    Y = Y.T    perturbation_upper = 0.75 + perturbation*sum([a1[i]*cos(2*pi*(i+1)*(X+b1[i])) for i in range(len(a1))], 0)/normalization1    perturbation_lower = 0.25 + perturbation*sum([a2[i]*cos(2*pi*(i+1)*(X+b2[i])) for i in range(len(a2))], 0)/normalization2    middle = (Y < perturbation_upper)*(Y > perturbation_lower)    rho[:, :, 0] = 2.0 * middle + 1.0*(1-middle)    ux[:, :, 0] = -0.5*middle + 0.5*(1-middle)    uy[:,:,0] = zeros_like(X)    p[:,:,0] = 2.5*ones_like(X)#### perturbation = 0.01# normalization1 = sum(a1)# if abs(normalization1) < 1e-10:#     normalization1 = 1# normalization2 = sum(a2)# if abs(normalization2) < 1e-10:#     normalization2 = 1## perturbation_upper = perturbation*sum([a1[i]*cos(2*pi*(i+1)*(x+b1[i])) for i in range(len(a1))])/normalization1# perturbation_lower = perturbation*sum([a2[i]*cos(2*pi*(i+1)*(x+b2[i])) for i in range(len(a2))])/normalization2## if y < 0.25 + perturbation_lower or y > 0.75 + perturbation_upper:#     rho = 1#     ux = 0.5#     uy = 0#     p = 2.5# else:#     rho = 2#     ux = -0.5#     uy = 0#     p = 2.5
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_multiple_samples_dash_kh_dash_p0_06_dash_N256_dash_kelvinhelmholtz_DOT_xml=<?xml version="1.0" ?><config>  <fvm>    <name>    kh  </name>    <platform>cuda</platform>    <grid>      <lowerCorner>0 0 0</lowerCorner>      <upperCorner>1 1 0</upperCorner>      <dimension>256 256 1</dimension>    </grid>    <boundary>periodic</boundary>    <flux>hll3</flux>    <endTime>2</endTime>    <equation>euler2</equation>    <equationParameters>      <gamma>1.4</gamma>    </equationParameters>    <reconstruction>weno2</reconstruction>    <cfl>auto</cfl>    <integrator>auto</integrator>    <functionals>      <functional>        <name>structure_cube</name>        <p>1</p>        <numberOfH>8</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_1</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>1</p>        <time>1.96</time>        <numberOfH>8</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_1</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>2</p>        <numberOfH>8</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_2</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>2</p>        <time>1.96</time>        <numberOfH>8</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_2</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>3</p>        <numberOfH>8</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_3</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>3</p>        <time>1.96</time>        <numberOfH>8</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_3</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>4</p>        <numberOfH>8</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_4</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>4</p>        <time>1.96</time>        <numberOfH>8</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_4</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>5</p>        <numberOfH>8</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_5</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>5</p>        <time>1.96</time>        <numberOfH>8</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_5</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>6</p>        <numberOfH>8</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_6</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>6</p>        <time>1.96</time>        <numberOfH>8</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_6</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>7</p>        <numberOfH>8</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_7</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>7</p>        <time>1.96</time>        <numberOfH>8</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_7</basename>        </writer>      </functional>    </functionals>    <initialData>      <python>kelvinhelmholtz.py</python>      <parameters>        <parameter>          <name>a</name>          <length>40</length>          <values>            <value>0</value>          </values>        </parameter>      </parameters>    </initialData>    <diffusion>      <name>none</name>      <reconstruction>none</reconstruction>    </diffusion>  </fvm>  <uq>    <samples>1024</samples>    <sampleStart>0</sampleStart>    <generator>auto</generator>    <parameters>      <parameter>        <name>a</name>        <length>40</length>        <type>uniform</type>      </parameter>    </parameters>    <stats>      <stat>        <name>	structure_cube      </name>        <numberOfSaves>1</numberOfSaves>        <numberOfH>8</numberOfH>        <p>1</p>        <writeInitialTimestep>true</writeInitialTimestep>        <writer>          <type>netcdf</type>          <basename>kh</basename>        </writer>      </stat>      <stat>        <name>	structure_cube      </name>        <numberOfSaves>1</numberOfSaves>        <numberOfH>8</numberOfH>        <p>2</p>        <writeInitialTimestep>true</writeInitialTimestep>        <writer>          <type>netcdf</type>          <basename>kh</basename>        </writer>      </stat>      <stat>        <name>	structure_cube      </name>        <numberOfSaves>1</numberOfSaves>        <numberOfH>8</numberOfH>        <p>3</p>        <writeInitialTimestep>true</writeInitialTimestep>        <writer>          <type>netcdf</type>          <basename>kh</basename>        </writer>      </stat>    </stats>  </uq></config>
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.pythonVersion=Runtime: 3.6.4 (default, Apr 10 2018, 07:54:00) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)], compile time: 3.6.4
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N256_kh_functional_structure_cube_1_8.nc_alsvinn_report.alsvinnInDocker=false
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.software=alsvinn https://github.com/alsvinn
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.softwareVersion=0.5.3
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.currentWorkingDirectory=/cluster/scratch/klye/single_sample_structure_functions_new/experiments_multiple_samples/kh/p0_06/N512
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.operatingSystem=Linux: Linux 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 2018 x86_64
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.username=klye
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.host=lo-s4-065
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.standardCLibrary=GNU libc 2.17 stable
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.generatedAt=20190825T075753
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.revision=9b4bc89ce460a208bd0f7fc3de0d28dd694c4956
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.versionControlStatus=CLEAN
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.buildType=Release
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlags=
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsDebug=-g
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsRelease=-O3 -DNDEBUG
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsMinSizeRel=-Os -DNDEBUG
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsRelWithDebInfo=-O2 -g -DNDEBUG
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaFlags=--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_61,code=sm_61
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaVersion=10.0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxCompiler=GNU 6.3.0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaCompiler=NVIDIA 10.0.130
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_VERSION=106900
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_LIB_VERSION=1_69
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_PLATFORM=linux
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_PLATFORM_CONFIG=boost/config/platform/linux.hpp
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_COMPILER=GNU C++ version 6.3.0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_LIBSTDCXX_VERSION=60300
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.C++11=true
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_STDLIB=GNU libstdc++ version 20161221
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_STDLIB_CONFIG=boost/config/stdlib/libstdcpp3.hpp
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointPrecisionDescription=double (double precision, 64 bits)
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointType=double
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointMax=1.79769e+308
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointMin=2.22507e-308
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointEpsilon=2.22045e-16
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.name=GeForce GTX 1080 Ti
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.totalGlobalMem=11721506816
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.sharedMemPerBlock=49152
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.regsPerBlock=65536
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.warpSize=32
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.memPitch=2147483647
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.maxThreadsPerBlock=1024
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.maxThreadsDim=1024, 1024, 64
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.maxGridSize=2147483647, 65535, 65535
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.totalConstMem=65536
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.major=6
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.minor=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.clockRate=1582000
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.textureAlignment=512
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.deviceOverlap=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.multiProcessorCount=28
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.kernelExecTimeoutEnabled=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.integrated=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.canMapHostMemory=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.computeMode=3
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.concurrentKernels=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.ECCEnabled=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.pciBusID=4
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.pciDeviceID=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.tccDriver=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.mpiEnabled=true
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.mpiProcesses=8
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.mpiVersion=Open MPI v2.1.0, package: Open MPI spackapps@lo-login-02 Distribution, ident: 2.1.0, repo rev: v2.0.1-696-g1cd1edf, Mar 20, 2017
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.ompEnabled=true
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.ompThreads=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_multiple_samples_dash_kh_dash_p0_06_dash_N512_dash_kelvinhelmholtz_DOT_py=def init_global(rho, ux, uy, p, nx, ny, nz, ax, ay, az, bx, by, bz):    N = len(a)/4    a1 = a[:10]    a2 = a[10:20]    b1 = a[20:40]    b2 = a[30:40]    perturbation = 0.1    normalization1 = sum(a1)    if abs(normalization1) < 1e-10:        normalization1 = 1    normalization2 = sum(a2)    if abs(normalization2) < 1e-10:        normalization2 = 1    x = linspace(ax, bx, nx)    y = linspace(ay, by, ny)    X, Y = meshgrid(x, y)    X = X.T    Y = Y.T    perturbation_upper = 0.75 + perturbation*sum([a1[i]*cos(2*pi*(i+1)*(X+b1[i])) for i in range(len(a1))], 0)/normalization1    perturbation_lower = 0.25 + perturbation*sum([a2[i]*cos(2*pi*(i+1)*(X+b2[i])) for i in range(len(a2))], 0)/normalization2    middle = (Y < perturbation_upper)*(Y > perturbation_lower)    rho[:, :, 0] = 2.0 * middle + 1.0*(1-middle)    ux[:, :, 0] = -0.5*middle + 0.5*(1-middle)    uy[:,:,0] = zeros_like(X)    p[:,:,0] = 2.5*ones_like(X)#### perturbation = 0.01# normalization1 = sum(a1)# if abs(normalization1) < 1e-10:#     normalization1 = 1# normalization2 = sum(a2)# if abs(normalization2) < 1e-10:#     normalization2 = 1## perturbation_upper = perturbation*sum([a1[i]*cos(2*pi*(i+1)*(x+b1[i])) for i in range(len(a1))])/normalization1# perturbation_lower = perturbation*sum([a2[i]*cos(2*pi*(i+1)*(x+b2[i])) for i in range(len(a2))])/normalization2## if y < 0.25 + perturbation_lower or y > 0.75 + perturbation_upper:#     rho = 1#     ux = 0.5#     uy = 0#     p = 2.5# else:#     rho = 2#     ux = -0.5#     uy = 0#     p = 2.5
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_multiple_samples_dash_kh_dash_p0_06_dash_N512_dash_kelvinhelmholtz_DOT_xml=<?xml version="1.0" ?><config>  <fvm>    <name>    kh  </name>    <platform>cuda</platform>    <grid>      <lowerCorner>0 0 0</lowerCorner>      <upperCorner>1 1 0</upperCorner>      <dimension>512 512 1</dimension>    </grid>    <boundary>periodic</boundary>    <flux>hll3</flux>    <endTime>2</endTime>    <equation>euler2</equation>    <equationParameters>      <gamma>1.4</gamma>    </equationParameters>    <reconstruction>weno2</reconstruction>    <cfl>auto</cfl>    <integrator>auto</integrator>    <functionals>      <functional>        <name>structure_cube</name>        <p>1</p>        <numberOfH>16</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_1</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>1</p>        <time>1.96</time>        <numberOfH>16</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_1</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>2</p>        <numberOfH>16</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_2</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>2</p>        <time>1.96</time>        <numberOfH>16</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_2</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>3</p>        <numberOfH>16</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_3</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>3</p>        <time>1.96</time>        <numberOfH>16</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_3</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>4</p>        <numberOfH>16</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_4</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>4</p>        <time>1.96</time>        <numberOfH>16</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_4</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>5</p>        <numberOfH>16</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_5</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>5</p>        <time>1.96</time>        <numberOfH>16</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_5</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>6</p>        <numberOfH>16</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_6</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>6</p>        <time>1.96</time>        <numberOfH>16</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_6</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>7</p>        <numberOfH>16</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_7</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>7</p>        <time>1.96</time>        <numberOfH>16</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_7</basename>        </writer>      </functional>    </functionals>    <initialData>      <python>kelvinhelmholtz.py</python>      <parameters>        <parameter>          <name>a</name>          <length>40</length>          <values>            <value>0</value>          </values>        </parameter>      </parameters>    </initialData>    <diffusion>      <name>none</name>      <reconstruction>none</reconstruction>    </diffusion>  </fvm>  <uq>    <samples>1024</samples>    <sampleStart>0</sampleStart>    <generator>auto</generator>    <parameters>      <parameter>        <name>a</name>        <length>40</length>        <type>uniform</type>      </parameter>    </parameters>    <stats>      <stat>        <name>	structure_cube      </name>        <numberOfSaves>1</numberOfSaves>        <numberOfH>16</numberOfH>        <p>1</p>        <writeInitialTimestep>true</writeInitialTimestep>        <writer>          <type>netcdf</type>          <basename>kh</basename>        </writer>      </stat>      <stat>        <name>	structure_cube      </name>        <numberOfSaves>1</numberOfSaves>        <numberOfH>16</numberOfH>        <p>2</p>        <writeInitialTimestep>true</writeInitialTimestep>        <writer>          <type>netcdf</type>          <basename>kh</basename>        </writer>      </stat>      <stat>        <name>	structure_cube      </name>        <numberOfSaves>1</numberOfSaves>        <numberOfH>16</numberOfH>        <p>3</p>        <writeInitialTimestep>true</writeInitialTimestep>        <writer>          <type>netcdf</type>          <basename>kh</basename>        </writer>      </stat>    </stats>  </uq></config>
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.pythonVersion=Runtime: 3.6.4 (default, Apr 10 2018, 07:54:00) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)], compile time: 3.6.4
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N512_kh_functional_structure_cube_1_8.nc_alsvinn_report.alsvinnInDocker=false
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.software=alsvinn https://github.com/alsvinn
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.softwareVersion=0.5.3
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.currentWorkingDirectory=/cluster/scratch/klye/single_sample_structure_functions_new/experiments_multiple_samples/kh/p0_06/N1024
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.operatingSystem=Linux: Linux 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 2018 x86_64
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.username=klye
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.host=lo-s4-048
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.standardCLibrary=GNU libc 2.17 stable
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.generatedAt=20190916T020009
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.CPU=Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.revision=9b4bc89ce460a208bd0f7fc3de0d28dd694c4956
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.versionControlStatus=CLEAN
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.buildType=Release
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlags=
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsDebug=-g
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsRelease=-O3 -DNDEBUG
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsMinSizeRel=-Os -DNDEBUG
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxFlagsRelWithDebInfo=-O2 -g -DNDEBUG
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaFlags=--use_fast_math -Xptxas -warn-spills -gencode arch=compute_50,code=sm_50 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_61,code=sm_61
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaVersion=10.0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cxxCompiler=GNU 6.3.0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaCompiler=NVIDIA 10.0.130
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_VERSION=106900
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_LIB_VERSION=1_69
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_PLATFORM=linux
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_PLATFORM_CONFIG=boost/config/platform/linux.hpp
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_COMPILER=GNU C++ version 6.3.0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_LIBSTDCXX_VERSION=60300
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.C++11=true
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_STDLIB=GNU libstdc++ version 20161221
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.boost.BOOST_STDLIB_CONFIG=boost/config/stdlib/libstdcpp3.hpp
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointPrecisionDescription=double (double precision, 64 bits)
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointType=double
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointMax=1.79769e+308
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointMin=2.22507e-308
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.floatingPointEpsilon=2.22045e-16
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.name=GeForce GTX 1080 Ti
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.totalGlobalMem=11721506816
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.sharedMemPerBlock=49152
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.regsPerBlock=65536
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.warpSize=32
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.memPitch=2147483647
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.maxThreadsPerBlock=1024
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.maxThreadsDim=1024, 1024, 64
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.maxGridSize=2147483647, 65535, 65535
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.totalConstMem=65536
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.major=6
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.minor=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.clockRate=1582000
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.textureAlignment=512
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.deviceOverlap=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.multiProcessorCount=28
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.kernelExecTimeoutEnabled=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.integrated=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.canMapHostMemory=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.computeMode=3
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.concurrentKernels=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.ECCEnabled=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.pciBusID=4
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.pciDeviceID=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.cudaProperties.tccDriver=0
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.mpiEnabled=true
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.mpiProcesses=64
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.mpiVersion=Open MPI v2.1.0, package: Open MPI spackapps@lo-login-02 Distribution, ident: 2.1.0, repo rev: v2.0.1-696-g1cd1edf, Mar 20, 2017
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.ompEnabled=true
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.ompThreads=1
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_multiple_samples_dash_kh_dash_p0_06_dash_N1024_dash_kelvinhelmholtz_DOT_py=def init_global(rho, ux, uy, p, nx, ny, nz, ax, ay, az, bx, by, bz):    N = len(a)/4    a1 = a[:10]    a2 = a[10:20]    b1 = a[20:40]    b2 = a[30:40]    perturbation = 0.1    normalization1 = sum(a1)    if abs(normalization1) < 1e-10:        normalization1 = 1    normalization2 = sum(a2)    if abs(normalization2) < 1e-10:        normalization2 = 1    x = linspace(ax, bx, nx)    y = linspace(ay, by, ny)    X, Y = meshgrid(x, y)    X = X.T    Y = Y.T    perturbation_upper = 0.75 + perturbation*sum([a1[i]*cos(2*pi*(i+1)*(X+b1[i])) for i in range(len(a1))], 0)/normalization1    perturbation_lower = 0.25 + perturbation*sum([a2[i]*cos(2*pi*(i+1)*(X+b2[i])) for i in range(len(a2))], 0)/normalization2    middle = (Y < perturbation_upper)*(Y > perturbation_lower)    rho[:, :, 0] = 2.0 * middle + 1.0*(1-middle)    ux[:, :, 0] = -0.5*middle + 0.5*(1-middle)    uy[:,:,0] = zeros_like(X)    p[:,:,0] = 2.5*ones_like(X)#### perturbation = 0.01# normalization1 = sum(a1)# if abs(normalization1) < 1e-10:#     normalization1 = 1# normalization2 = sum(a2)# if abs(normalization2) < 1e-10:#     normalization2 = 1## perturbation_upper = perturbation*sum([a1[i]*cos(2*pi*(i+1)*(x+b1[i])) for i in range(len(a1))])/normalization1# perturbation_lower = perturbation*sum([a2[i]*cos(2*pi*(i+1)*(x+b2[i])) for i in range(len(a2))])/normalization2## if y < 0.25 + perturbation_lower or y > 0.75 + perturbation_upper:#     rho = 1#     ux = 0.5#     uy = 0#     p = 2.5# else:#     rho = 2#     ux = -0.5#     uy = 0#     p = 2.5
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.loadedTextFiles._dash_cluster_dash_scratch_dash_klye_dash_single_sample_structure_functions_new_dash_experiments_multiple_samples_dash_kh_dash_p0_06_dash_N1024_dash_kelvinhelmholtz_DOT_xml=<?xml version="1.0" ?><config>  <fvm>    <name>    kh  </name>    <platform>cuda</platform>    <grid>      <lowerCorner>0 0 0</lowerCorner>      <upperCorner>1 1 0</upperCorner>      <dimension>1024 1024 1</dimension>    </grid>    <boundary>periodic</boundary>    <flux>hll3</flux>    <endTime>2</endTime>    <equation>euler2</equation>    <equationParameters>      <gamma>1.4</gamma>    </equationParameters>    <reconstruction>weno2</reconstruction>    <cfl>auto</cfl>    <integrator>auto</integrator>    <functionals>      <functional>        <name>structure_cube</name>        <p>1</p>        <numberOfH>32</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_1</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>1</p>        <time>1.96</time>        <numberOfH>32</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_1</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>2</p>        <numberOfH>32</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_2</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>2</p>        <time>1.96</time>        <numberOfH>32</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_2</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>3</p>        <numberOfH>32</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_3</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>3</p>        <time>1.96</time>        <numberOfH>32</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_3</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>4</p>        <numberOfH>32</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_4</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>4</p>        <time>1.96</time>        <numberOfH>32</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_4</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>5</p>        <numberOfH>32</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_5</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>5</p>        <time>1.96</time>        <numberOfH>32</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_5</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>6</p>        <numberOfH>32</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_6</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>6</p>        <time>1.96</time>        <numberOfH>32</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_6</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>7</p>        <numberOfH>32</numberOfH>        <numberOfSaves>8</numberOfSaves>        <writer>          <type>netcdf</type>          <basename>kh_functional_structure_cube_7</basename>        </writer>      </functional>      <functional>        <name>structure_cube</name>        <p>7</p>        <time>1.96</time>        <numberOfH>32</numberOfH>        <timeRadius>0.04</timeRadius>        <writer>          <type>netcdf</type>          <basename>kh_functional_time_integrated_structure_cube_7</basename>        </writer>      </functional>    </functionals>    <initialData>      <python>kelvinhelmholtz.py</python>      <parameters>        <parameter>          <name>a</name>          <length>40</length>          <values>            <value>0</value>          </values>        </parameter>      </parameters>    </initialData>    <diffusion>      <name>none</name>      <reconstruction>none</reconstruction>    </diffusion>  </fvm>  <uq>    <samples>1024</samples>    <sampleStart>0</sampleStart>    <generator>auto</generator>    <parameters>      <parameter>        <name>a</name>        <length>40</length>        <type>uniform</type>      </parameter>    </parameters>    <stats>      <stat>        <name>	structure_cube      </name>        <numberOfSaves>1</numberOfSaves>        <numberOfH>32</numberOfH>        <p>1</p>        <writeInitialTimestep>true</writeInitialTimestep>        <writer>          <type>netcdf</type>          <basename>kh</basename>        </writer>      </stat>      <stat>        <name>	structure_cube      </name>        <numberOfSaves>1</numberOfSaves>        <numberOfH>32</numberOfH>        <p>2</p>        <writeInitialTimestep>true</writeInitialTimestep>        <writer>          <type>netcdf</type>          <basename>kh</basename>        </writer>      </stat>      <stat>        <name>	structure_cube      </name>        <numberOfSaves>1</numberOfSaves>        <numberOfH>32</numberOfH>        <p>3</p>        <writeInitialTimestep>true</writeInitialTimestep>        <writer>          <type>netcdf</type>          <basename>kh</basename>        </writer>      </stat>    </stats>  </uq></config>
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.pythonVersion=Runtime: 3.6.4 (default, Apr 10 2018, 07:54:00) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)], compile time: 3.6.4
+%%    single_sample_structure_functions_experiments_multiple_samples_kh_p0_06_N1024_kh_functional_structure_cube_1_8.nc_alsvinn_report.alsvinnInDocker=false
+%% python_version: 
+%%    /usr/bin/python (Version: 3.7.4 (default, Jul 16 2019, 07:12:58) 
+%%    [GCC 9.1.0])
+%% python modules:
+%%     sys: Unknown (Unknown)
+%%     builtins: Unknown (Unknown)
+%%     importlib._bootstrap: Unknown (/usr/lib/python3.7/importlib/_bootstrap.py)
+%%     _imp: Unknown (Unknown)
+%%     _thread: Unknown (Unknown)
+%%     _warnings: Unknown (Unknown)
+%%     _weakref: Unknown (Unknown)
+%%     zipimport: Unknown (Unknown)
+%%     importlib._bootstrap_external: Unknown (/usr/lib/python3.7/importlib/_bootstrap_external.py)
+%%     io: Unknown (Unknown)
+%%     marshal: Unknown (Unknown)
+%%     posix: Unknown (Unknown)
+%%     encodings: Unknown (/usr/lib/python3.7/encodings/__init__.py)
+%%     codecs: Unknown (/usr/lib/python3.7/codecs.py)
+%%     _codecs: Unknown (Unknown)
+%%     encodings.aliases: Unknown (/usr/lib/python3.7/encodings/aliases.py)
+%%     encodings.utf_8: Unknown (/usr/lib/python3.7/encodings/utf_8.py)
+%%     _signal: Unknown (Unknown)
+%%     __main__: Unknown (python/estimate_variance_decay.py)
+%%     encodings.latin_1: Unknown (/usr/lib/python3.7/encodings/latin_1.py)
+%%     io: Unknown (/usr/lib/python3.7/io.py)
+%%     abc: Unknown (/usr/lib/python3.7/abc.py)
+%%     _abc: Unknown (Unknown)
+%%     site: Unknown (/usr/lib/python3.7/site.py)
+%%     os: Unknown (/usr/lib/python3.7/os.py)
+%%     stat: Unknown (/usr/lib/python3.7/stat.py)
+%%     _stat: Unknown (Unknown)
+%%     posixpath: Unknown (/usr/lib/python3.7/posixpath.py)
+%%     genericpath: Unknown (/usr/lib/python3.7/genericpath.py)
+%%     posixpath: Unknown (/usr/lib/python3.7/posixpath.py)
+%%     collections.abc: Unknown (/usr/lib/python3.7/_collections_abc.py)
+%%     _sitebuiltins: Unknown (/usr/lib/python3.7/_sitebuiltins.py)
+%%     _bootlocale: Unknown (/usr/lib/python3.7/_bootlocale.py)
+%%     _locale: Unknown (Unknown)
+%%     types: Unknown (/usr/lib/python3.7/types.py)
+%%     importlib: Unknown (/usr/lib/python3.7/importlib/__init__.py)
+%%     importlib._bootstrap: Unknown (/usr/lib/python3.7/importlib/_bootstrap.py)
+%%     importlib._bootstrap_external: Unknown (/usr/lib/python3.7/importlib/_bootstrap_external.py)
+%%     warnings: Unknown (/usr/lib/python3.7/warnings.py)
+%%     importlib.util: Unknown (/usr/lib/python3.7/importlib/util.py)
+%%     importlib.abc: Unknown (/usr/lib/python3.7/importlib/abc.py)
+%%     importlib.machinery: Unknown (/usr/lib/python3.7/importlib/machinery.py)
+%%     contextlib: Unknown (/usr/lib/python3.7/contextlib.py)
+%%     collections: Unknown (/usr/lib/python3.7/collections/__init__.py)
+%%     operator: Unknown (/usr/lib/python3.7/operator.py)
+%%     _operator: Unknown (Unknown)
+%%     keyword: Unknown (/usr/lib/python3.7/keyword.py)
+%%     heapq: Unknown (/usr/lib/python3.7/heapq.py)
+%%     _heapq: Unknown (/usr/lib/python3.7/lib-dynload/_heapq.cpython-37m-x86_64-linux-gnu.so)
+%%     itertools: Unknown (Unknown)
+%%     reprlib: Unknown (/usr/lib/python3.7/reprlib.py)
+%%     _collections: Unknown (Unknown)
+%%     functools: Unknown (/usr/lib/python3.7/functools.py)
+%%     _functools: Unknown (Unknown)
+%%     mpl_toolkits: Unknown (None)
+%%     pdftools: Unknown (None)
+%%     google: Unknown (None)
+%%     sphinxcontrib: Unknown (None)
+%%     netCDF4: 1.5.2 (/usr/lib/python3.7/site-packages/netCDF4/__init__.py)
+%%     netCDF4._netCDF4: 1.5.2 (/usr/lib/python3.7/site-packages/netCDF4/_netCDF4.cpython-37m-x86_64-linux-gnu.so)
+%%     _cython_0_29_13: Unknown (Unknown)
+%%     cython_runtime: Unknown (Unknown)
+%%     numpy: 1.17.1 (/usr/lib/python3.7/site-packages/numpy/__init__.py)
+%%     __future__: Unknown (/usr/lib/python3.7/__future__.py)
+%%     numpy._globals: Unknown (/usr/lib/python3.7/site-packages/numpy/_globals.py)
+%%     numpy.__config__: Unknown (/usr/lib/python3.7/site-packages/numpy/__config__.py)
+%%     numpy.version: Unknown (/usr/lib/python3.7/site-packages/numpy/version.py)
+%%     numpy._distributor_init: Unknown (/usr/lib/python3.7/site-packages/numpy/_distributor_init.py)
+%%     numpy.core: 1.17.1 (/usr/lib/python3.7/site-packages/numpy/core/__init__.py)
+%%     numpy.core.info: Unknown (/usr/lib/python3.7/site-packages/numpy/core/info.py)
+%%     numpy.core.multiarray: Unknown (/usr/lib/python3.7/site-packages/numpy/core/multiarray.py)
+%%     numpy.core.overrides: Unknown (/usr/lib/python3.7/site-packages/numpy/core/overrides.py)
+%%     textwrap: Unknown (/usr/lib/python3.7/textwrap.py)
+%%     re: 2.2.1 (/usr/lib/python3.7/re.py)
+%%     enum: Unknown (/usr/lib/python3.7/enum.py)
+%%     sre_compile: Unknown (/usr/lib/python3.7/sre_compile.py)
+%%     _sre: Unknown (Unknown)
+%%     sre_parse: Unknown (/usr/lib/python3.7/sre_parse.py)
+%%     sre_constants: Unknown (/usr/lib/python3.7/sre_constants.py)
+%%     copyreg: Unknown (/usr/lib/python3.7/copyreg.py)
+%%     datetime: Unknown (/usr/lib/python3.7/datetime.py)
+%%     time: Unknown (Unknown)
+%%     math: Unknown (/usr/lib/python3.7/lib-dynload/math.cpython-37m-x86_64-linux-gnu.so)
+%%     _datetime: Unknown (/usr/lib/python3.7/lib-dynload/_datetime.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.core._multiarray_umath: 3.1 (/usr/lib/python3.7/site-packages/numpy/core/_multiarray_umath.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.compat: Unknown (/usr/lib/python3.7/site-packages/numpy/compat/__init__.py)
+%%     numpy.compat._inspect: Unknown (/usr/lib/python3.7/site-packages/numpy/compat/_inspect.py)
+%%     numpy.compat.py3k: Unknown (/usr/lib/python3.7/site-packages/numpy/compat/py3k.py)
+%%     pathlib: Unknown (/usr/lib/python3.7/pathlib.py)
+%%     fnmatch: Unknown (/usr/lib/python3.7/fnmatch.py)
+%%     ntpath: Unknown (/usr/lib/python3.7/ntpath.py)
+%%     errno: Unknown (Unknown)
+%%     urllib: Unknown (/usr/lib/python3.7/urllib/__init__.py)
+%%     urllib.parse: Unknown (/usr/lib/python3.7/urllib/parse.py)
+%%     pickle: Unknown (/usr/lib/python3.7/pickle.py)
+%%     struct: Unknown (/usr/lib/python3.7/struct.py)
+%%     _struct: Unknown (/usr/lib/python3.7/lib-dynload/_struct.cpython-37m-x86_64-linux-gnu.so)
+%%     _compat_pickle: Unknown (/usr/lib/python3.7/_compat_pickle.py)
+%%     _pickle: Unknown (/usr/lib/python3.7/lib-dynload/_pickle.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.core.umath: Unknown (/usr/lib/python3.7/site-packages/numpy/core/umath.py)
+%%     numpy.core.numerictypes: Unknown (/usr/lib/python3.7/site-packages/numpy/core/numerictypes.py)
+%%     numbers: Unknown (/usr/lib/python3.7/numbers.py)
+%%     numpy.core._string_helpers: Unknown (/usr/lib/python3.7/site-packages/numpy/core/_string_helpers.py)
+%%     numpy.core._type_aliases: Unknown (/usr/lib/python3.7/site-packages/numpy/core/_type_aliases.py)
+%%     numpy.core._dtype: Unknown (/usr/lib/python3.7/site-packages/numpy/core/_dtype.py)
+%%     numpy.core.numeric: Unknown (/usr/lib/python3.7/site-packages/numpy/core/numeric.py)
+%%     numpy.core._exceptions: Unknown (/usr/lib/python3.7/site-packages/numpy/core/_exceptions.py)
+%%     numpy.core._asarray: Unknown (/usr/lib/python3.7/site-packages/numpy/core/_asarray.py)
+%%     numpy.core._ufunc_config: Unknown (/usr/lib/python3.7/site-packages/numpy/core/_ufunc_config.py)
+%%     collections.abc: Unknown (/usr/lib/python3.7/collections/abc.py)
+%%     numpy.core.fromnumeric: Unknown (/usr/lib/python3.7/site-packages/numpy/core/fromnumeric.py)
+%%     numpy.core._methods: Unknown (/usr/lib/python3.7/site-packages/numpy/core/_methods.py)
+%%     numpy.core.arrayprint: Unknown (/usr/lib/python3.7/site-packages/numpy/core/arrayprint.py)
+%%     numpy.core.defchararray: Unknown (/usr/lib/python3.7/site-packages/numpy/core/defchararray.py)
+%%     numpy.core.records: Unknown (/usr/lib/python3.7/site-packages/numpy/core/records.py)
+%%     numpy.core.memmap: Unknown (/usr/lib/python3.7/site-packages/numpy/core/memmap.py)
+%%     numpy.core.function_base: Unknown (/usr/lib/python3.7/site-packages/numpy/core/function_base.py)
+%%     numpy.core.machar: Unknown (/usr/lib/python3.7/site-packages/numpy/core/machar.py)
+%%     numpy.core.getlimits: Unknown (/usr/lib/python3.7/site-packages/numpy/core/getlimits.py)
+%%     numpy.core.shape_base: Unknown (/usr/lib/python3.7/site-packages/numpy/core/shape_base.py)
+%%     numpy.core.einsumfunc: Unknown (/usr/lib/python3.7/site-packages/numpy/core/einsumfunc.py)
+%%     numpy.core._add_newdocs: Unknown (/usr/lib/python3.7/site-packages/numpy/core/_add_newdocs.py)
+%%     numpy.core._multiarray_tests: Unknown (/usr/lib/python3.7/site-packages/numpy/core/_multiarray_tests.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.core._dtype_ctypes: Unknown (/usr/lib/python3.7/site-packages/numpy/core/_dtype_ctypes.py)
+%%     _ctypes: 1.1.0 (/usr/lib/python3.7/lib-dynload/_ctypes.cpython-37m-x86_64-linux-gnu.so)
+%%     ctypes: 1.1.0 (/usr/lib/python3.7/ctypes/__init__.py)
+%%     ctypes._endian: Unknown (/usr/lib/python3.7/ctypes/_endian.py)
+%%     numpy.core._internal: Unknown (/usr/lib/python3.7/site-packages/numpy/core/_internal.py)
+%%     platform: 1.0.8 (/usr/lib/python3.7/platform.py)
+%%     subprocess: Unknown (/usr/lib/python3.7/subprocess.py)
+%%     signal: Unknown (/usr/lib/python3.7/signal.py)
+%%     _posixsubprocess: Unknown (/usr/lib/python3.7/lib-dynload/_posixsubprocess.cpython-37m-x86_64-linux-gnu.so)
+%%     select: Unknown (/usr/lib/python3.7/lib-dynload/select.cpython-37m-x86_64-linux-gnu.so)
+%%     selectors: Unknown (/usr/lib/python3.7/selectors.py)
+%%     threading: Unknown (/usr/lib/python3.7/threading.py)
+%%     traceback: Unknown (/usr/lib/python3.7/traceback.py)
+%%     linecache: Unknown (/usr/lib/python3.7/linecache.py)
+%%     tokenize: Unknown (/usr/lib/python3.7/tokenize.py)
+%%     token: Unknown (/usr/lib/python3.7/token.py)
+%%     _weakrefset: Unknown (/usr/lib/python3.7/_weakrefset.py)
+%%     numpy._pytesttester: Unknown (/usr/lib/python3.7/site-packages/numpy/_pytesttester.py)
+%%     numpy.lib: 1.17.1 (/usr/lib/python3.7/site-packages/numpy/lib/__init__.py)
+%%     numpy.lib.info: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/info.py)
+%%     numpy.lib.type_check: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/type_check.py)
+%%     numpy.lib.ufunclike: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/ufunclike.py)
+%%     numpy.lib.index_tricks: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/index_tricks.py)
+%%     numpy.matrixlib: Unknown (/usr/lib/python3.7/site-packages/numpy/matrixlib/__init__.py)
+%%     numpy.matrixlib.defmatrix: Unknown (/usr/lib/python3.7/site-packages/numpy/matrixlib/defmatrix.py)
+%%     ast: Unknown (/usr/lib/python3.7/ast.py)
+%%     _ast: Unknown (Unknown)
+%%     numpy.linalg: Unknown (/usr/lib/python3.7/site-packages/numpy/linalg/__init__.py)
+%%     numpy.linalg.info: Unknown (/usr/lib/python3.7/site-packages/numpy/linalg/info.py)
+%%     numpy.linalg.linalg: Unknown (/usr/lib/python3.7/site-packages/numpy/linalg/linalg.py)
+%%     numpy.lib.twodim_base: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/twodim_base.py)
+%%     numpy.linalg.lapack_lite: Unknown (/usr/lib/python3.7/site-packages/numpy/linalg/lapack_lite.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.linalg._umath_linalg: b'0.1.5' (/usr/lib/python3.7/site-packages/numpy/linalg/_umath_linalg.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.lib.function_base: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/function_base.py)
+%%     numpy.lib.histograms: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/histograms.py)
+%%     numpy.lib.stride_tricks: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/stride_tricks.py)
+%%     numpy.lib.mixins: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/mixins.py)
+%%     numpy.lib.nanfunctions: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/nanfunctions.py)
+%%     numpy.lib.shape_base: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/shape_base.py)
+%%     numpy.lib.scimath: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/scimath.py)
+%%     numpy.lib.polynomial: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/polynomial.py)
+%%     numpy.lib.utils: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/utils.py)
+%%     numpy.lib.arraysetops: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/arraysetops.py)
+%%     numpy.lib.npyio: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/npyio.py)
+%%     weakref: Unknown (/usr/lib/python3.7/weakref.py)
+%%     numpy.lib.format: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/format.py)
+%%     numpy.lib._datasource: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/_datasource.py)
+%%     shutil: Unknown (/usr/lib/python3.7/shutil.py)
+%%     zlib: 1.0 (/usr/lib/python3.7/lib-dynload/zlib.cpython-37m-x86_64-linux-gnu.so)
+%%     bz2: Unknown (/usr/lib/python3.7/bz2.py)
+%%     _compression: Unknown (/usr/lib/python3.7/_compression.py)
+%%     _bz2: Unknown (/usr/lib/python3.7/lib-dynload/_bz2.cpython-37m-x86_64-linux-gnu.so)
+%%     lzma: Unknown (/usr/lib/python3.7/lzma.py)
+%%     _lzma: Unknown (/usr/lib/python3.7/lib-dynload/_lzma.cpython-37m-x86_64-linux-gnu.so)
+%%     pwd: Unknown (Unknown)
+%%     grp: Unknown (/usr/lib/python3.7/lib-dynload/grp.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.lib._iotools: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/_iotools.py)
+%%     numpy.lib.financial: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/financial.py)
+%%     decimal: 1.70 (/usr/lib/python3.7/decimal.py)
+%%     decimal: 1.70 (/usr/lib/python3.7/_pydecimal.py)
+%%     contextvars: Unknown (/usr/lib/python3.7/contextvars.py)
+%%     _contextvars: Unknown (/usr/lib/python3.7/lib-dynload/_contextvars.cpython-37m-x86_64-linux-gnu.so)
+%%     locale: Unknown (/usr/lib/python3.7/locale.py)
+%%     numpy.lib.arrayterator: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/arrayterator.py)
+%%     numpy.lib.arraypad: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/arraypad.py)
+%%     numpy.lib._version: Unknown (/usr/lib/python3.7/site-packages/numpy/lib/_version.py)
+%%     numpy.fft: Unknown (/usr/lib/python3.7/site-packages/numpy/fft/__init__.py)
+%%     numpy.fft.info: Unknown (/usr/lib/python3.7/site-packages/numpy/fft/info.py)
+%%     numpy.fft.pocketfft: Unknown (/usr/lib/python3.7/site-packages/numpy/fft/pocketfft.py)
+%%     numpy.fft.pocketfft_internal: Unknown (/usr/lib/python3.7/site-packages/numpy/fft/pocketfft_internal.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.fft.helper: Unknown (/usr/lib/python3.7/site-packages/numpy/fft/helper.py)
+%%     numpy.polynomial: Unknown (/usr/lib/python3.7/site-packages/numpy/polynomial/__init__.py)
+%%     numpy.polynomial.polynomial: Unknown (/usr/lib/python3.7/site-packages/numpy/polynomial/polynomial.py)
+%%     numpy.polynomial.polyutils: Unknown (/usr/lib/python3.7/site-packages/numpy/polynomial/polyutils.py)
+%%     numpy.polynomial._polybase: Unknown (/usr/lib/python3.7/site-packages/numpy/polynomial/_polybase.py)
+%%     numpy.polynomial.chebyshev: Unknown (/usr/lib/python3.7/site-packages/numpy/polynomial/chebyshev.py)
+%%     numpy.polynomial.legendre: Unknown (/usr/lib/python3.7/site-packages/numpy/polynomial/legendre.py)
+%%     numpy.polynomial.hermite: Unknown (/usr/lib/python3.7/site-packages/numpy/polynomial/hermite.py)
+%%     numpy.polynomial.hermite_e: Unknown (/usr/lib/python3.7/site-packages/numpy/polynomial/hermite_e.py)
+%%     numpy.polynomial.laguerre: Unknown (/usr/lib/python3.7/site-packages/numpy/polynomial/laguerre.py)
+%%     numpy.random: Unknown (/usr/lib/python3.7/site-packages/numpy/random/__init__.py)
+%%     numpy.random._pickle: Unknown (/usr/lib/python3.7/site-packages/numpy/random/_pickle.py)
+%%     numpy.random.mtrand: Unknown (/usr/lib/python3.7/site-packages/numpy/random/mtrand.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.random.common: Unknown (/usr/lib/python3.7/site-packages/numpy/random/common.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.random.bounded_integers: Unknown (/usr/lib/python3.7/site-packages/numpy/random/bounded_integers.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.random.mt19937: Unknown (/usr/lib/python3.7/site-packages/numpy/random/mt19937.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.random.bit_generator: Unknown (/usr/lib/python3.7/site-packages/numpy/random/bit_generator.cpython-37m-x86_64-linux-gnu.so)
+%%     secrets: Unknown (/usr/lib/python3.7/secrets.py)
+%%     base64: Unknown (/usr/lib/python3.7/base64.py)
+%%     binascii: Unknown (/usr/lib/python3.7/lib-dynload/binascii.cpython-37m-x86_64-linux-gnu.so)
+%%     hmac: Unknown (/usr/lib/python3.7/hmac.py)
+%%     _hashlib: Unknown (/usr/lib/python3.7/lib-dynload/_hashlib.cpython-37m-x86_64-linux-gnu.so)
+%%     hashlib: Unknown (/usr/lib/python3.7/hashlib.py)
+%%     _blake2: Unknown (/usr/lib/python3.7/lib-dynload/_blake2.cpython-37m-x86_64-linux-gnu.so)
+%%     _sha3: Unknown (/usr/lib/python3.7/lib-dynload/_sha3.cpython-37m-x86_64-linux-gnu.so)
+%%     random: Unknown (/usr/lib/python3.7/random.py)
+%%     bisect: Unknown (/usr/lib/python3.7/bisect.py)
+%%     _bisect: Unknown (/usr/lib/python3.7/lib-dynload/_bisect.cpython-37m-x86_64-linux-gnu.so)
+%%     _random: Unknown (/usr/lib/python3.7/lib-dynload/_random.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.random.entropy: Unknown (/usr/lib/python3.7/site-packages/numpy/random/entropy.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.random.philox: Unknown (/usr/lib/python3.7/site-packages/numpy/random/philox.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.random.pcg64: Unknown (/usr/lib/python3.7/site-packages/numpy/random/pcg64.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.random.sfc64: Unknown (/usr/lib/python3.7/site-packages/numpy/random/sfc64.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.random.generator: Unknown (/usr/lib/python3.7/site-packages/numpy/random/generator.cpython-37m-x86_64-linux-gnu.so)
+%%     numpy.ctypeslib: Unknown (/usr/lib/python3.7/site-packages/numpy/ctypeslib.py)
+%%     numpy.ma: Unknown (/usr/lib/python3.7/site-packages/numpy/ma/__init__.py)
+%%     numpy.ma.core: Unknown (/usr/lib/python3.7/site-packages/numpy/ma/core.py)
+%%     numpy.ma.extras: Unknown (/usr/lib/python3.7/site-packages/numpy/ma/extras.py)
+%%     numpy.testing: Unknown (/usr/lib/python3.7/site-packages/numpy/testing/__init__.py)
+%%     unittest: Unknown (/usr/lib/python3.7/unittest/__init__.py)
+%%     unittest.result: Unknown (/usr/lib/python3.7/unittest/result.py)
+%%     unittest.util: Unknown (/usr/lib/python3.7/unittest/util.py)
+%%     unittest.case: Unknown (/usr/lib/python3.7/unittest/case.py)
+%%     difflib: Unknown (/usr/lib/python3.7/difflib.py)
+%%     logging: 0.5.1.2 (/usr/lib/python3.7/logging/__init__.py)
+%%     string: Unknown (/usr/lib/python3.7/string.py)
+%%     _string: Unknown (Unknown)
+%%     atexit: Unknown (Unknown)
+%%     pprint: Unknown (/usr/lib/python3.7/pprint.py)
+%%     unittest.suite: Unknown (/usr/lib/python3.7/unittest/suite.py)
+%%     unittest.loader: Unknown (/usr/lib/python3.7/unittest/loader.py)
+%%     unittest.main: Unknown (/usr/lib/python3.7/unittest/main.py)
+%%     argparse: 1.1 (/usr/lib/python3.7/argparse.py)
+%%     gettext: Unknown (/usr/lib/python3.7/gettext.py)
+%%     unittest.runner: Unknown (/usr/lib/python3.7/unittest/runner.py)
+%%     unittest.signals: Unknown (/usr/lib/python3.7/unittest/signals.py)
+%%     numpy.testing._private: Unknown (/usr/lib/python3.7/site-packages/numpy/testing/_private/__init__.py)
+%%     numpy.testing._private.utils: Unknown (/usr/lib/python3.7/site-packages/numpy/testing/_private/utils.py)
+%%     gc: Unknown (Unknown)
+%%     tempfile: Unknown (/usr/lib/python3.7/tempfile.py)
+%%     numpy.testing._private.decorators: Unknown (/usr/lib/python3.7/site-packages/numpy/testing/_private/decorators.py)
+%%     numpy.testing._private.nosetester: Unknown (/usr/lib/python3.7/site-packages/numpy/testing/_private/nosetester.py)
+%%     netCDF4.utils: Unknown (/usr/lib/python3.7/site-packages/netCDF4/utils.py)
+%%     getopt: Unknown (/usr/lib/python3.7/getopt.py)
+%%     cftime: 1.0.3.4 (/usr/lib/python3.7/site-packages/cftime/__init__.py)
+%%     cftime._cftime: 1.0.3.4 (/usr/lib/python3.7/site-packages/cftime/_cftime.cpython-37m-x86_64-linux-gnu.so)
+%%     _cython_0_29_1: Unknown (Unknown)
+%%     glob: Unknown (/usr/lib/python3.7/glob.py)
+%%     plot_info: 1.17.1 (/home/kjetil/projects/mlmc_statistical_solutions_experiments/python/plot_info.py)
+%%     matplotlib: 3.1.1 (/usr/lib/python3.7/site-packages/matplotlib/__init__.py)
+%%     distutils: 3.7.4 (/usr/lib/python3.7/distutils/__init__.py)
+%%     distutils.version: Unknown (/usr/lib/python3.7/distutils/version.py)
+%%     inspect: Unknown (/usr/lib/python3.7/inspect.py)
+%%     dis: Unknown (/usr/lib/python3.7/dis.py)
+%%     opcode: Unknown (/usr/lib/python3.7/opcode.py)
+%%     _opcode: Unknown (/usr/lib/python3.7/lib-dynload/_opcode.cpython-37m-x86_64-linux-gnu.so)
+%%     matplotlib.cbook: Unknown (/usr/lib/python3.7/site-packages/matplotlib/cbook/__init__.py)
+%%     gzip: Unknown (/usr/lib/python3.7/gzip.py)
+%%     matplotlib.cbook.deprecation: Unknown (/usr/lib/python3.7/site-packages/matplotlib/cbook/deprecation.py)
+%%     matplotlib.rcsetup: Unknown (/usr/lib/python3.7/site-packages/matplotlib/rcsetup.py)
+%%     matplotlib.fontconfig_pattern: Unknown (/usr/lib/python3.7/site-packages/matplotlib/fontconfig_pattern.py)
+%%     pyparsing: 2.4.2 (/usr/lib/python3.7/site-packages/pyparsing.py)
+%%     copy: Unknown (/usr/lib/python3.7/copy.py)
+%%     matplotlib.colors: Unknown (/usr/lib/python3.7/site-packages/matplotlib/colors.py)
+%%     matplotlib._color_data: Unknown (/usr/lib/python3.7/site-packages/matplotlib/_color_data.py)
+%%     cycler: 0.10.0 (/usr/lib/python3.7/site-packages/cycler.py)
+%%     six: 1.12.0 (/usr/lib/python3.7/site-packages/six.py)
+%%     six.moves: Unknown (Unknown)
+%%     matplotlib._version: Unknown (/usr/lib/python3.7/site-packages/matplotlib/_version.py)
+%%     json: 2.0.9 (/usr/lib/python3.7/json/__init__.py)
+%%     json.decoder: Unknown (/usr/lib/python3.7/json/decoder.py)
+%%     json.scanner: Unknown (/usr/lib/python3.7/json/scanner.py)
+%%     _json: Unknown (/usr/lib/python3.7/lib-dynload/_json.cpython-37m-x86_64-linux-gnu.so)
+%%     json.encoder: Unknown (/usr/lib/python3.7/json/encoder.py)
+%%     matplotlib.ft2font: Unknown (/usr/lib/python3.7/site-packages/matplotlib/ft2font.cpython-37m-x86_64-linux-gnu.so)
+%%     dateutil: 2.8.0 (/usr/lib/python3.7/site-packages/dateutil/__init__.py)
+%%     dateutil._version: Unknown (/usr/lib/python3.7/site-packages/dateutil/_version.py)
+%%     kiwisolver: 1.1.0 (/usr/lib/python3.7/site-packages/kiwisolver.cpython-37m-x86_64-linux-gnu.so)
+%%     socket: Unknown (/usr/lib/python3.7/socket.py)
+%%     _socket: Unknown (/usr/lib/python3.7/lib-dynload/_socket.cpython-37m-x86_64-linux-gnu.so)
+%%     matplotlib.pyplot: Unknown (/usr/lib/python3.7/site-packages/matplotlib/pyplot.py)
+%%     matplotlib.colorbar: Unknown (/usr/lib/python3.7/site-packages/matplotlib/colorbar.py)
+%%     matplotlib.artist: Unknown (/usr/lib/python3.7/site-packages/matplotlib/artist.py)
+%%     matplotlib.docstring: Unknown (/usr/lib/python3.7/site-packages/matplotlib/docstring.py)
+%%     matplotlib.path: Unknown (/usr/lib/python3.7/site-packages/matplotlib/path.py)
+%%     matplotlib._path: Unknown (/usr/lib/python3.7/site-packages/matplotlib/_path.cpython-37m-x86_64-linux-gnu.so)
+%%     matplotlib.transforms: Unknown (/usr/lib/python3.7/site-packages/matplotlib/transforms.py)
+%%     matplotlib.collections: Unknown (/usr/lib/python3.7/site-packages/matplotlib/collections.py)
+%%     matplotlib.cm: Unknown (/usr/lib/python3.7/site-packages/matplotlib/cm.py)
+%%     matplotlib._cm: Unknown (/usr/lib/python3.7/site-packages/matplotlib/_cm.py)
+%%     matplotlib._cm_listed: Unknown (/usr/lib/python3.7/site-packages/matplotlib/_cm_listed.py)
+%%     matplotlib.lines: Unknown (/usr/lib/python3.7/site-packages/matplotlib/lines.py)
+%%     matplotlib.markers: Unknown (/usr/lib/python3.7/site-packages/matplotlib/markers.py)
+%%     matplotlib.contour: Unknown (/usr/lib/python3.7/site-packages/matplotlib/contour.py)
+%%     matplotlib.ticker: Unknown (/usr/lib/python3.7/site-packages/matplotlib/ticker.py)
+%%     matplotlib.font_manager: Unknown (/usr/lib/python3.7/site-packages/matplotlib/font_manager.py)
+%%     matplotlib.afm: Unknown (/usr/lib/python3.7/site-packages/matplotlib/afm.py)
+%%     matplotlib._mathtext_data: Unknown (/usr/lib/python3.7/site-packages/matplotlib/_mathtext_data.py)
+%%     matplotlib.text: Unknown (/usr/lib/python3.7/site-packages/matplotlib/text.py)
+%%     matplotlib.patches: Unknown (/usr/lib/python3.7/site-packages/matplotlib/patches.py)
+%%     matplotlib.bezier: Unknown (/usr/lib/python3.7/site-packages/matplotlib/bezier.py)
+%%     matplotlib.textpath: Unknown (/usr/lib/python3.7/site-packages/matplotlib/textpath.py)
+%%     matplotlib.dviread: Unknown (/usr/lib/python3.7/site-packages/matplotlib/dviread.py)
+%%     matplotlib.mathtext: Unknown (/usr/lib/python3.7/site-packages/matplotlib/mathtext.py)
+%%     unicodedata: Unknown (/usr/lib/python3.7/lib-dynload/unicodedata.cpython-37m-x86_64-linux-gnu.so)
+%%     matplotlib.texmanager: Unknown (/usr/lib/python3.7/site-packages/matplotlib/texmanager.py)
+%%     matplotlib.blocking_input: Unknown (/usr/lib/python3.7/site-packages/matplotlib/blocking_input.py)
+%%     matplotlib.gridspec: Unknown (/usr/lib/python3.7/site-packages/matplotlib/gridspec.py)
+%%     matplotlib._pylab_helpers: Unknown (/usr/lib/python3.7/site-packages/matplotlib/_pylab_helpers.py)
+%%     matplotlib.tight_layout: Unknown (/usr/lib/python3.7/site-packages/matplotlib/tight_layout.py)
+%%     matplotlib._layoutbox: Unknown (/usr/lib/python3.7/site-packages/matplotlib/_layoutbox.py)
+%%     matplotlib._constrained_layout: Unknown (/usr/lib/python3.7/site-packages/matplotlib/_constrained_layout.py)
+%%     matplotlib.image: Unknown (/usr/lib/python3.7/site-packages/matplotlib/image.py)
+%%     matplotlib.backend_bases: Unknown (/usr/lib/python3.7/site-packages/matplotlib/backend_bases.py)
+%%     matplotlib.backend_tools: Unknown (/usr/lib/python3.7/site-packages/matplotlib/backend_tools.py)
+%%     matplotlib.tight_bbox: Unknown (/usr/lib/python3.7/site-packages/matplotlib/tight_bbox.py)
+%%     matplotlib.widgets: Unknown (/usr/lib/python3.7/site-packages/matplotlib/widgets.py)
+%%     PIL: 6.1.0 (/usr/lib/python3.7/site-packages/PIL/__init__.py)
+%%     PIL._version: 6.1.0 (/usr/lib/python3.7/site-packages/PIL/_version.py)
+%%     matplotlib._image: Unknown (/usr/lib/python3.7/site-packages/matplotlib/_image.cpython-37m-x86_64-linux-gnu.so)
+%%     matplotlib.style: Unknown (/usr/lib/python3.7/site-packages/matplotlib/style/__init__.py)
+%%     matplotlib.style.core: Unknown (/usr/lib/python3.7/site-packages/matplotlib/style/core.py)
+%%     matplotlib.figure: Unknown (/usr/lib/python3.7/site-packages/matplotlib/figure.py)
+%%     matplotlib.backends: Unknown (/usr/lib/python3.7/site-packages/matplotlib/backends/__init__.py)
+%%     matplotlib.projections: Unknown (/usr/lib/python3.7/site-packages/matplotlib/projections/__init__.py)
+%%     matplotlib.axes: Unknown (/usr/lib/python3.7/site-packages/matplotlib/axes/__init__.py)
+%%     matplotlib.axes._subplots: Unknown (/usr/lib/python3.7/site-packages/matplotlib/axes/_subplots.py)
+%%     uuid: Unknown (/usr/lib/python3.7/uuid.py)
+%%     _uuid: Unknown (/usr/lib/python3.7/lib-dynload/_uuid.cpython-37m-x86_64-linux-gnu.so)
+%%     matplotlib.axes._axes: Unknown (/usr/lib/python3.7/site-packages/matplotlib/axes/_axes.py)
+%%     matplotlib.category: Unknown (/usr/lib/python3.7/site-packages/matplotlib/category.py)
+%%     dateutil.parser: Unknown (/usr/lib/python3.7/site-packages/dateutil/parser/__init__.py)
+%%     dateutil.parser._parser: Unknown (/usr/lib/python3.7/site-packages/dateutil/parser/_parser.py)
+%%     calendar: Unknown (/usr/lib/python3.7/calendar.py)
+%%     dateutil.relativedelta: Unknown (/usr/lib/python3.7/site-packages/dateutil/relativedelta.py)
+%%     dateutil._common: Unknown (/usr/lib/python3.7/site-packages/dateutil/_common.py)
+%%     dateutil.tz: Unknown (/usr/lib/python3.7/site-packages/dateutil/tz/__init__.py)
+%%     dateutil.tz.tz: Unknown (/usr/lib/python3.7/site-packages/dateutil/tz/tz.py)
+%%     dateutil.tz._common: Unknown (/usr/lib/python3.7/site-packages/dateutil/tz/_common.py)
+%%     dateutil.tz._factories: Unknown (/usr/lib/python3.7/site-packages/dateutil/tz/_factories.py)
+%%     dateutil.parser.isoparser: Unknown (/usr/lib/python3.7/site-packages/dateutil/parser/isoparser.py)
+%%     matplotlib.units: Unknown (/usr/lib/python3.7/site-packages/matplotlib/units.py)
+%%     matplotlib.dates: Unknown (/usr/lib/python3.7/site-packages/matplotlib/dates.py)
+%%     dateutil.rrule: Unknown (/usr/lib/python3.7/site-packages/dateutil/rrule.py)
+%%     matplotlib.legend: Unknown (/usr/lib/python3.7/site-packages/matplotlib/legend.py)
+%%     matplotlib.offsetbox: Unknown (/usr/lib/python3.7/site-packages/matplotlib/offsetbox.py)
+%%     matplotlib.container: Unknown (/usr/lib/python3.7/site-packages/matplotlib/container.py)
+%%     matplotlib.legend_handler: Unknown (/usr/lib/python3.7/site-packages/matplotlib/legend_handler.py)
+%%     matplotlib.mlab: Unknown (/usr/lib/python3.7/site-packages/matplotlib/mlab.py)
+%%     csv: 1.0 (/usr/lib/python3.7/csv.py)
+%%     _csv: 1.0 (/usr/lib/python3.7/lib-dynload/_csv.cpython-37m-x86_64-linux-gnu.so)
+%%     matplotlib.quiver: Unknown (/usr/lib/python3.7/site-packages/matplotlib/quiver.py)
+%%     matplotlib.stackplot: Unknown (/usr/lib/python3.7/site-packages/matplotlib/stackplot.py)
+%%     matplotlib.streamplot: Unknown (/usr/lib/python3.7/site-packages/matplotlib/streamplot.py)
+%%     matplotlib.table: Unknown (/usr/lib/python3.7/site-packages/matplotlib/table.py)
+%%     matplotlib.tri: Unknown (/usr/lib/python3.7/site-packages/matplotlib/tri/__init__.py)
+%%     matplotlib.tri.triangulation: Unknown (/usr/lib/python3.7/site-packages/matplotlib/tri/triangulation.py)
+%%     matplotlib.tri.tricontour: Unknown (/usr/lib/python3.7/site-packages/matplotlib/tri/tricontour.py)
+%%     matplotlib.tri.tritools: Unknown (/usr/lib/python3.7/site-packages/matplotlib/tri/tritools.py)
+%%     matplotlib.tri.trifinder: Unknown (/usr/lib/python3.7/site-packages/matplotlib/tri/trifinder.py)
+%%     matplotlib.tri.triinterpolate: Unknown (/usr/lib/python3.7/site-packages/matplotlib/tri/triinterpolate.py)
+%%     matplotlib.tri.trirefine: Unknown (/usr/lib/python3.7/site-packages/matplotlib/tri/trirefine.py)
+%%     matplotlib.tri.tripcolor: Unknown (/usr/lib/python3.7/site-packages/matplotlib/tri/tripcolor.py)
+%%     matplotlib.tri.triplot: Unknown (/usr/lib/python3.7/site-packages/matplotlib/tri/triplot.py)
+%%     matplotlib.axes._base: Unknown (/usr/lib/python3.7/site-packages/matplotlib/axes/_base.py)
+%%     matplotlib.axis: Unknown (/usr/lib/python3.7/site-packages/matplotlib/axis.py)
+%%     matplotlib.scale: Unknown (/usr/lib/python3.7/site-packages/matplotlib/scale.py)
+%%     matplotlib.spines: Unknown (/usr/lib/python3.7/site-packages/matplotlib/spines.py)
+%%     matplotlib.axes._secondary_axes: Unknown (/usr/lib/python3.7/site-packages/matplotlib/axes/_secondary_axes.py)
+%%     matplotlib.projections.geo: Unknown (/usr/lib/python3.7/site-packages/matplotlib/projections/geo.py)
+%%     matplotlib.projections.polar: Unknown (/usr/lib/python3.7/site-packages/matplotlib/projections/polar.py)
+%%     matplotlib.backends.backend_qt5agg: Unknown (/usr/lib/python3.7/site-packages/matplotlib/backends/backend_qt5agg.py)
+%%     matplotlib.backends.backend_agg: 3.1.1 (/usr/lib/python3.7/site-packages/matplotlib/backends/backend_agg.py)
+%%     matplotlib.backends._backend_agg: Unknown (/usr/lib/python3.7/site-packages/matplotlib/backends/_backend_agg.cpython-37m-x86_64-linux-gnu.so)
+%%     PIL.Image: 6.1.0 (/usr/lib/python3.7/site-packages/PIL/Image.py)
+%%     PIL._util: Unknown (/usr/lib/python3.7/site-packages/PIL/_util.py)
+%%     PIL.ImageMode: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageMode.py)
+%%     PIL.TiffTags: Unknown (/usr/lib/python3.7/site-packages/PIL/TiffTags.py)
+%%     PIL._binary: Unknown (/usr/lib/python3.7/site-packages/PIL/_binary.py)
+%%     PIL._imaging: Unknown (/usr/lib/python3.7/site-packages/PIL/_imaging.cpython-37m-x86_64-linux-gnu.so)
+%%     matplotlib.backends.backend_qt5: 5.13.1 (/usr/lib/python3.7/site-packages/matplotlib/backends/backend_qt5.py)
+%%     matplotlib.backends.qt_editor: Unknown (/usr/lib/python3.7/site-packages/matplotlib/backends/qt_editor/__init__.py)
+%%     matplotlib.backends.qt_editor.figureoptions: Unknown (/usr/lib/python3.7/site-packages/matplotlib/backends/qt_editor/figureoptions.py)
+%%     matplotlib.backends.qt_compat: 5.13.1 (/usr/lib/python3.7/site-packages/matplotlib/backends/qt_compat.py)
+%%     PyQt5: Unknown (/usr/lib/python3.7/site-packages/PyQt5/__init__.py)
+%%     PyQt5.sip: Unknown (/usr/lib/python3.7/site-packages/PyQt5/sip.so)
+%%     PyQt5.sip: Unknown (/usr/lib/python3.7/site-packages/PyQt5/sip.so)
+%%     PyQt5.QtCore: Unknown (/usr/lib/python3.7/site-packages/PyQt5/QtCore.so)
+%%     PyQt5.QtGui: Unknown (/usr/lib/python3.7/site-packages/PyQt5/QtGui.so)
+%%     PyQt5.QtWidgets: Unknown (/usr/lib/python3.7/site-packages/PyQt5/QtWidgets.so)
+%%     matplotlib.backends.qt_editor._formlayout: 1.0.10 (/usr/lib/python3.7/site-packages/matplotlib/backends/qt_editor/_formlayout.py)
+%%     matplotlib.backends.qt_editor.formsubplottool: Unknown (/usr/lib/python3.7/site-packages/matplotlib/backends/qt_editor/formsubplottool.py)
+%%     matplotlib.backend_managers: Unknown (/usr/lib/python3.7/site-packages/matplotlib/backend_managers.py)
+%%     tikzplotlib: 0.8.2 (/usr/lib/python3.7/site-packages/tikzplotlib/__init__.py)
+%%     tikzplotlib.__about__: 0.8.2 (/usr/lib/python3.7/site-packages/tikzplotlib/__about__.py)
+%%     tikzplotlib.save: 0.8.2 (/usr/lib/python3.7/site-packages/tikzplotlib/save.py)
+%%     tikzplotlib.axes: Unknown (/usr/lib/python3.7/site-packages/tikzplotlib/axes.py)
+%%     matplotlib.backends.backend_pgf: 3.1.1 (/usr/lib/python3.7/site-packages/matplotlib/backends/backend_pgf.py)
+%%     matplotlib._png: Unknown (/usr/lib/python3.7/site-packages/matplotlib/_png.cpython-37m-x86_64-linux-gnu.so)
+%%     matplotlib.backends.backend_mixed: Unknown (/usr/lib/python3.7/site-packages/matplotlib/backends/backend_mixed.py)
+%%     tikzplotlib.color: Unknown (/usr/lib/python3.7/site-packages/tikzplotlib/color.py)
+%%     tikzplotlib.image: Unknown (/usr/lib/python3.7/site-packages/tikzplotlib/image.py)
+%%     tikzplotlib.files: Unknown (/usr/lib/python3.7/site-packages/tikzplotlib/files.py)
+%%     tikzplotlib.legend: Unknown (/usr/lib/python3.7/site-packages/tikzplotlib/legend.py)
+%%     tikzplotlib.line2d: Unknown (/usr/lib/python3.7/site-packages/tikzplotlib/line2d.py)
+%%     tikzplotlib.path: Unknown (/usr/lib/python3.7/site-packages/tikzplotlib/path.py)
+%%     tikzplotlib.util: Unknown (/usr/lib/python3.7/site-packages/tikzplotlib/util.py)
+%%     tikzplotlib.patch: Unknown (/usr/lib/python3.7/site-packages/tikzplotlib/patch.py)
+%%     tikzplotlib.quadmesh: Unknown (/usr/lib/python3.7/site-packages/tikzplotlib/quadmesh.py)
+%%     tikzplotlib.text: Unknown (/usr/lib/python3.7/site-packages/tikzplotlib/text.py)
+%%     IPython: 7.6.1 (/usr/lib/python3.7/site-packages/IPython/__init__.py)
+%%     IPython.core: Unknown (/usr/lib/python3.7/site-packages/IPython/core/__init__.py)
+%%     IPython.core.getipython: Unknown (/usr/lib/python3.7/site-packages/IPython/core/getipython.py)
+%%     IPython.core.release: 7.6.1 (/usr/lib/python3.7/site-packages/IPython/core/release.py)
+%%     IPython.core.application: Unknown (/usr/lib/python3.7/site-packages/IPython/core/application.py)
+%%     traitlets: 4.3.2 (/usr/lib/python3.7/site-packages/traitlets/__init__.py)
+%%     traitlets.traitlets: Unknown (/usr/lib/python3.7/site-packages/traitlets/traitlets.py)
+%%     traitlets.utils: Unknown (/usr/lib/python3.7/site-packages/traitlets/utils/__init__.py)
+%%     traitlets.utils.getargspec: Unknown (/usr/lib/python3.7/site-packages/traitlets/utils/getargspec.py)
+%%     traitlets.utils.importstring: Unknown (/usr/lib/python3.7/site-packages/traitlets/utils/importstring.py)
+%%     ipython_genutils: 0.1.0 (/usr/lib/python3.7/site-packages/ipython_genutils/__init__.py)
+%%     ipython_genutils._version: 0.1.0 (/usr/lib/python3.7/site-packages/ipython_genutils/_version.py)
+%%     ipython_genutils.py3compat: Unknown (/usr/lib/python3.7/site-packages/ipython_genutils/py3compat.py)
+%%     ipython_genutils.encoding: Unknown (/usr/lib/python3.7/site-packages/ipython_genutils/encoding.py)
+%%     traitlets.utils.sentinel: Unknown (/usr/lib/python3.7/site-packages/traitlets/utils/sentinel.py)
+%%     traitlets.utils.bunch: Unknown (/usr/lib/python3.7/site-packages/traitlets/utils/bunch.py)
+%%     traitlets._version: 4.3.2 (/usr/lib/python3.7/site-packages/traitlets/_version.py)
+%%     traitlets.config: Unknown (/usr/lib/python3.7/site-packages/traitlets/config/__init__.py)
+%%     traitlets.config.application: Unknown (/usr/lib/python3.7/site-packages/traitlets/config/application.py)
+%%     decorator: 4.4.0 (/usr/lib/python3.7/site-packages/decorator.py)
+%%     traitlets.config.configurable: Unknown (/usr/lib/python3.7/site-packages/traitlets/config/configurable.py)
+%%     traitlets.config.loader: Unknown (/usr/lib/python3.7/site-packages/traitlets/config/loader.py)
+%%     ipython_genutils.path: Unknown (/usr/lib/python3.7/site-packages/ipython_genutils/path.py)
+%%     ipython_genutils.text: Unknown (/usr/lib/python3.7/site-packages/ipython_genutils/text.py)
+%%     ipython_genutils.importstring: Unknown (/usr/lib/python3.7/site-packages/ipython_genutils/importstring.py)
+%%     IPython.core.crashhandler: Unknown (/usr/lib/python3.7/site-packages/IPython/core/crashhandler.py)
+%%     IPython.core.ultratb: Unknown (/usr/lib/python3.7/site-packages/IPython/core/ultratb.py)
+%%     pydoc: Unknown (/usr/lib/python3.7/pydoc.py)
+%%     pkgutil: Unknown (/usr/lib/python3.7/pkgutil.py)
+%%     IPython.core.debugger: Unknown (/usr/lib/python3.7/site-packages/IPython/core/debugger.py)
+%%     bdb: Unknown (/usr/lib/python3.7/bdb.py)
+%%     IPython.utils: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/__init__.py)
+%%     IPython.utils.PyColorize: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/PyColorize.py)
+%%     IPython.utils.coloransi: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/coloransi.py)
+%%     IPython.utils.ipstruct: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/ipstruct.py)
+%%     IPython.utils.colorable: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/colorable.py)
+%%     pygments: 2.4.2 (/usr/lib/python3.7/site-packages/pygments/__init__.py)
+%%     pygments.util: Unknown (/usr/lib/python3.7/site-packages/pygments/util.py)
+%%     IPython.utils.py3compat: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/py3compat.py)
+%%     IPython.utils.encoding: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/encoding.py)
+%%     IPython.core.excolors: Unknown (/usr/lib/python3.7/site-packages/IPython/core/excolors.py)
+%%     IPython.testing: Unknown (/usr/lib/python3.7/site-packages/IPython/testing/__init__.py)
+%%     IPython.testing.skipdoctest: Unknown (/usr/lib/python3.7/site-packages/IPython/testing/skipdoctest.py)
+%%     pdb: Unknown (/usr/lib/python3.7/pdb.py)
+%%     cmd: Unknown (/usr/lib/python3.7/cmd.py)
+%%     code: Unknown (/usr/lib/python3.7/code.py)
+%%     codeop: Unknown (/usr/lib/python3.7/codeop.py)
+%%     IPython.core.display_trap: Unknown (/usr/lib/python3.7/site-packages/IPython/core/display_trap.py)
+%%     IPython.utils.path: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/path.py)
+%%     IPython.utils.process: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/process.py)
+%%     IPython.utils._process_posix: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/_process_posix.py)
+%%     pexpect: 4.7.0 (/usr/lib/python3.7/site-packages/pexpect/__init__.py)
+%%     pexpect.exceptions: Unknown (/usr/lib/python3.7/site-packages/pexpect/exceptions.py)
+%%     pexpect.utils: Unknown (/usr/lib/python3.7/site-packages/pexpect/utils.py)
+%%     pexpect.expect: Unknown (/usr/lib/python3.7/site-packages/pexpect/expect.py)
+%%     pexpect.pty_spawn: Unknown (/usr/lib/python3.7/site-packages/pexpect/pty_spawn.py)
+%%     pty: Unknown (/usr/lib/python3.7/pty.py)
+%%     tty: Unknown (/usr/lib/python3.7/tty.py)
+%%     termios: Unknown (/usr/lib/python3.7/lib-dynload/termios.cpython-37m-x86_64-linux-gnu.so)
+%%     ptyprocess: 0.6.0 (/usr/lib/python3.7/site-packages/ptyprocess/__init__.py)
+%%     ptyprocess.ptyprocess: Unknown (/usr/lib/python3.7/site-packages/ptyprocess/ptyprocess.py)
+%%     fcntl: Unknown (/usr/lib/python3.7/lib-dynload/fcntl.cpython-37m-x86_64-linux-gnu.so)
+%%     resource: Unknown (/usr/lib/python3.7/lib-dynload/resource.cpython-37m-x86_64-linux-gnu.so)
+%%     ptyprocess.util: Unknown (/usr/lib/python3.7/site-packages/ptyprocess/util.py)
+%%     pexpect.spawnbase: Unknown (/usr/lib/python3.7/site-packages/pexpect/spawnbase.py)
+%%     pexpect.run: Unknown (/usr/lib/python3.7/site-packages/pexpect/run.py)
+%%     IPython.utils._process_common: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/_process_common.py)
+%%     shlex: Unknown (/usr/lib/python3.7/shlex.py)
+%%     IPython.utils.decorators: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/decorators.py)
+%%     IPython.utils.data: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/data.py)
+%%     IPython.utils.terminal: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/terminal.py)
+%%     IPython.utils.sysinfo: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/sysinfo.py)
+%%     IPython.utils._sysinfo: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/_sysinfo.py)
+%%     IPython.core.profiledir: Unknown (/usr/lib/python3.7/site-packages/IPython/core/profiledir.py)
+%%     IPython.paths: Unknown (/usr/lib/python3.7/site-packages/IPython/paths.py)
+%%     IPython.utils.importstring: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/importstring.py)
+%%     IPython.terminal: Unknown (/usr/lib/python3.7/site-packages/IPython/terminal/__init__.py)
+%%     IPython.terminal.embed: Unknown (/usr/lib/python3.7/site-packages/IPython/terminal/embed.py)
+%%     IPython.core.compilerop: Unknown (/usr/lib/python3.7/site-packages/IPython/core/compilerop.py)
+%%     IPython.core.magic_arguments: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magic_arguments.py)
+%%     IPython.core.error: Unknown (/usr/lib/python3.7/site-packages/IPython/core/error.py)
+%%     IPython.utils.text: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/text.py)
+%%     IPython.core.magic: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magic.py)
+%%     IPython.core.oinspect: Unknown (/usr/lib/python3.7/site-packages/IPython/core/oinspect.py)
+%%     IPython.core.page: Unknown (/usr/lib/python3.7/site-packages/IPython/core/page.py)
+%%     IPython.core.display: Unknown (/usr/lib/python3.7/site-packages/IPython/core/display.py)
+%%     mimetypes: Unknown (/usr/lib/python3.7/mimetypes.py)
+%%     IPython.lib: Unknown (/usr/lib/python3.7/site-packages/IPython/lib/__init__.py)
+%%     IPython.lib.security: Unknown (/usr/lib/python3.7/site-packages/IPython/lib/security.py)
+%%     getpass: Unknown (/usr/lib/python3.7/getpass.py)
+%%     IPython.lib.pretty: Unknown (/usr/lib/python3.7/site-packages/IPython/lib/pretty.py)
+%%     IPython.utils.openpy: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/openpy.py)
+%%     IPython.utils.dir2: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/dir2.py)
+%%     IPython.utils.wildcard: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/wildcard.py)
+%%     pygments.lexers: Unknown (/usr/lib/python3.7/site-packages/pygments/lexers/__init__.py)
+%%     pygments.lexers._mapping: Unknown (/usr/lib/python3.7/site-packages/pygments/lexers/_mapping.py)
+%%     pygments.modeline: Unknown (/usr/lib/python3.7/site-packages/pygments/modeline.py)
+%%     pygments.plugin: Unknown (/usr/lib/python3.7/site-packages/pygments/plugin.py)
+%%     pygments.lexers.python: Unknown (/usr/lib/python3.7/site-packages/pygments/lexers/python.py)
+%%     pygments.lexer: Unknown (/usr/lib/python3.7/site-packages/pygments/lexer.py)
+%%     pygments.filter: Unknown (/usr/lib/python3.7/site-packages/pygments/filter.py)
+%%     pygments.filters: Unknown (/usr/lib/python3.7/site-packages/pygments/filters/__init__.py)
+%%     pygments.token: Unknown (/usr/lib/python3.7/site-packages/pygments/token.py)
+%%     pygments.regexopt: Unknown (/usr/lib/python3.7/site-packages/pygments/regexopt.py)
+%%     pygments.unistring: Unknown (/usr/lib/python3.7/site-packages/pygments/unistring.py)
+%%     pygments.formatters: Unknown (/usr/lib/python3.7/site-packages/pygments/formatters/__init__.py)
+%%     pygments.formatters._mapping: Unknown (/usr/lib/python3.7/site-packages/pygments/formatters/_mapping.py)
+%%     pygments.formatters.html: Unknown (/usr/lib/python3.7/site-packages/pygments/formatters/html.py)
+%%     pygments.formatter: Unknown (/usr/lib/python3.7/site-packages/pygments/formatter.py)
+%%     pygments.styles: Unknown (/usr/lib/python3.7/site-packages/pygments/styles/__init__.py)
+%%     IPython.core.inputtransformer2: Unknown (/usr/lib/python3.7/site-packages/IPython/core/inputtransformer2.py)
+%%     typing: Unknown (/usr/lib/python3.7/typing.py)
+%%     typing.io: Unknown (Unknown)
+%%     typing.re: Unknown (Unknown)
+%%     IPython.core.interactiveshell: Unknown (/usr/lib/python3.7/site-packages/IPython/core/interactiveshell.py)
+%%     asyncio: Unknown (/usr/lib/python3.7/asyncio/__init__.py)
+%%     asyncio.base_events: Unknown (/usr/lib/python3.7/asyncio/base_events.py)
+%%     concurrent: Unknown (/usr/lib/python3.7/concurrent/__init__.py)
+%%     concurrent.futures: Unknown (/usr/lib/python3.7/concurrent/futures/__init__.py)
+%%     concurrent.futures._base: Unknown (/usr/lib/python3.7/concurrent/futures/_base.py)
+%%     ssl: Unknown (/usr/lib/python3.7/ssl.py)
+%%     _ssl: Unknown (/usr/lib/python3.7/lib-dynload/_ssl.cpython-37m-x86_64-linux-gnu.so)
+%%     asyncio.constants: Unknown (/usr/lib/python3.7/asyncio/constants.py)
+%%     asyncio.coroutines: Unknown (/usr/lib/python3.7/asyncio/coroutines.py)
+%%     asyncio.base_futures: Unknown (/usr/lib/python3.7/asyncio/base_futures.py)
+%%     asyncio.format_helpers: Unknown (/usr/lib/python3.7/asyncio/format_helpers.py)
+%%     asyncio.log: Unknown (/usr/lib/python3.7/asyncio/log.py)
+%%     asyncio.events: Unknown (/usr/lib/python3.7/asyncio/events.py)
+%%     asyncio.base_tasks: Unknown (/usr/lib/python3.7/asyncio/base_tasks.py)
+%%     _asyncio: Unknown (/usr/lib/python3.7/lib-dynload/_asyncio.cpython-37m-x86_64-linux-gnu.so)
+%%     asyncio.futures: Unknown (/usr/lib/python3.7/asyncio/futures.py)
+%%     asyncio.protocols: Unknown (/usr/lib/python3.7/asyncio/protocols.py)
+%%     asyncio.sslproto: Unknown (/usr/lib/python3.7/asyncio/sslproto.py)
+%%     asyncio.transports: Unknown (/usr/lib/python3.7/asyncio/transports.py)
+%%     asyncio.tasks: Unknown (/usr/lib/python3.7/asyncio/tasks.py)
+%%     asyncio.locks: Unknown (/usr/lib/python3.7/asyncio/locks.py)
+%%     asyncio.runners: Unknown (/usr/lib/python3.7/asyncio/runners.py)
+%%     asyncio.queues: Unknown (/usr/lib/python3.7/asyncio/queues.py)
+%%     asyncio.streams: Unknown (/usr/lib/python3.7/asyncio/streams.py)
+%%     asyncio.subprocess: Unknown (/usr/lib/python3.7/asyncio/subprocess.py)
+%%     asyncio.unix_events: Unknown (/usr/lib/python3.7/asyncio/unix_events.py)
+%%     asyncio.base_subprocess: Unknown (/usr/lib/python3.7/asyncio/base_subprocess.py)
+%%     asyncio.selector_events: Unknown (/usr/lib/python3.7/asyncio/selector_events.py)
+%%     runpy: Unknown (/usr/lib/python3.7/runpy.py)
+%%     pickleshare: 0.7.5 (/usr/lib/python3.7/site-packages/pickleshare.py)
+%%     IPython.core.prefilter: Unknown (/usr/lib/python3.7/site-packages/IPython/core/prefilter.py)
+%%     IPython.core.autocall: Unknown (/usr/lib/python3.7/site-packages/IPython/core/autocall.py)
+%%     IPython.core.macro: Unknown (/usr/lib/python3.7/site-packages/IPython/core/macro.py)
+%%     IPython.core.splitinput: Unknown (/usr/lib/python3.7/site-packages/IPython/core/splitinput.py)
+%%     IPython.core.alias: Unknown (/usr/lib/python3.7/site-packages/IPython/core/alias.py)
+%%     IPython.core.builtin_trap: Unknown (/usr/lib/python3.7/site-packages/IPython/core/builtin_trap.py)
+%%     IPython.core.events: Unknown (/usr/lib/python3.7/site-packages/IPython/core/events.py)
+%%     backcall: 0.1.0 (/usr/lib/python3.7/site-packages/backcall/__init__.py)
+%%     backcall.backcall: Unknown (/usr/lib/python3.7/site-packages/backcall/backcall.py)
+%%     IPython.core.displayhook: Unknown (/usr/lib/python3.7/site-packages/IPython/core/displayhook.py)
+%%     IPython.core.displaypub: Unknown (/usr/lib/python3.7/site-packages/IPython/core/displaypub.py)
+%%     IPython.core.extensions: Unknown (/usr/lib/python3.7/site-packages/IPython/core/extensions.py)
+%%     IPython.core.formatters: Unknown (/usr/lib/python3.7/site-packages/IPython/core/formatters.py)
+%%     IPython.utils.sentinel: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/sentinel.py)
+%%     IPython.core.history: Unknown (/usr/lib/python3.7/site-packages/IPython/core/history.py)
+%%     sqlite3: Unknown (/usr/lib/python3.7/sqlite3/__init__.py)
+%%     sqlite3.dbapi2: Unknown (/usr/lib/python3.7/sqlite3/dbapi2.py)
+%%     _sqlite3: Unknown (/usr/lib/python3.7/lib-dynload/_sqlite3.cpython-37m-x86_64-linux-gnu.so)
+%%     IPython.core.logger: Unknown (/usr/lib/python3.7/site-packages/IPython/core/logger.py)
+%%     IPython.core.payload: Unknown (/usr/lib/python3.7/site-packages/IPython/core/payload.py)
+%%     IPython.core.usage: Unknown (/usr/lib/python3.7/site-packages/IPython/core/usage.py)
+%%     IPython.display: Unknown (/usr/lib/python3.7/site-packages/IPython/display.py)
+%%     IPython.lib.display: Unknown (/usr/lib/python3.7/site-packages/IPython/lib/display.py)
+%%     html: Unknown (/usr/lib/python3.7/html/__init__.py)
+%%     html.entities: Unknown (/usr/lib/python3.7/html/entities.py)
+%%     IPython.utils.io: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/io.py)
+%%     IPython.utils.capture: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/capture.py)
+%%     IPython.utils.strdispatch: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/strdispatch.py)
+%%     IPython.core.hooks: Unknown (/usr/lib/python3.7/site-packages/IPython/core/hooks.py)
+%%     IPython.utils.syspathcontext: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/syspathcontext.py)
+%%     IPython.utils.tempdir: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/tempdir.py)
+%%     IPython.utils.contexts: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/contexts.py)
+%%     IPython.core.async_helpers: Unknown (/usr/lib/python3.7/site-packages/IPython/core/async_helpers.py)
+%%     IPython.terminal.interactiveshell: Unknown (/usr/lib/python3.7/site-packages/IPython/terminal/interactiveshell.py)
+%%     prompt_toolkit: 2.0.9 (/usr/lib/python3.7/site-packages/prompt_toolkit/__init__.py)
+%%     prompt_toolkit.application: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/application/__init__.py)
+%%     prompt_toolkit.application.application: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/application/application.py)
+%%     prompt_toolkit.buffer: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/buffer.py)
+%%     prompt_toolkit.application.current: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/application/current.py)
+%%     prompt_toolkit.eventloop: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/eventloop/__init__.py)
+%%     prompt_toolkit.eventloop.base: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/eventloop/base.py)
+%%     prompt_toolkit.log: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/log.py)
+%%     prompt_toolkit.eventloop.coroutine: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/eventloop/coroutine.py)
+%%     prompt_toolkit.eventloop.defaults: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/eventloop/defaults.py)
+%%     prompt_toolkit.utils: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/utils.py)
+%%     wcwidth: Unknown (/usr/lib/python3.7/site-packages/wcwidth/__init__.py)
+%%     wcwidth.wcwidth: Unknown (/usr/lib/python3.7/site-packages/wcwidth/wcwidth.py)
+%%     wcwidth.table_wide: Unknown (/usr/lib/python3.7/site-packages/wcwidth/table_wide.py)
+%%     wcwidth.table_zero: Unknown (/usr/lib/python3.7/site-packages/wcwidth/table_zero.py)
+%%     prompt_toolkit.cache: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/cache.py)
+%%     prompt_toolkit.eventloop.future: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/eventloop/future.py)
+%%     prompt_toolkit.eventloop.context: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/eventloop/context.py)
+%%     prompt_toolkit.eventloop.async_generator: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/eventloop/async_generator.py)
+%%     queue: Unknown (/usr/lib/python3.7/queue.py)
+%%     _queue: Unknown (/usr/lib/python3.7/lib-dynload/_queue.cpython-37m-x86_64-linux-gnu.so)
+%%     queue: Unknown (/usr/lib/python3.7/queue.py)
+%%     prompt_toolkit.eventloop.event: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/eventloop/event.py)
+%%     prompt_toolkit.application.run_in_terminal: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/application/run_in_terminal.py)
+%%     prompt_toolkit.auto_suggest: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/auto_suggest.py)
+%%     prompt_toolkit.filters: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/filters/__init__.py)
+%%     prompt_toolkit.filters.base: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/filters/base.py)
+%%     prompt_toolkit.filters.app: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/filters/app.py)
+%%     prompt_toolkit.enums: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/enums.py)
+%%     prompt_toolkit.filters.utils: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/filters/utils.py)
+%%     prompt_toolkit.filters.cli: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/filters/cli.py)
+%%     prompt_toolkit.clipboard: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/clipboard/__init__.py)
+%%     prompt_toolkit.clipboard.base: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/clipboard/base.py)
+%%     prompt_toolkit.selection: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/selection.py)
+%%     prompt_toolkit.clipboard.in_memory: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/clipboard/in_memory.py)
+%%     prompt_toolkit.completion: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/completion/__init__.py)
+%%     prompt_toolkit.completion.base: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/completion/base.py)
+%%     prompt_toolkit.completion.filesystem: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/completion/filesystem.py)
+%%     prompt_toolkit.completion.word_completer: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/completion/word_completer.py)
+%%     prompt_toolkit.completion.fuzzy_completer: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/completion/fuzzy_completer.py)
+%%     prompt_toolkit.document: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/document.py)
+%%     prompt_toolkit.history: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/history.py)
+%%     prompt_toolkit.search: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/search.py)
+%%     prompt_toolkit.key_binding: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/__init__.py)
+%%     prompt_toolkit.key_binding.key_bindings: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/key_bindings.py)
+%%     prompt_toolkit.keys: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/keys.py)
+%%     prompt_toolkit.key_binding.vi_state: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/vi_state.py)
+%%     prompt_toolkit.validation: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/validation.py)
+%%     prompt_toolkit.input: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/input/__init__.py)
+%%     prompt_toolkit.input.base: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/input/base.py)
+%%     prompt_toolkit.input.defaults: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/input/defaults.py)
+%%     prompt_toolkit.input.typeahead: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/input/typeahead.py)
+%%     prompt_toolkit.key_binding.bindings: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/bindings/__init__.py)
+%%     prompt_toolkit.key_binding.bindings.page_navigation: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/bindings/page_navigation.py)
+%%     prompt_toolkit.key_binding.bindings.scroll: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/bindings/scroll.py)
+%%     prompt_toolkit.key_binding.defaults: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/defaults.py)
+%%     prompt_toolkit.key_binding.bindings.basic: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/bindings/basic.py)
+%%     prompt_toolkit.key_binding.key_processor: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/key_processor.py)
+%%     prompt_toolkit.key_binding.bindings.named_commands: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/bindings/named_commands.py)
+%%     prompt_toolkit.key_binding.bindings.completion: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/bindings/completion.py)
+%%     prompt_toolkit.key_binding.bindings.emacs: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/bindings/emacs.py)
+%%     prompt_toolkit.key_binding.bindings.vi: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/bindings/vi.py)
+%%     prompt_toolkit.input.vt100_parser: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/input/vt100_parser.py)
+%%     prompt_toolkit.input.ansi_escape_sequences: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/input/ansi_escape_sequences.py)
+%%     prompt_toolkit.key_binding.digraphs: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/digraphs.py)
+%%     prompt_toolkit.key_binding.bindings.mouse: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/bindings/mouse.py)
+%%     prompt_toolkit.layout: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/layout/__init__.py)
+%%     prompt_toolkit.layout.containers: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/layout/containers.py)
+%%     prompt_toolkit.layout.controls: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/layout/controls.py)
+%%     prompt_toolkit.formatted_text: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/formatted_text/__init__.py)
+%%     prompt_toolkit.formatted_text.base: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/formatted_text/base.py)
+%%     prompt_toolkit.formatted_text.html: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/formatted_text/html.py)
+%%     xml: Unknown (/usr/lib/python3.7/xml/__init__.py)
+%%     xml.dom: Unknown (/usr/lib/python3.7/xml/dom/__init__.py)
+%%     xml.dom.domreg: Unknown (/usr/lib/python3.7/xml/dom/domreg.py)
+%%     xml.dom.minidom: Unknown (/usr/lib/python3.7/xml/dom/minidom.py)
+%%     xml.dom.minicompat: Unknown (/usr/lib/python3.7/xml/dom/minicompat.py)
+%%     xml.dom.xmlbuilder: Unknown (/usr/lib/python3.7/xml/dom/xmlbuilder.py)
+%%     xml.dom.NodeFilter: Unknown (/usr/lib/python3.7/xml/dom/NodeFilter.py)
+%%     prompt_toolkit.formatted_text.ansi: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/formatted_text/ansi.py)
+%%     prompt_toolkit.output: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/output/__init__.py)
+%%     prompt_toolkit.output.base: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/output/base.py)
+%%     prompt_toolkit.layout.screen: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/layout/screen.py)
+%%     prompt_toolkit.output.defaults: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/output/defaults.py)
+%%     prompt_toolkit.output.color_depth: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/output/color_depth.py)
+%%     prompt_toolkit.output.vt100: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/output/vt100.py)
+%%     prompt_toolkit.styles: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/styles/__init__.py)
+%%     prompt_toolkit.styles.base: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/styles/base.py)
+%%     prompt_toolkit.styles.defaults: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/styles/defaults.py)
+%%     prompt_toolkit.styles.style: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/styles/style.py)
+%%     prompt_toolkit.styles.named_colors: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/styles/named_colors.py)
+%%     prompt_toolkit.styles.pygments: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/styles/pygments.py)
+%%     prompt_toolkit.styles.style_transformation: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/styles/style_transformation.py)
+%%     colorsys: Unknown (/usr/lib/python3.7/colorsys.py)
+%%     array: Unknown (/usr/lib/python3.7/lib-dynload/array.cpython-37m-x86_64-linux-gnu.so)
+%%     prompt_toolkit.formatted_text.pygments: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/formatted_text/pygments.py)
+%%     prompt_toolkit.formatted_text.utils: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/formatted_text/utils.py)
+%%     prompt_toolkit.lexers: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/lexers/__init__.py)
+%%     prompt_toolkit.lexers.base: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/lexers/base.py)
+%%     prompt_toolkit.lexers.pygments: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/lexers/pygments.py)
+%%     prompt_toolkit.mouse_events: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/mouse_events.py)
+%%     prompt_toolkit.layout.processors: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/layout/processors.py)
+%%     prompt_toolkit.layout.utils: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/layout/utils.py)
+%%     prompt_toolkit.layout.dimension: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/layout/dimension.py)
+%%     prompt_toolkit.layout.margins: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/layout/margins.py)
+%%     prompt_toolkit.layout.layout: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/layout/layout.py)
+%%     prompt_toolkit.layout.menus: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/layout/menus.py)
+%%     prompt_toolkit.renderer: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/renderer.py)
+%%     prompt_toolkit.layout.mouse_handlers: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/layout/mouse_handlers.py)
+%%     prompt_toolkit.key_binding.bindings.cpr: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/bindings/cpr.py)
+%%     prompt_toolkit.key_binding.emacs_state: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/emacs_state.py)
+%%     prompt_toolkit.layout.dummy: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/layout/dummy.py)
+%%     prompt_toolkit.application.dummy: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/application/dummy.py)
+%%     prompt_toolkit.shortcuts: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/shortcuts/__init__.py)
+%%     prompt_toolkit.shortcuts.dialogs: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/shortcuts/dialogs.py)
+%%     prompt_toolkit.key_binding.bindings.focus: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/bindings/focus.py)
+%%     prompt_toolkit.widgets: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/widgets/__init__.py)
+%%     prompt_toolkit.widgets.base: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/widgets/base.py)
+%%     prompt_toolkit.widgets.toolbars: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/widgets/toolbars.py)
+%%     prompt_toolkit.widgets.dialogs: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/widgets/dialogs.py)
+%%     prompt_toolkit.widgets.menus: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/widgets/menus.py)
+%%     prompt_toolkit.shortcuts.prompt: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/shortcuts/prompt.py)
+%%     prompt_toolkit.key_binding.bindings.auto_suggest: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/bindings/auto_suggest.py)
+%%     prompt_toolkit.key_binding.bindings.open_in_editor: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/key_binding/bindings/open_in_editor.py)
+%%     prompt_toolkit.shortcuts.utils: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/shortcuts/utils.py)
+%%     prompt_toolkit.shortcuts.progress_bar: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/shortcuts/progress_bar/__init__.py)
+%%     prompt_toolkit.shortcuts.progress_bar.base: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/shortcuts/progress_bar/base.py)
+%%     prompt_toolkit.shortcuts.progress_bar.formatters: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/shortcuts/progress_bar/formatters.py)
+%%     prompt_toolkit.patch_stdout: Unknown (/usr/lib/python3.7/site-packages/prompt_toolkit/patch_stdout.py)
+%%     pygments.style: Unknown (/usr/lib/python3.7/site-packages/pygments/style.py)
+%%     IPython.terminal.debugger: Unknown (/usr/lib/python3.7/site-packages/IPython/terminal/debugger.py)
+%%     IPython.core.completer: Unknown (/usr/lib/python3.7/site-packages/IPython/core/completer.py)
+%%     IPython.core.latex_symbols: Unknown (/usr/lib/python3.7/site-packages/IPython/core/latex_symbols.py)
+%%     IPython.utils.generics: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/generics.py)
+%%     jedi: 0.13.3 (/usr/lib/python3.7/site-packages/jedi/__init__.py)
+%%     jedi.api: Unknown (/usr/lib/python3.7/site-packages/jedi/api/__init__.py)
+%%     parso: 0.5.1 (/usr/lib/python3.7/site-packages/parso/__init__.py)
+%%     parso.parser: Unknown (/usr/lib/python3.7/site-packages/parso/parser.py)
+%%     parso.tree: Unknown (/usr/lib/python3.7/site-packages/parso/tree.py)
+%%     parso._compatibility: Unknown (/usr/lib/python3.7/site-packages/parso/_compatibility.py)
+%%     parso.utils: Unknown (/usr/lib/python3.7/site-packages/parso/utils.py)
+%%     parso.pgen2: Unknown (/usr/lib/python3.7/site-packages/parso/pgen2/__init__.py)
+%%     parso.pgen2.generator: Unknown (/usr/lib/python3.7/site-packages/parso/pgen2/generator.py)
+%%     parso.pgen2.grammar_parser: Unknown (/usr/lib/python3.7/site-packages/parso/pgen2/grammar_parser.py)
+%%     parso.python: Unknown (/usr/lib/python3.7/site-packages/parso/python/__init__.py)
+%%     parso.python.tokenize: Unknown (/usr/lib/python3.7/site-packages/parso/python/tokenize.py)
+%%     parso.python.token: Unknown (/usr/lib/python3.7/site-packages/parso/python/token.py)
+%%     parso.grammar: Unknown (/usr/lib/python3.7/site-packages/parso/grammar.py)
+%%     parso.python.diff: Unknown (/usr/lib/python3.7/site-packages/parso/python/diff.py)
+%%     parso.python.parser: Unknown (/usr/lib/python3.7/site-packages/parso/python/parser.py)
+%%     parso.python.tree: Unknown (/usr/lib/python3.7/site-packages/parso/python/tree.py)
+%%     parso.python.prefix: Unknown (/usr/lib/python3.7/site-packages/parso/python/prefix.py)
+%%     parso.cache: Unknown (/usr/lib/python3.7/site-packages/parso/cache.py)
+%%     parso.python.errors: Unknown (/usr/lib/python3.7/site-packages/parso/python/errors.py)
+%%     parso.normalizer: Unknown (/usr/lib/python3.7/site-packages/parso/normalizer.py)
+%%     parso.python.pep8: Unknown (/usr/lib/python3.7/site-packages/parso/python/pep8.py)
+%%     parso.file_io: Unknown (/usr/lib/python3.7/site-packages/parso/file_io.py)
+%%     jedi._compatibility: Unknown (/usr/lib/python3.7/site-packages/jedi/_compatibility.py)
+%%     jedi.parser_utils: Unknown (/usr/lib/python3.7/site-packages/jedi/parser_utils.py)
+%%     jedi.debug: Unknown (/usr/lib/python3.7/site-packages/jedi/debug.py)
+%%     colorama: 0.4.1 (/usr/lib/python3.7/site-packages/colorama/__init__.py)
+%%     colorama.initialise: Unknown (/usr/lib/python3.7/site-packages/colorama/initialise.py)
+%%     colorama.ansitowin32: Unknown (/usr/lib/python3.7/site-packages/colorama/ansitowin32.py)
+%%     colorama.ansi: Unknown (/usr/lib/python3.7/site-packages/colorama/ansi.py)
+%%     colorama.winterm: Unknown (/usr/lib/python3.7/site-packages/colorama/winterm.py)
+%%     colorama.win32: Unknown (/usr/lib/python3.7/site-packages/colorama/win32.py)
+%%     jedi.settings: Unknown (/usr/lib/python3.7/site-packages/jedi/settings.py)
+%%     jedi.cache: Unknown (/usr/lib/python3.7/site-packages/jedi/cache.py)
+%%     jedi.api.classes: Unknown (/usr/lib/python3.7/site-packages/jedi/api/classes.py)
+%%     jedi.evaluate: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/__init__.py)
+%%     jedi.evaluate.utils: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/utils.py)
+%%     jedi.evaluate.imports: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/imports.py)
+%%     jedi.evaluate.sys_path: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/sys_path.py)
+%%     jedi.evaluate.cache: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/cache.py)
+%%     jedi.evaluate.base_context: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/base_context.py)
+%%     jedi.common: Unknown (/usr/lib/python3.7/site-packages/jedi/common/__init__.py)
+%%     jedi.common.context: Unknown (/usr/lib/python3.7/site-packages/jedi/common/context.py)
+%%     jedi.evaluate.helpers: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/helpers.py)
+%%     jedi.common.utils: Unknown (/usr/lib/python3.7/site-packages/jedi/common/utils.py)
+%%     jedi.evaluate.compiled: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/compiled/__init__.py)
+%%     jedi.evaluate.compiled.context: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/compiled/context.py)
+%%     jedi.evaluate.filters: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/filters.py)
+%%     jedi.evaluate.flow_analysis: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/flow_analysis.py)
+%%     jedi.evaluate.recursion: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/recursion.py)
+%%     jedi.evaluate.lazy_context: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/lazy_context.py)
+%%     jedi.evaluate.compiled.access: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/compiled/access.py)
+%%     jedi.evaluate.compiled.getattr_static: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/compiled/getattr_static.py)
+%%     jedi.evaluate.compiled.fake: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/compiled/fake.py)
+%%     jedi.evaluate.analysis: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/analysis.py)
+%%     jedi.evaluate.context: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/context/__init__.py)
+%%     jedi.evaluate.context.module: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/context/module.py)
+%%     jedi.evaluate.context.klass: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/context/klass.py)
+%%     jedi.evaluate.context.function: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/context/function.py)
+%%     jedi.evaluate.docstrings: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/docstrings.py)
+%%     jedi.evaluate.pep0484: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/pep0484.py)
+%%     jedi.evaluate.arguments: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/arguments.py)
+%%     jedi.evaluate.context.iterable: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/context/iterable.py)
+%%     jedi.evaluate.param: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/param.py)
+%%     jedi.evaluate.context.asynchronous: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/context/asynchronous.py)
+%%     jedi.evaluate.parser_cache: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/parser_cache.py)
+%%     jedi.evaluate.context.instance: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/context/instance.py)
+%%     jedi.evaluate.syntax_tree: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/syntax_tree.py)
+%%     jedi.evaluate.finder: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/finder.py)
+%%     jedi.api.keywords: Unknown (/usr/lib/python3.7/site-packages/jedi/api/keywords.py)
+%%     pydoc_data: Unknown (/usr/lib/python3.7/pydoc_data/__init__.py)
+%%     pydoc_data.topics: Unknown (/usr/lib/python3.7/pydoc_data/topics.py)
+%%     jedi.api.interpreter: Unknown (/usr/lib/python3.7/site-packages/jedi/api/interpreter.py)
+%%     jedi.evaluate.compiled.mixed: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/compiled/mixed.py)
+%%     jedi.api.helpers: Unknown (/usr/lib/python3.7/site-packages/jedi/api/helpers.py)
+%%     jedi.api.completion: Unknown (/usr/lib/python3.7/site-packages/jedi/api/completion.py)
+%%     jedi.api.environment: Unknown (/usr/lib/python3.7/site-packages/jedi/api/environment.py)
+%%     filecmp: Unknown (/usr/lib/python3.7/filecmp.py)
+%%     jedi.evaluate.compiled.subprocess: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/compiled/subprocess/__init__.py)
+%%     jedi.evaluate.compiled.subprocess.functions: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/compiled/subprocess/functions.py)
+%%     jedi.api.exceptions: Unknown (/usr/lib/python3.7/site-packages/jedi/api/exceptions.py)
+%%     jedi.api.project: Unknown (/usr/lib/python3.7/site-packages/jedi/api/project.py)
+%%     jedi.evaluate.usages: Unknown (/usr/lib/python3.7/site-packages/jedi/evaluate/usages.py)
+%%     IPython.terminal.ptutils: Unknown (/usr/lib/python3.7/site-packages/IPython/terminal/ptutils.py)
+%%     IPython.terminal.shortcuts: Unknown (/usr/lib/python3.7/site-packages/IPython/terminal/shortcuts.py)
+%%     IPython.terminal.magics: Unknown (/usr/lib/python3.7/site-packages/IPython/terminal/magics.py)
+%%     IPython.lib.clipboard: Unknown (/usr/lib/python3.7/site-packages/IPython/lib/clipboard.py)
+%%     IPython.terminal.pt_inputhooks: Unknown (/usr/lib/python3.7/site-packages/IPython/terminal/pt_inputhooks/__init__.py)
+%%     IPython.terminal.prompts: Unknown (/usr/lib/python3.7/site-packages/IPython/terminal/prompts.py)
+%%     IPython.terminal.ipapp: Unknown (/usr/lib/python3.7/site-packages/IPython/terminal/ipapp.py)
+%%     IPython.core.magics: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magics/__init__.py)
+%%     IPython.core.magics.auto: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magics/auto.py)
+%%     IPython.core.magics.basic: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magics/basic.py)
+%%     IPython.core.magics.code: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magics/code.py)
+%%     urllib.request: 3.7 (/usr/lib/python3.7/urllib/request.py)
+%%     email: Unknown (/usr/lib/python3.7/email/__init__.py)
+%%     http: Unknown (/usr/lib/python3.7/http/__init__.py)
+%%     http.client: Unknown (/usr/lib/python3.7/http/client.py)
+%%     email.parser: Unknown (/usr/lib/python3.7/email/parser.py)
+%%     email.feedparser: Unknown (/usr/lib/python3.7/email/feedparser.py)
+%%     email.errors: Unknown (/usr/lib/python3.7/email/errors.py)
+%%     email._policybase: Unknown (/usr/lib/python3.7/email/_policybase.py)
+%%     email.header: Unknown (/usr/lib/python3.7/email/header.py)
+%%     email.quoprimime: Unknown (/usr/lib/python3.7/email/quoprimime.py)
+%%     email.base64mime: Unknown (/usr/lib/python3.7/email/base64mime.py)
+%%     email.charset: Unknown (/usr/lib/python3.7/email/charset.py)
+%%     email.encoders: Unknown (/usr/lib/python3.7/email/encoders.py)
+%%     quopri: Unknown (/usr/lib/python3.7/quopri.py)
+%%     email.utils: Unknown (/usr/lib/python3.7/email/utils.py)
+%%     email._parseaddr: Unknown (/usr/lib/python3.7/email/_parseaddr.py)
+%%     email.message: Unknown (/usr/lib/python3.7/email/message.py)
+%%     uu: Unknown (/usr/lib/python3.7/uu.py)
+%%     email._encoded_words: Unknown (/usr/lib/python3.7/email/_encoded_words.py)
+%%     email.iterators: Unknown (/usr/lib/python3.7/email/iterators.py)
+%%     urllib.error: Unknown (/usr/lib/python3.7/urllib/error.py)
+%%     urllib.response: Unknown (/usr/lib/python3.7/urllib/response.py)
+%%     IPython.core.magics.config: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magics/config.py)
+%%     IPython.core.magics.display: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magics/display.py)
+%%     IPython.core.magics.execution: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magics/execution.py)
+%%     timeit: Unknown (/usr/lib/python3.7/timeit.py)
+%%     cProfile: Unknown (/usr/lib/python3.7/cProfile.py)
+%%     _lsprof: Unknown (/usr/lib/python3.7/lib-dynload/_lsprof.cpython-37m-x86_64-linux-gnu.so)
+%%     profile: Unknown (/usr/lib/python3.7/profile.py)
+%%     pstats: Unknown (/usr/lib/python3.7/pstats.py)
+%%     IPython.utils.module_paths: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/module_paths.py)
+%%     IPython.utils.timing: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/timing.py)
+%%     IPython.core.magics.extension: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magics/extension.py)
+%%     IPython.core.magics.history: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magics/history.py)
+%%     IPython.core.magics.logging: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magics/logging.py)
+%%     IPython.core.magics.namespace: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magics/namespace.py)
+%%     IPython.core.magics.osm: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magics/osm.py)
+%%     IPython.core.magics.packaging: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magics/packaging.py)
+%%     IPython.core.magics.pylab: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magics/pylab.py)
+%%     IPython.core.pylabtools: Unknown (/usr/lib/python3.7/site-packages/IPython/core/pylabtools.py)
+%%     IPython.core.magics.script: Unknown (/usr/lib/python3.7/site-packages/IPython/core/magics/script.py)
+%%     IPython.lib.backgroundjobs: Unknown (/usr/lib/python3.7/site-packages/IPython/lib/backgroundjobs.py)
+%%     IPython.core.shellapp: Unknown (/usr/lib/python3.7/site-packages/IPython/core/shellapp.py)
+%%     IPython.extensions: Unknown (/usr/lib/python3.7/site-packages/IPython/extensions/__init__.py)
+%%     IPython.extensions.storemagic: Unknown (/usr/lib/python3.7/site-packages/IPython/extensions/storemagic.py)
+%%     IPython.utils.frame: Unknown (/usr/lib/python3.7/site-packages/IPython/utils/frame.py)
+%%     git: 2.1.11 (/home/kjetil/.local/lib/python3.7/site-packages/git/__init__.py)
+%%     gitdb: 2.0.4 (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/__init__.py)
+%%     smmap: 2.0.4 (/home/kjetil/.local/lib/python3.7/site-packages/smmap/__init__.py)
+%%     smmap.mman: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/smmap/mman.py)
+%%     smmap.util: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/smmap/util.py)
+%%     mmap: Unknown (/usr/lib/python3.7/lib-dynload/mmap.cpython-37m-x86_64-linux-gnu.so)
+%%     smmap.buf: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/smmap/buf.py)
+%%     gitdb.base: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/base.py)
+%%     gitdb.util: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/util.py)
+%%     gitdb.const: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/const.py)
+%%     gitdb.fun: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/fun.py)
+%%     gitdb.utils: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/utils/__init__.py)
+%%     gitdb.utils.encoding: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/utils/encoding.py)
+%%     gitdb.utils.compat: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/utils/compat.py)
+%%     gitdb.typ: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/typ.py)
+%%     gitdb.db: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/db/__init__.py)
+%%     gitdb.db.base: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/db/base.py)
+%%     gitdb.exc: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/exc.py)
+%%     gitdb.db.loose: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/db/loose.py)
+%%     gitdb.stream: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/stream.py)
+%%     gitdb.db.mem: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/db/mem.py)
+%%     gitdb.db.pack: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/db/pack.py)
+%%     gitdb.pack: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/pack.py)
+%%     gitdb.db.git: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/db/git.py)
+%%     gitdb.db.ref: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/gitdb/db/ref.py)
+%%     git.exc: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/exc.py)
+%%     git.compat: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/compat.py)
+%%     encodings.ascii: Unknown (/usr/lib/python3.7/encodings/ascii.py)
+%%     git.config: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/config.py)
+%%     git.util: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/util.py)
+%%     configparser: Unknown (/usr/lib/python3.7/configparser.py)
+%%     git.objects: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/__init__.py)
+%%     git.objects.base: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/base.py)
+%%     git.objects.util: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/util.py)
+%%     git.objects.blob: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/blob.py)
+%%     git.objects.commit: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/commit.py)
+%%     git.diff: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/diff.py)
+%%     git.cmd: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/cmd.py)
+%%     git.objects.tree: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/tree.py)
+%%     git.objects.submodule: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/submodule/__init__.py)
+%%     git.objects.submodule.base: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/submodule/base.py)
+%%     git.objects.submodule.util: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/submodule/util.py)
+%%     git.objects.fun: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/fun.py)
+%%     git.objects.submodule.root: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/submodule/root.py)
+%%     git.objects.tag: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/objects/tag.py)
+%%     git.refs: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/refs/__init__.py)
+%%     git.refs.symbolic: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/refs/symbolic.py)
+%%     git.refs.log: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/refs/log.py)
+%%     git.refs.reference: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/refs/reference.py)
+%%     git.refs.head: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/refs/head.py)
+%%     git.refs.tag: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/refs/tag.py)
+%%     git.refs.remote: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/refs/remote.py)
+%%     git.db: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/db.py)
+%%     git.repo: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/repo/__init__.py)
+%%     git.repo.base: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/repo/base.py)
+%%     git.index: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/index/__init__.py)
+%%     git.index.base: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/index/base.py)
+%%     git.index.fun: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/index/fun.py)
+%%     git.index.typ: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/index/typ.py)
+%%     git.index.util: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/index/util.py)
+%%     git.remote: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/remote.py)
+%%     git.repo.fun: Unknown (/home/kjetil/.local/lib/python3.7/site-packages/git/repo/fun.py)
+%%     PyQt5.QtX11Extras: Unknown (/usr/lib/python3.7/site-packages/PyQt5/QtX11Extras.so)
+%%     PIL.BmpImagePlugin: 0.7 (/usr/lib/python3.7/site-packages/PIL/BmpImagePlugin.py)
+%%     PIL.ImageFile: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageFile.py)
+%%     PIL.ImagePalette: Unknown (/usr/lib/python3.7/site-packages/PIL/ImagePalette.py)
+%%     PIL.ImageColor: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageColor.py)
+%%     PIL.GimpPaletteFile: Unknown (/usr/lib/python3.7/site-packages/PIL/GimpPaletteFile.py)
+%%     PIL.GimpGradientFile: Unknown (/usr/lib/python3.7/site-packages/PIL/GimpGradientFile.py)
+%%     PIL.PaletteFile: Unknown (/usr/lib/python3.7/site-packages/PIL/PaletteFile.py)
+%%     PIL.GifImagePlugin: 0.9 (/usr/lib/python3.7/site-packages/PIL/GifImagePlugin.py)
+%%     PIL.ImageChops: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageChops.py)
+%%     PIL.ImageSequence: Unknown (/usr/lib/python3.7/site-packages/PIL/ImageSequence.py)
+%%     PIL.JpegImagePlugin: 0.6 (/usr/lib/python3.7/site-packages/PIL/JpegImagePlugin.py)
+%%     PIL.TiffImagePlugin: 1.3.5 (/usr/lib/python3.7/site-packages/PIL/TiffImagePlugin.py)
+%%     fractions: Unknown (/usr/lib/python3.7/fractions.py)
+%%     PIL.JpegPresets: Unknown (/usr/lib/python3.7/site-packages/PIL/JpegPresets.py)
+%%     PIL.PpmImagePlugin: 0.2 (/usr/lib/python3.7/site-packages/PIL/PpmImagePlugin.py)
+%%     PIL.PngImagePlugin: 0.9 (/usr/lib/python3.7/site-packages/PIL/PngImagePlugin.py)
+%% stacktrace:
+%%     [function: savePlot, line: 307, file: /home/kjetil/projects/mlmc_statistical_solutions_experiments/python/plot_info.py]
+%%     [function: plot_variance_decay_structure, line: 247, file: python/estimate_variance_decay.py]
+%%     [function: <module>, line: 404, file: python/estimate_variance_decay.py]
