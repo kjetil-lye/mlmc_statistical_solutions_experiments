@@ -239,6 +239,7 @@ def plot_variance_decay_structure(title, resolutions, basenames, norm_ord, varia
     
     ax2.plot(resolutions, speedups, '--x', label='MLMC Speedup')
     ax2.legend(loc=1)
+    ax2.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
     ax2.set_ylabel("Potential MLMC speedup")
             
     plot_info.savePlot(f'variance_decay_with_speedup_structure_{p}_{norm_ord}_{title}_{variable}')
@@ -326,23 +327,24 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable
     
     plot_info.savePlot(f'variance_decay_{norm_ord}_{title}_{variable}')
     
-    plot_info.saveData(f'variance_details_{norm_ord}_{title}_{variable}.txt', variances_details)
+    plot_info.saveData(f'variance_details_{norm_ord}_{title}_{variable}', variances_details)
 
-    plot_info.saveData(f'variance_{norm_ord}_{title}_{variable}.txt', variances)
+    plot_info.saveData(f'variance_{norm_ord}_{title}_{variable}', variances)
     
-    plot_info.saveData(f'variance_decay_resolutions_{norm_ord}_{title}_{variable}.txt', resolutions)
+    plot_info.saveData(f'variance_decay_resolutions_{norm_ord}_{title}_{variable}', resolutions)
     
     ax2 = ax1.twinx()
 
     
     
     ax2.plot(resolutions, speedups, '--x', label='MLMC Speedup')
-    ax2.legend(loc=0)
+    ax2.legend(loc=1)
+    ax2.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
     ax2.set_ylabel("Potential MLMC speedup")
             
     plot_info.savePlot(f'variance_decay_with_speedup_{norm_ord}_{title}_{variable}')
     
-    plot_info.saveData(f'variance_decay_speedups_{norm_ord}_{title}_{variable}.txt', speedups)
+    plot_info.saveData(f'variance_decay_speedups_{norm_ord}_{title}_{variable}', speedups)
      
 if __name__ == '__main__':
     
