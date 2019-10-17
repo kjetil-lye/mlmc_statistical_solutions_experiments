@@ -3,6 +3,7 @@ import numpy as np
 import plot_info
 import matplotlib.pyplot as plt
 import sys
+import os
 
 class Functional:
     pass
@@ -13,6 +14,9 @@ class Identity(Functional):
     
     def latex_name(self, u):
         return u
+
+    def name(self):
+        return "identity"
     
 class M2(Functional):
     def __call__(self, x):
@@ -20,7 +24,9 @@ class M2(Functional):
     
     def latex_name(self, u):
         return f'({u})^2'
-    
+
+    def name(self):
+        return "m2"
         
 
 
@@ -117,6 +123,7 @@ def load(filename, variable):
             for n, variable in enumerate(variables):
                 key = f'sample_{sample}_{variable}'
                 data[:,:,n] = f.variables[key][:,:,0]
+
             samples.append(data)
             sample += 1
                 
@@ -229,7 +236,7 @@ def plot_variance_decay_structure(title, resolutions, basenames, norm_ord, varia
         
     fig, ax1 = plt.subplots()
     ax1.loglog(resolutions, variances, '-o', 
-               label=f'$\\|\\mathrm{{Var}}(S^{{{p}}}_r({variable_latex}^{{N}}))\\|_{{L^{{{norm_ord}}}}}$')
+               label=f'$\\|\\mathrm{{Var}}(S^{{{p}}}_r({variable_latex}^{{N}}))\\|_{{L^{{{norm_ord}}}}}$', basex=2, basey=2)
     
     
     ax1.loglog(resolutions[1:], variances_details, '-*', 
@@ -241,8 +248,9 @@ def plot_variance_decay_structure(title, resolutions, basenames, norm_ord, varia
     ax1.set_xlabel("Resolution ($N\\times N$)")
     
     ax1.set_ylabel("Variance")
-    
-    ax1.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
+
+    ax1.set_xticks(resolutions)
+    ax1.set_xticklabels([f'${int(r)}\\times {int(r)}$' for r in resolutions])
     
     #plt.title(f'Structure function variance decay\n{title}\nVariable: {variable}')
     
@@ -258,15 +266,15 @@ def plot_variance_decay_structure(title, resolutions, basenames, norm_ord, varia
 
     
     
-    ax2.plot(resolutions, speedups, '--x', label='MLMC Speedup', basex=2)
+    ax2.loglog(resolutions, speedups, '--x', label='MLMC Speedup', basex=2, basey=2)
     ax2.legend(loc=1)
-    ax2.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
-    plt.xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
+    ax2.set_xticks(resolutions)
+    ax2.set_xticklabels([f'${int(r)}\\times {int(r)}$' for r in resolutions])
     ax2.set_ylabel("Potential MLMC speedup")
             
     ylims = ax2.get_ylim()
     
-    ax2.set_ylim([min(ylims[0], 0.5), max(ylims[1], 3)])
+    ax2.set_ylim([min(ylims[0], 0.5), max(ylims[1], 4)])
     
     
     plot_info.savePlot(f'variance_decay_with_speedup_structure_{p}_{norm_ord}_{title}_{variable}')
@@ -284,11 +292,11 @@ def compute_variance_decay_normed(resolutions, basenames, norm_ord, variable, fu
     for resolution in resolutions:
         print(f"Resolution: {resolution}")
         data = load(basenames.format(resolution=resolution), variable)
-        variance_single_level = np.linalg.norm(np.var(data, axis=0).flatten(), ord=norm_ord)/float(resolution)**(2/norm_ord)
+        variance_single_level = np.linalg.norm(np.var(functional(data), axis=0).flatten(), ord=norm_ord)/float(resolution)**(2/norm_ord)
         
         variances.append(variance_single_level)
         if resolution > resolutions[0]:
-            detail = data - data_coarse
+            detail = functional(data) - functional(data_coarse)
             
             variance_detail = np.linalg.norm(np.var(detail, axis=0).flatten(), ord=norm_ord)/float(resolution)**(2/norm_ord)
             
@@ -331,56 +339,65 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable
         variable_latex = 'm_y'
     else:
         variable_latex = variable
-    
-    
-        
+
+    latex_variable_resolution = lambda resolution: f'{variable_latex}^{{{resolution}}}'
+    latex_variable_resolution_functional = lambda resolution : functional.latex_name(latex_variable_resolution(resolution))
+
+
+    if 'time_integrated' in os.path.basename(basenames):
+        latex_variable_resolution_functional_inner = latex_variable_resolution_functional
+        latex_variable_resolution_functional = lambda resolution: f'\\dashint_0^T{latex_variable_resolution_functional_inner(resolution)}\\;dt'
+
+
     fig, ax1 = plt.subplots()
+
     ax1.loglog(resolutions, variances, '-o', 
-               label=f'$\\|\\mathrm{{Var}}({variable_latex}^{{N}})\\|_{{L^{{{norm_ord}}}}}$')
+               label=f'$\\|\\mathrm{{Var}}({latex_variable_resolution_functional("N")})\\|_{{L^{{{norm_ord}}}}}$',
+               basex=2, basey=2)
     
     
     ax1.loglog(resolutions[1:], variances_details, '-*', 
-               label=f'$\\|\\mathrm{{Var}}({variable_latex}^{{N}}-{variable_latex}^{{N/2}})\\|_{{L^{{{norm_ord}}}}}$',
+               label=f'$\\|\\mathrm{{Var}}({latex_variable_resolution_functional("N")}-{latex_variable_resolution_functional("N/2")})\\|_{{L^{{{norm_ord}}}}}$',
                basex=2, basey=2)
     
-    ax1.legend()
+    ax1.legend(loc='lower left')
     
     ax1.set_xlabel("Resolution ($N\\times N$)")
     
     ax1.set_ylabel("Variance")
-    
-    ax1.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
+
+    ax1.set_xticks(resolutions)
+    ax1.set_xticklabels([f'${int(r)}\\times {int(r)}$' for r in resolutions])
     
     #plt.title(f'Variance decay\n{title}\nVariable: {variable}')
     
-    plot_info.savePlot(f'variance_decay_{norm_ord}_{title}_{variable}')
+    plot_info.savePlot(f'variance_decay_{functional.name()}_{norm_ord}_{title}_{variable}')
     
-    plot_info.saveData(f'variance_details_{norm_ord}_{title}_{variable}', variances_details)
+    plot_info.saveData(f'variance_details_{functional.name()}_{norm_ord}_{title}_{variable}', variances_details)
 
-    plot_info.saveData(f'variance_{norm_ord}_{title}_{variable}', variances)
+    plot_info.saveData(f'variance_{functional.name()}_{norm_ord}_{title}_{variable}', variances)
     
-    plot_info.saveData(f'variance_decay_resolutions_{norm_ord}_{title}_{variable}', resolutions)
+    plot_info.saveData(f'variance_decay_resolutions_{functional.name()}_{norm_ord}_{title}_{variable}', resolutions)
     
     ax2 = ax1.twinx()
 
     
     
-    ax2.plot(resolutions, speedups, '--x', label='MLMC Speedup', basex=2)
-    ax2.legend(loc=1)
-    ax2.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
-    ax2.set_ylabel("Potential MLMC speedup")
+    ax2.loglog(resolutions, speedups, '--x', label='MLMC Speedup', basex=2, basey=2, color='C3')
 
-    ax2.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
-    
-    plt.xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
+
+    ax2.set_ylabel("Potential MLMC speedup")
+    ax2.set_xticks(resolutions)
+    ax2.set_xticklabels([f'${int(r)}\\times {int(r)}$' for r in resolutions])
     
     ylims = ax2.get_ylim()
     
-    ax2.set_ylim([min(ylims[0], 0.5), max(ylims[1], 3)])
+    ax2.set_ylim([min(ylims[0], 0.5), max(ylims[1], 4.4)])
+    plt.legend(loc='center right')
             
-    plot_info.savePlot(f'variance_decay_with_speedup_{norm_ord}_{title}_{variable}')
+    plot_info.savePlot(f'variance_decay_with_speedup_{functional.name()}_{norm_ord}_{title}_{variable}')
     
-    plot_info.saveData(f'variance_decay_speedups_{norm_ord}_{title}_{variable}', speedups)
+    plot_info.saveData(f'variance_decay_speedups_{functional.name()}_{norm_ord}_{title}_{variable}', speedups)
      
 if __name__ == '__main__':
     
@@ -430,8 +447,8 @@ Computes the variance decay
     
     
     functionals = {
-            "identity" : lambda x: x,
-            "m2" : lambda x: x**2
+            "identity" : Identity(),
+            "m2" : M2()
             }
     
     
@@ -445,9 +462,10 @@ Computes the variance decay
                                    functional)
         
     else:
+        if args.functional != 'identity':
+            raise ValueError(f"We only support identity functional with structure functions. Given {args.functional}.")
         plot_variance_decay_structure(args.title, resolutions,
                                    args.input_basename, args.norm_order,
                                    args.variable, 
-                                   args.power,
-                                   functional)
+                                   args.power)
         
