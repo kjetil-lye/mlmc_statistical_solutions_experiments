@@ -1,4 +1,5 @@
 AUTHORS = "Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>"
+import latex_plots
 import numpy
 import glob
 import sys
