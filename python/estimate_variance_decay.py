@@ -4,6 +4,25 @@ import plot_info
 import matplotlib.pyplot as plt
 import sys
 
+class Functional:
+    pass
+
+class Identity(Functional):
+    def __call__(self, x):
+        return x
+    
+    def latex_name(self, u):
+        return u
+    
+class M2(Functional):
+    def __call__(self, x):
+        return x**2
+    
+    def latex_name(self, u):
+        return f'({u})^2'
+    
+        
+
 
 def speedup_mlmc(variances, levels, work):
 
@@ -210,11 +229,11 @@ def plot_variance_decay_structure(title, resolutions, basenames, norm_ord, varia
         
     fig, ax1 = plt.subplots()
     ax1.loglog(resolutions, variances, '-o', 
-               label=f'$||\\mathrm{{Var}}(S^{{{p}}}_r({variable_latex}^{{N}}))||_{{L^{{{norm_ord}}}}}$')
+               label=f'$\\|\\mathrm{{Var}}(S^{{{p}}}_r({variable_latex}^{{N}}))\\|_{{L^{{{norm_ord}}}}}$')
     
     
     ax1.loglog(resolutions[1:], variances_details, '-*', 
-               label=f'$||\\mathrm{{Var}}(S^{{{p}}}_r({variable_latex}^{{N}})-S^{{{p}}}_r({variable_latex}^{{N/2}}))||_{{L^{{{norm_ord}}}}}$',
+               label=f'$\\|\\mathrm{{Var}}(S^{{{p}}}_r({variable_latex}^{{N}})-S^{{{p}}}_r({variable_latex}^{{N/2}}))\\|_{{L^{{{norm_ord}}}}}$',
                basex=2, basey=2)
     
     ax1.legend()
@@ -239,9 +258,10 @@ def plot_variance_decay_structure(title, resolutions, basenames, norm_ord, varia
 
     
     
-    ax2.plot(resolutions, speedups, '--x', label='MLMC Speedup')
+    ax2.plot(resolutions, speedups, '--x', label='MLMC Speedup', basex=2)
     ax2.legend(loc=1)
     ax2.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
+    plt.xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
     ax2.set_ylabel("Potential MLMC speedup")
             
     ylims = ax2.get_ylim()
@@ -257,7 +277,7 @@ def plot_variance_decay_structure(title, resolutions, basenames, norm_ord, varia
 
 
 
-def compute_variance_decay_normed(resolutions, basenames, norm_ord, variable):
+def compute_variance_decay_normed(resolutions, basenames, norm_ord, variable, functional):
     variances = []
     variances_details = []
     
@@ -280,11 +300,12 @@ def compute_variance_decay_normed(resolutions, basenames, norm_ord, variable):
     return variances, variances_details
 
 
-def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable):
+def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable, functional):
     variances, variances_details = compute_variance_decay_normed(resolutions, 
                                                                  basenames,
                                                                  norm_ord,
-                                                                 variable)
+                                                                 variable,
+                                                                 functional)
     
     
     speedups = [1]
@@ -315,11 +336,11 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable
         
     fig, ax1 = plt.subplots()
     ax1.loglog(resolutions, variances, '-o', 
-               label=f'$||\\mathrm{{Var}}({variable_latex}^{{N}})||_{{L^{{{norm_ord}}}}}$')
+               label=f'$\\|\\mathrm{{Var}}({variable_latex}^{{N}})\\|_{{L^{{{norm_ord}}}}}$')
     
     
     ax1.loglog(resolutions[1:], variances_details, '-*', 
-               label=f'$||\\mathrm{{Var}}({variable_latex}^{{N}}-{variable_latex}^{{N/2}})||_{{L^{{{norm_ord}}}}}$',
+               label=f'$\\|\\mathrm{{Var}}({variable_latex}^{{N}}-{variable_latex}^{{N/2}})\\|_{{L^{{{norm_ord}}}}}$',
                basex=2, basey=2)
     
     ax1.legend()
@@ -344,12 +365,14 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable
 
     
     
-    ax2.plot(resolutions, speedups, '--x', label='MLMC Speedup')
+    ax2.plot(resolutions, speedups, '--x', label='MLMC Speedup', basex=2)
     ax2.legend(loc=1)
     ax2.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
     ax2.set_ylabel("Potential MLMC speedup")
 
     ax2.set_xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
+    
+    plt.xticks(resolutions, [f'${r}\\times {r}$' for r in resolutions])
     
     ylims = ax2.get_ylim()
     
@@ -373,6 +396,9 @@ Computes the variance decay
 
     parser.add_argument('--title', type=str, required=True,
                         help='Title of plot')
+    
+    parser.add_argument('--functional', type=str, default='identity',
+                        help='The functional to apply to the data. Default is no functional applied. Alternative: "m2", the second moment')
 
 
 
@@ -403,14 +429,25 @@ Computes the variance decay
                                int(np.log2(args.max_resolution)+1))
     
     
+    functionals = {
+            "identity" : lambda x: x,
+            "m2" : lambda x: x**2
+            }
+    
+    
+    functional = functionals[args.functional]
+    
+    
     if not args.structure:
         plot_variance_decay_normed(args.title, resolutions,
                                    args.input_basename, args.norm_order,
-                                   args.variable)
+                                   args.variable,
+                                   functional)
         
     else:
         plot_variance_decay_structure(args.title, resolutions,
                                    args.input_basename, args.norm_order,
                                    args.variable, 
-                                   args.power)
+                                   args.power,
+                                   functional)
         
