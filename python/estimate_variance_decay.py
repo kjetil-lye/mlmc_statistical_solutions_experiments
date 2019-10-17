@@ -327,7 +327,7 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable
         
         speedups.append(speedup)
         
-        
+    functional_name = functional.name()
     
     if variable == 'all':
         variable_latex = 'u'
@@ -343,6 +343,10 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable
     latex_variable_resolution = lambda resolution: f'{variable_latex}^{{{resolution}}}'
     latex_variable_resolution_functional = lambda resolution : functional.latex_name(latex_variable_resolution(resolution))
 
+    if '_moment_2_' in os.path.basename(basenames):
+        latex_variable_resolution_functional_inner_moment = latex_variable_resolution_functional
+        latex_variable_resolution_functional = lambda resolution: f'({latex_variable_resolution_functional_inner_moment(resolution)})^2'
+        functional_name = 'm2'
 
     if 'time_integrated' in os.path.basename(basenames):
         latex_variable_resolution_functional_inner = latex_variable_resolution_functional
@@ -371,13 +375,13 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable
     
     #plt.title(f'Variance decay\n{title}\nVariable: {variable}')
     
-    plot_info.savePlot(f'variance_decay_{functional.name()}_{norm_ord}_{title}_{variable}')
+    plot_info.savePlot(f'variance_decay_{functional_name}_{norm_ord}_{title}_{variable}')
     
-    plot_info.saveData(f'variance_details_{functional.name()}_{norm_ord}_{title}_{variable}', variances_details)
+    plot_info.saveData(f'variance_details_{functional_name}_{norm_ord}_{title}_{variable}', variances_details)
 
-    plot_info.saveData(f'variance_{functional.name()}_{norm_ord}_{title}_{variable}', variances)
+    plot_info.saveData(f'variance_{functional_name}_{norm_ord}_{title}_{variable}', variances)
     
-    plot_info.saveData(f'variance_decay_resolutions_{functional.name()}_{norm_ord}_{title}_{variable}', resolutions)
+    plot_info.saveData(f'variance_decay_resolutions_{functional_name}_{norm_ord}_{title}_{variable}', resolutions)
     
     ax2 = ax1.twinx()
 
@@ -395,9 +399,9 @@ def plot_variance_decay_normed(title, resolutions, basenames, norm_ord, variable
     ax2.set_ylim([min(ylims[0], 0.5), max(ylims[1], 4.4)])
     plt.legend(loc='center right')
             
-    plot_info.savePlot(f'variance_decay_with_speedup_{functional.name()}_{norm_ord}_{title}_{variable}')
+    plot_info.savePlot(f'variance_decay_with_speedup_{functional_name}_{norm_ord}_{title}_{variable}')
     
-    plot_info.saveData(f'variance_decay_speedups_{functional.name()}_{norm_ord}_{title}_{variable}', speedups)
+    plot_info.saveData(f'variance_decay_speedups_{functional_name}_{norm_ord}_{title}_{variable}', speedups)
      
 if __name__ == '__main__':
     
