@@ -5,7 +5,7 @@ export PYTHONPATH=$(pwd)/python:$PYTHONPATH
 function submit() {
     bsub -W 120:00 -R 'rusage[mem=128000]' "$@"
 }
-
+module load texlive
 datapath='/cluster/work/math/klye/single_sample_structure_functions/'
 
 for order in 1 2
