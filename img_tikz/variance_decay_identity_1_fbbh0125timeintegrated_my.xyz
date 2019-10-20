@@ -50,15 +50,15 @@ table {%
   rotate=0.0,
   align=right
 ]{By Kjetil Olsen Lye @ ETHZ <kjetil.o.lye@gmail.com>
-Commit: 81e9eb83be5a8783aed7b193c769a0b9e8ab389e
+Commit: e61f989c2d6a62ccea6381d2117232fe2d281601
 Repo: git@github.com:kjetil-lye/mlmc\_statistical\_solutions\_experiments.git
-Hostname: lo-amd-fp-003};
+Hostname: lo-a2-016};
 \node at (axis cs:0.2,0.93)[
   scale=0.5,
   anchor=south east,
   text=white!50.19607843137255!black,
   rotate=0.0
-]{@81e9};
+]{@e61f};
 \end{axis}
 
 \end{tikzpicture}
@@ -69,14 +69,14 @@ Hostname: lo-amd-fp-003};
 %% script name: python/estimate_variance_decay.py
 %% ALWAYS INCLUDE THE COMMENTS WHEN COPYING THIS PLOT
 %% DO NOT REMOVE THE COMMENTS BELOW!
-%% GIT git_commit : 81e9eb83be5a8783aed7b193c769a0b9e8ab389e
+%% GIT git_commit : e61f989c2d6a62ccea6381d2117232fe2d281601
 %% GIT git_repo_modified : True
 %% GIT git_branch : master
 %% GIT git_remote_url : git@github.com:kjetil-lye/mlmc_statistical_solutions_experiments.git
-%% GIT git_short_commit : 81e9
+%% GIT git_short_commit : e61f
 %% working_directory : /cluster/scratch/klye/mlmc_statistical_solutions_experiments
-%% hostname : lo-amd-fp-003
-%% generated_on_date : 2019-10-18 05:35:38.791081
+%% hostname : lo-a2-016
+%% generated_on_date : 2019-10-20 10:15:45.873062
 %% accessed_environment:
 %% additional_parameters:
 %%    commandrun=/cluster/apps/python/3.6.4_cpu/bin/python python/estimate_variance_decay.py --input_basename /cluster/work/math/klye/single_sample_structure_functions/experiments_full_time_average/fbb/H0_125/N{resolution}/euler_fbb_functional_time_integrated_identity_0.nc --starting_resolution 64 --max_resolution 1024 --title fBb $H=0.125$  time integrated --variable my --norm_order 1 --functional identity
